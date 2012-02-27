@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* TsoiMechanismAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TsoiMechanismAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		265DB5A114F6A8540070D769 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265DB5A014F6A8540070D769 /* MainWindow.xib */; };
+		265DB5A814F6A8E10070D769 /* MainWindow~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265DB5A714F6A8E10070D769 /* MainWindow~iPad.xib */; };
+		266BA54214F8311000B06C88 /* ModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BA54114F8311000B06C88 /* ModeViewController.m */; };
+		266BA54514F8358C00B06C88 /* ModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266BA54414F8358C00B06C88 /* ModeViewController.xib */; };
+		266BA54714F8379100B06C88 /* ModeViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266BA54614F8379100B06C88 /* ModeViewController~iPad.xib */; };
+		26C6257914F59A4600B8A163 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6257714F59A4600B8A163 /* RootViewController.m */; };
+		26C6258414F59C8D00B8A163 /* IdentifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258214F59C8D00B8A163 /* IdentifyViewController.m */; };
+		26C6258A14F59CB900B8A163 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258814F59CB900B8A163 /* DrawViewController.m */; };
+		26C6258F14F59CC500B8A163 /* ChallengeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258D14F59CC500B8A163 /* ChallengeViewController.m */; };
+		26C6259914F59E1400B8A163 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259814F59E1400B8A163 /* test.xml */; };
+		26C6259F14F59E2F00B8A163 /* ChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259A14F59E2F00B8A163 /* ChallengeViewController.xib */; };
+		26C625A014F59E2F00B8A163 /* IdentifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259B14F59E2F00B8A163 /* IdentifyViewController.xib */; };
+		26C625A214F59E2F00B8A163 /* DrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259D14F59E2F00B8A163 /* DrawViewController.xib */; };
+		26C625A314F59E2F00B8A163 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259E14F59E2F00B8A163 /* RootViewController.xib */; };
+		26C625A914F59E4000B8A163 /* ChallengeViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C625A414F59E4000B8A163 /* ChallengeViewController~iPad.xib */; };
+		26C625AA14F59E4000B8A163 /* IdentifyViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C625A514F59E4000B8A163 /* IdentifyViewController~iPad.xib */; };
+		26C625AC14F59E4000B8A163 /* DrawViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C625A714F59E4000B8A163 /* DrawViewController~iPad.xib */; };
+		26C625AD14F59E4000B8A163 /* RootViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C625A814F59E4000B8A163 /* RootViewController~iPad.xib */; };
+		26C625BC14F5F2DA00B8A163 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6255114F597F600B8A163 /* GDataXMLNode.m */; };
+		26C625BD14F5F2DA00B8A163 /* ProblemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6255514F5981A00B8A163 /* ProblemView.m */; };
+		26C625BE14F5F2DA00B8A163 /* Problems.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6255714F5981A00B8A163 /* Problems.m */; };
+		26C625BF14F5F2DA00B8A163 /* Problem.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6255914F5982300B8A163 /* Problem.m */; };
+		26C625C014F5F2DA00B8A163 /* Molecule.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6255B14F5982300B8A163 /* Molecule.m */; };
+		26C625C114F5F2DA00B8A163 /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6255D14F5982300B8A163 /* Element.m */; };
+		26C625C214F5F2DA00B8A163 /* Bond.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6255F14F5982300B8A163 /* Bond.m */; };
+		26C625C314F5F2DA00B8A163 /* Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6256114F5982300B8A163 /* Arrow.m */; };
+		26C625C614F6178400B8A163 /* Marker.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C625C514F6178400B8A163 /* Marker.m */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* TsoiMechanismAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TsoiMechanismAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* TsoiMechanismAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TsoiMechanismAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* TsoiMechanism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TsoiMechanism.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		265DB5A014F6A8540070D769 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = Views/MainWindow.xib; sourceTree = "<group>"; };
+		265DB5A714F6A8E10070D769 /* MainWindow~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow~iPad.xib"; path = "Views/MainWindow~iPad.xib"; sourceTree = "<group>"; };
+		266BA54014F8311000B06C88 /* ModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeViewController.h; sourceTree = "<group>"; };
+		266BA54114F8311000B06C88 /* ModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeViewController.m; sourceTree = "<group>"; };
+		266BA54414F8358C00B06C88 /* ModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ModeViewController.xib; path = Views/ModeViewController.xib; sourceTree = "<group>"; };
+		266BA54614F8379100B06C88 /* ModeViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "ModeViewController~iPad.xib"; path = "Views/ModeViewController~iPad.xib"; sourceTree = "<group>"; };
+		26C6255014F597F600B8A163 /* GDataXMLNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		26C6255114F597F600B8A163 /* GDataXMLNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		26C6255414F5981A00B8A163 /* ProblemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProblemView.h; sourceTree = "<group>"; };
+		26C6255514F5981A00B8A163 /* ProblemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProblemView.m; sourceTree = "<group>"; };
+		26C6255614F5981A00B8A163 /* Problems.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Problems.h; sourceTree = "<group>"; };
+		26C6255714F5981A00B8A163 /* Problems.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Problems.m; sourceTree = "<group>"; };
+		26C6255814F5982300B8A163 /* Problem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Problem.h; sourceTree = "<group>"; };
+		26C6255914F5982300B8A163 /* Problem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Problem.m; sourceTree = "<group>"; };
+		26C6255A14F5982300B8A163 /* Molecule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Molecule.h; sourceTree = "<group>"; };
+		26C6255B14F5982300B8A163 /* Molecule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Molecule.m; sourceTree = "<group>"; };
+		26C6255C14F5982300B8A163 /* Element.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = "<group>"; };
+		26C6255D14F5982300B8A163 /* Element.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Element.m; sourceTree = "<group>"; };
+		26C6255E14F5982300B8A163 /* Bond.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bond.h; sourceTree = "<group>"; };
+		26C6255F14F5982300B8A163 /* Bond.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bond.m; sourceTree = "<group>"; };
+		26C6256014F5982300B8A163 /* Arrow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
+		26C6256114F5982300B8A163 /* Arrow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Arrow.m; sourceTree = "<group>"; };
+		26C6257614F59A4600B8A163 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		26C6257714F59A4600B8A163 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		26C6258114F59C8C00B8A163 /* IdentifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentifyViewController.h; sourceTree = "<group>"; };
+		26C6258214F59C8D00B8A163 /* IdentifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifyViewController.m; sourceTree = "<group>"; };
+		26C6258714F59CB900B8A163 /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
+		26C6258814F59CB900B8A163 /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
+		26C6258C14F59CC500B8A163 /* ChallengeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeViewController.h; sourceTree = "<group>"; };
+		26C6258D14F59CC500B8A163 /* ChallengeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeViewController.m; sourceTree = "<group>"; };
+		26C6259814F59E1400B8A163 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = test.xml; path = XMLs/test.xml; sourceTree = "<group>"; };
+		26C6259A14F59E2F00B8A163 /* ChallengeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChallengeViewController.xib; path = Views/ChallengeViewController.xib; sourceTree = "<group>"; };
+		26C6259B14F59E2F00B8A163 /* IdentifyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IdentifyViewController.xib; path = Views/IdentifyViewController.xib; sourceTree = "<group>"; };
+		26C6259D14F59E2F00B8A163 /* DrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DrawViewController.xib; path = Views/DrawViewController.xib; sourceTree = "<group>"; };
+		26C6259E14F59E2F00B8A163 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RootViewController.xib; path = Views/RootViewController.xib; sourceTree = "<group>"; };
+		26C625A414F59E4000B8A163 /* ChallengeViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "ChallengeViewController~iPad.xib"; path = "Views/ChallengeViewController~iPad.xib"; sourceTree = "<group>"; };
+		26C625A514F59E4000B8A163 /* IdentifyViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "IdentifyViewController~iPad.xib"; path = "Views/IdentifyViewController~iPad.xib"; sourceTree = "<group>"; };
+		26C625A714F59E4000B8A163 /* DrawViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "DrawViewController~iPad.xib"; path = "Views/DrawViewController~iPad.xib"; sourceTree = "<group>"; };
+		26C625A814F59E4000B8A163 /* RootViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "RootViewController~iPad.xib"; path = "Views/RootViewController~iPad.xib"; sourceTree = "<group>"; };
+		26C625C414F6178400B8A163 /* Marker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marker.h; sourceTree = "<group>"; };
+		26C625C514F6178400B8A163 /* Marker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marker.m; sourceTree = "<group>"; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AAE50D9B0CCF005BE974 /* TsoiMechanism_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TsoiMechanism_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* TsoiMechanism-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TsoiMechanism-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				26C6254E14F597EB00B8A163 /* GXML */,
+				26C6255214F5980500B8A163 /* Problem Base */,
+				26C6255314F5980E00B8A163 /* Models */,
+				26C6259114F59CD700B8A163 /* ViewControllers */,
+				1D3623240D0F684500981E51 /* TsoiMechanismAppDelegate.h */,
+				1D3623250D0F684500981E51 /* TsoiMechanismAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* TsoiMechanism.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26C6254E14F597EB00B8A163 /* GXML */ = {
+			isa = PBXGroup;
+			children = (
+				26C6255014F597F600B8A163 /* GDataXMLNode.h */,
+				26C6255114F597F600B8A163 /* GDataXMLNode.m */,
+			);
+			name = GXML;
+			sourceTree = "<group>";
+		};
+		26C6255214F5980500B8A163 /* Problem Base */ = {
+			isa = PBXGroup;
+			children = (
+				26C6255414F5981A00B8A163 /* ProblemView.h */,
+				26C6255514F5981A00B8A163 /* ProblemView.m */,
+				26C6255614F5981A00B8A163 /* Problems.h */,
+				26C6255714F5981A00B8A163 /* Problems.m */,
+			);
+			name = "Problem Base";
+			sourceTree = "<group>";
+		};
+		26C6255314F5980E00B8A163 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				26C6255814F5982300B8A163 /* Problem.h */,
+				26C6255914F5982300B8A163 /* Problem.m */,
+				26C6255A14F5982300B8A163 /* Molecule.h */,
+				26C6255B14F5982300B8A163 /* Molecule.m */,
+				26C6255C14F5982300B8A163 /* Element.h */,
+				26C6255D14F5982300B8A163 /* Element.m */,
+				26C6255E14F5982300B8A163 /* Bond.h */,
+				26C6255F14F5982300B8A163 /* Bond.m */,
+				26C6256014F5982300B8A163 /* Arrow.h */,
+				26C6256114F5982300B8A163 /* Arrow.m */,
+				26C625C414F6178400B8A163 /* Marker.h */,
+				26C625C514F6178400B8A163 /* Marker.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		26C6256214F5983400B8A163 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				26C6257014F598F400B8A163 /* iPhone */,
+				26C6256D14F598C700B8A163 /* iPad */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		26C6256314F5983E00B8A163 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		26C6256414F5984300B8A163 /* XMLs */ = {
+			isa = PBXGroup;
+			children = (
+				26C6259814F59E1400B8A163 /* test.xml */,
+			);
+			name = XMLs;
+			sourceTree = "<group>";
+		};
+		26C6256D14F598C700B8A163 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				265DB5A714F6A8E10070D769 /* MainWindow~iPad.xib */,
+				26C625A814F59E4000B8A163 /* RootViewController~iPad.xib */,
+				266BA54614F8379100B06C88 /* ModeViewController~iPad.xib */,
+				26C625A514F59E4000B8A163 /* IdentifyViewController~iPad.xib */,
+				26C625A714F59E4000B8A163 /* DrawViewController~iPad.xib */,
+				26C625A414F59E4000B8A163 /* ChallengeViewController~iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		26C6257014F598F400B8A163 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				265DB5A014F6A8540070D769 /* MainWindow.xib */,
+				26C6259E14F59E2F00B8A163 /* RootViewController.xib */,
+				266BA54414F8358C00B06C88 /* ModeViewController.xib */,
+				26C6259B14F59E2F00B8A163 /* IdentifyViewController.xib */,
+				26C6259D14F59E2F00B8A163 /* DrawViewController.xib */,
+				26C6259A14F59E2F00B8A163 /* ChallengeViewController.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		26C6259114F59CD700B8A163 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				26C6257614F59A4600B8A163 /* RootViewController.h */,
+				26C6257714F59A4600B8A163 /* RootViewController.m */,
+				266BA54014F8311000B06C88 /* ModeViewController.h */,
+				266BA54114F8311000B06C88 /* ModeViewController.m */,
+				26C6258114F59C8C00B8A163 /* IdentifyViewController.h */,
+				26C6258214F59C8D00B8A163 /* IdentifyViewController.m */,
+				26C6258714F59CB900B8A163 /* DrawViewController.h */,
+				26C6258814F59CB900B8A163 /* DrawViewController.m */,
+				26C6258C14F59CC500B8A163 /* ChallengeViewController.h */,
+				26C6258D14F59CC500B8A163 /* ChallengeViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AAE50D9B0CCF005BE974 /* TsoiMechanism_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				26C6256414F5984300B8A163 /* XMLs */,
+				26C6256314F5983E00B8A163 /* Images */,
+				26C6256214F5983400B8A163 /* Views */,
+				8D1107310486CEB800E47090 /* TsoiMechanism-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* TsoiMechanism */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TsoiMechanism" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TsoiMechanism;
+			productName = TsoiMechanism;
+			productReference = 1D6058910D05DD3D006BFB54 /* TsoiMechanism.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TsoiMechanism" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* TsoiMechanism */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C6259914F59E1400B8A163 /* test.xml in Resources */,
+				26C6259F14F59E2F00B8A163 /* ChallengeViewController.xib in Resources */,
+				26C625A014F59E2F00B8A163 /* IdentifyViewController.xib in Resources */,
+				26C625A214F59E2F00B8A163 /* DrawViewController.xib in Resources */,
+				26C625A314F59E2F00B8A163 /* RootViewController.xib in Resources */,
+				26C625A914F59E4000B8A163 /* ChallengeViewController~iPad.xib in Resources */,
+				26C625AA14F59E4000B8A163 /* IdentifyViewController~iPad.xib in Resources */,
+				26C625AC14F59E4000B8A163 /* DrawViewController~iPad.xib in Resources */,
+				26C625AD14F59E4000B8A163 /* RootViewController~iPad.xib in Resources */,
+				265DB5A114F6A8540070D769 /* MainWindow.xib in Resources */,
+				265DB5A814F6A8E10070D769 /* MainWindow~iPad.xib in Resources */,
+				266BA54514F8358C00B06C88 /* ModeViewController.xib in Resources */,
+				266BA54714F8379100B06C88 /* ModeViewController~iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26C625BC14F5F2DA00B8A163 /* GDataXMLNode.m in Sources */,
+				26C625BD14F5F2DA00B8A163 /* ProblemView.m in Sources */,
+				26C625BE14F5F2DA00B8A163 /* Problems.m in Sources */,
+				26C625BF14F5F2DA00B8A163 /* Problem.m in Sources */,
+				26C625C014F5F2DA00B8A163 /* Molecule.m in Sources */,
+				26C625C114F5F2DA00B8A163 /* Element.m in Sources */,
+				26C625C214F5F2DA00B8A163 /* Bond.m in Sources */,
+				26C625C314F5F2DA00B8A163 /* Arrow.m in Sources */,
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* TsoiMechanismAppDelegate.m in Sources */,
+				26C6257914F59A4600B8A163 /* RootViewController.m in Sources */,
+				26C6258414F59C8D00B8A163 /* IdentifyViewController.m in Sources */,
+				26C6258A14F59CB900B8A163 /* DrawViewController.m in Sources */,
+				26C6258F14F59CC500B8A163 /* ChallengeViewController.m in Sources */,
+				26C625C614F6178400B8A163 /* Marker.m in Sources */,
+				266BA54214F8311000B06C88 /* ModeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TsoiMechanism_Prefix.pch;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "TsoiMechanism-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = TsoiMechanism;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TsoiMechanism_Prefix.pch;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "TsoiMechanism-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = TsoiMechanism;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TsoiMechanism" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TsoiMechanism" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
