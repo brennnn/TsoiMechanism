@@ -19,9 +19,9 @@
 }
 
 @property (nonatomic, retain) IBOutlet ProblemView *problemView;
-@property (nonatomic, retain) IBOutlet IBOutlet UILabel *problemNumberLabel;
-@property (nonatomic, retain) IBOutlet IBOutlet UILabel *scoreLabel;
-@property (nonatomic, retain) IBOutlet IBOutlet UILabel *instructionsLabel;
+@property (nonatomic, retain) IBOutlet UILabel *problemNumberLabel;
+@property (nonatomic, retain) IBOutlet UILabel *scoreLabel;
+@property (nonatomic, retain) IBOutlet UILabel *instructionsLabel;
 
 // Increments and displays problemNumber and calls the next problem to be shown
 -(void) goToNextProblem;
