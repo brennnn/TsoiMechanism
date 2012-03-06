@@ -19,6 +19,7 @@
     return self;
 }
 
+// The point the arrow is drawn and checks to see if it exceeds the number of drawn arrows for the problem
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
@@ -34,6 +35,7 @@
     }
 }
 
+// keep arrow drawn as you drag tha arrow.
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
@@ -42,18 +44,20 @@
     }
 }
 
+// This is the function that "Sticks" the arrow to the hitbox.
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
-	NSString *arrowCount = (NSString *) [problemView getProblemArrowCount];
-	NSString *arrowStack = (NSString *) [problemView getArrowStackCount];
-	NSLog(@"StartE");
+	//NSString *arrowCount = (NSString *) [problemView getProblemArrowCount]; // How many Arrows in the problem are needed
+	//NSString *arrowStack = (NSString *) [problemView getArrowStackCount]; // How many arrows where used
+	//NSLog(@"StartE");
     if ([problemView isArrowInProgress]) {
         CGPoint hitbox = [problemView isHitbox:touchPoint];
         if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f))) {
             [problemView endArrow:hitbox];
             if ([problemView getArrowStackCount] == 1)
             {
+				//Checks to see if the current arrow drawn is on the correct hitbox and direction
 				if([problemView doesLastArrowMatchProblem]) {
 				NSLog(@"Arrow Match");
                 [problemView showElectrophileMarker:hitbox];
@@ -70,7 +74,7 @@
 			}
 			[problemView removeLastArrow];
         }
-		NSLog(@"%d",arrowStack);
+		//NSLog(@"%d",arrowStack);
     }
 }
 
