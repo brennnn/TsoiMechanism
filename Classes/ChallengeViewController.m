@@ -15,7 +15,8 @@
 {
     if (self = [super initWithNibName:@"ModeViewController" bundle:nibBundleOrNil]) 
     {
-        
+        [instructionsLabel setText:@"Draw the arrows to the appropiate spots"];
+		isSecondTry = FALSE;
     }
     return self;
 }
