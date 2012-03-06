@@ -59,18 +59,19 @@
             {
 				//Checks to see if the current arrow drawn is on the correct hitbox and direction
 				if([problemView doesLastArrowMatchProblem]) {
-				NSLog(@"Arrow Match");
-                [problemView showElectrophileMarker:hitbox];
+					NSLog(@"Arrow Match");
+					[problemView showElectrophileMarker:hitbox];
 				} else {
 					NSLog(@"Arrow does not Match");
 					[problemView removeLastArrow];
+					[problemView clearNucleophileMarker];
 				}
 
             }
         } else {
             if ([problemView getArrowStackCount] == 1)
             {
-                [problemView clearElectrophileMarker];
+				[problemView clearNucleophileMarker];
 			}
 			[problemView removeLastArrow];
         }
