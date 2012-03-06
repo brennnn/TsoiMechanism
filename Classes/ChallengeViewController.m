@@ -50,7 +50,7 @@
             
             if ([problemView doesLastArrowMatchProblem])
             {
-                //NSLog(@"Last Arrow Matches Problem");
+                NSLog(@"Last Arrow Matches Problem");
             }
             if ([problemView doesAllArrowsMatchProblem])
             {

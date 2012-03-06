@@ -24,7 +24,8 @@
     CGPoint touchPoint = [touch locationInView:problemView];
 
     CGPoint hitbox = [problemView isHitbox:touchPoint];
-    if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f))) {
+	NSLog(@"StartB");
+    if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f)) && ([problemView getProblemArrowCount] > [problemView getArrowStackCount])) {
         [problemView startArrow:hitbox];
         if ([problemView getArrowStackCount] == 1)
         {
@@ -36,31 +37,40 @@
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
-    
     if ([problemView isArrowInProgress]) {
-        [problemView setArrowEnd:touchPoint];
+		[problemView setArrowEnd:touchPoint];
     }
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
-    
+	NSString *arrowCount = (NSString *) [problemView getProblemArrowCount];
+	NSString *arrowStack = (NSString *) [problemView getArrowStackCount];
+	NSLog(@"StartE");
     if ([problemView isArrowInProgress]) {
         CGPoint hitbox = [problemView isHitbox:touchPoint];
         if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f))) {
             [problemView endArrow:hitbox];
             if ([problemView getArrowStackCount] == 1)
             {
+				if([problemView doesLastArrowMatchProblem]) {
+				NSLog(@"Arrow Match");
                 [problemView showElectrophileMarker:hitbox];
+				} else {
+					NSLog(@"Arrow does not Match");
+					[problemView removeLastArrow];
+				}
+
             }
         } else {
             if ([problemView getArrowStackCount] == 1)
             {
                 [problemView clearElectrophileMarker];
-            }
-            [problemView removeLastArrow];
+			}
+			[problemView removeLastArrow];
         }
+		NSLog(@"%d",arrowStack);
     }
 }
 
