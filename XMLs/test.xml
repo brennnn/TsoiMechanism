@@ -5,7 +5,7 @@
             <Label>C</Label>
             <Charge>1</Charge>
             <Electrons>2</Electrons>
-            <Type>1</Type>
+            <Type>2</Type>
         </Element>
         <Element>
             <Location x="60" y="120" />
@@ -50,7 +50,7 @@
             <Label>O</Label>
             <Charge>0</Charge>
             <Electrons>4</Electrons>
-            <Type>2</Type>
+            <Type>1</Type>
         </Element>
         <Element>
             <Location x="60" y="120" />
