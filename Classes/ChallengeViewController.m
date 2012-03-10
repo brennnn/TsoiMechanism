@@ -13,7 +13,7 @@
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {
-    if (self = [super initWithNibName:@"ModeViewController" bundle:nibBundleOrNil]) 
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) 
     {
         
     }
