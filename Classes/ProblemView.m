@@ -446,7 +446,10 @@
             Element *elementB = [moleculeB.elements valueForKey:[NSString stringWithFormat:@"%i,%i", (int)locationB.x, (int)locationB.y]];
             if ((elementA != nil) && (elementB != nil))
             {
-                return TRUE;   
+                if ((elementA.type == ELEMENT_NUCLEOPHILE) && (elementB.type == ELEMENT_ELECTROPHILE))
+                {
+                    return TRUE;
+                }
             }
         }
         
@@ -461,7 +464,10 @@
             Element *elementB = [moleculeB.elements valueForKey:[NSString stringWithFormat:@"%i,%i", (int)locationB.x, (int)locationB.y]];
             if ((elementA != nil) && (elementB != nil))
             {
-                return TRUE;   
+                if ((elementA.type == ELEMENT_NUCLEOPHILE) && (elementB.type == ELEMENT_ELECTROPHILE))
+                {
+                    return TRUE;
+                }
             }
         }
         
