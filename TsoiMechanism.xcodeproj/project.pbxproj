@@ -14,8 +14,6 @@
 		265DB5A114F6A8540070D769 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265DB5A014F6A8540070D769 /* MainWindow.xib */; };
 		265DB5A814F6A8E10070D769 /* MainWindow~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265DB5A714F6A8E10070D769 /* MainWindow~iPad.xib */; };
 		266BA54214F8311000B06C88 /* ModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BA54114F8311000B06C88 /* ModeViewController.m */; };
-		266BA54514F8358C00B06C88 /* ModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266BA54414F8358C00B06C88 /* ModeViewController.xib */; };
-		266BA54714F8379100B06C88 /* ModeViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266BA54614F8379100B06C88 /* ModeViewController~iPad.xib */; };
 		26C6257914F59A4600B8A163 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6257714F59A4600B8A163 /* RootViewController.m */; };
 		26C6258414F59C8D00B8A163 /* IdentifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258214F59C8D00B8A163 /* IdentifyViewController.m */; };
 		26C6258A14F59CB900B8A163 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258814F59CB900B8A163 /* DrawViewController.m */; };
@@ -51,8 +49,6 @@
 		265DB5A714F6A8E10070D769 /* MainWindow~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow~iPad.xib"; path = "Views/MainWindow~iPad.xib"; sourceTree = "<group>"; };
 		266BA54014F8311000B06C88 /* ModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeViewController.h; sourceTree = "<group>"; };
 		266BA54114F8311000B06C88 /* ModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeViewController.m; sourceTree = "<group>"; };
-		266BA54414F8358C00B06C88 /* ModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ModeViewController.xib; path = Views/ModeViewController.xib; sourceTree = "<group>"; };
-		266BA54614F8379100B06C88 /* ModeViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "ModeViewController~iPad.xib"; path = "Views/ModeViewController~iPad.xib"; sourceTree = "<group>"; };
 		26C6255014F597F600B8A163 /* GDataXMLNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		26C6255114F597F600B8A163 /* GDataXMLNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		26C6255414F5981A00B8A163 /* ProblemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProblemView.h; sourceTree = "<group>"; };
@@ -197,7 +193,6 @@
 			children = (
 				265DB5A714F6A8E10070D769 /* MainWindow~iPad.xib */,
 				26C625A814F59E4000B8A163 /* RootViewController~iPad.xib */,
-				266BA54614F8379100B06C88 /* ModeViewController~iPad.xib */,
 				26C625A514F59E4000B8A163 /* IdentifyViewController~iPad.xib */,
 				26C625A714F59E4000B8A163 /* DrawViewController~iPad.xib */,
 				26C625A414F59E4000B8A163 /* ChallengeViewController~iPad.xib */,
@@ -210,7 +205,6 @@
 			children = (
 				265DB5A014F6A8540070D769 /* MainWindow.xib */,
 				26C6259E14F59E2F00B8A163 /* RootViewController.xib */,
-				266BA54414F8358C00B06C88 /* ModeViewController.xib */,
 				26C6259B14F59E2F00B8A163 /* IdentifyViewController.xib */,
 				26C6259D14F59E2F00B8A163 /* DrawViewController.xib */,
 				26C6259A14F59E2F00B8A163 /* ChallengeViewController.xib */,
@@ -338,8 +332,6 @@
 				26C625AD14F59E4000B8A163 /* RootViewController~iPad.xib in Resources */,
 				265DB5A114F6A8540070D769 /* MainWindow.xib in Resources */,
 				265DB5A814F6A8E10070D769 /* MainWindow~iPad.xib in Resources */,
-				266BA54514F8358C00B06C88 /* ModeViewController.xib in Resources */,
-				266BA54714F8379100B06C88 /* ModeViewController~iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
