@@ -37,6 +37,10 @@
 		26C625C314F5F2DA00B8A163 /* Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6256114F5982300B8A163 /* Arrow.m */; };
 		26C625C614F6178400B8A163 /* Marker.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C625C514F6178400B8A163 /* Marker.m */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		65F2A168151020F600BFCE83 /* sonic.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F2A166151020F600BFCE83 /* sonic.png */; };
+		65F2A16C151024A500BFCE83 /* knuckles.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F2A16B151024A500BFCE83 /* knuckles.png */; };
+		65F2A1771511346300BFCE83 /* knuckles-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F2A1751511346300BFCE83 /* knuckles-success.png */; };
+		65F2A1781511346300BFCE83 /* sonic-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F2A1761511346300BFCE83 /* sonic-success.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +91,10 @@
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* TsoiMechanism_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TsoiMechanism_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65F2A166151020F600BFCE83 /* sonic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sonic.png; sourceTree = "<group>"; };
+		65F2A16B151024A500BFCE83 /* knuckles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knuckles.png; sourceTree = "<group>"; };
+		65F2A1751511346300BFCE83 /* knuckles-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knuckles-success.png"; sourceTree = "<group>"; };
+		65F2A1761511346300BFCE83 /* sonic-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sonic-success.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TsoiMechanism-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TsoiMechanism-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,6 +261,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				65F2A166151020F600BFCE83 /* sonic.png */,
+				65F2A16B151024A500BFCE83 /* knuckles.png */,
+				65F2A1751511346300BFCE83 /* knuckles-success.png */,
+				65F2A1761511346300BFCE83 /* sonic-success.png */,
 				26C6256414F5984300B8A163 /* XMLs */,
 				26C6256314F5983E00B8A163 /* Images */,
 				26C6256214F5983400B8A163 /* Views */,
@@ -332,6 +344,10 @@
 				26C625AD14F59E4000B8A163 /* RootViewController~iPad.xib in Resources */,
 				265DB5A114F6A8540070D769 /* MainWindow.xib in Resources */,
 				265DB5A814F6A8E10070D769 /* MainWindow~iPad.xib in Resources */,
+				65F2A168151020F600BFCE83 /* sonic.png in Resources */,
+				65F2A16C151024A500BFCE83 /* knuckles.png in Resources */,
+				65F2A1771511346300BFCE83 /* knuckles-success.png in Resources */,
+				65F2A1781511346300BFCE83 /* sonic-success.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
