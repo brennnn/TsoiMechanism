@@ -9,6 +9,8 @@
 #import "DrawViewController.h"
 
 @implementation DrawViewController
+@synthesize instructionButton;
+@synthesize hintButton;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {
@@ -82,6 +84,27 @@
 
 -(void) dealloc {
     [super dealloc];
+	[instructionButton release];
+	[hintButton	release];
+}
+
+-(IBAction)hintPressed:(id)sender{
+	
+	NSMutableArray *hintArray = [[NSMutableArray alloc] init];
+	
+	[hintArray addObject:@"Are you sure that is the right bond?"];
+	[hintArray addObject:@"Try a different element!"];
+	[hintArray addObject:@"How many bonds are there in this problem?"];
+	[hintArray addObject:@"Try a different bond"];
+	[hintArray addObject:@"That arrow might not go there"];
+	
+	int numObjects = [hintArray count];
+	int randomInt = arc4random() % (numObjects);
+	
+	NSString *randomHint = [NSString stringWithFormat:[hintArray objectAtIndex: randomInt]];
+	UIAlertView *hintView = [[UIAlertView alloc]initWithTitle:@"Hint!" message:randomHint delegate:self cancelButtonTitle:@"Return to Game" otherButtonTitles:nil];
+	[hintView show];
+	[hintView release];
 }
 
 @end

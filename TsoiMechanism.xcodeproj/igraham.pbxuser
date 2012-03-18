@@ -6,6 +6,34 @@
 			FFF61EF214F310F100980131 /* TsoiMechanism */,
 		);
 	};
+	26C6258714F59CB900B8A163 /* DrawViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 325}}";
+			sepNavSelRange = "{322, 0}";
+			sepNavVisRange = "{157, 379}";
+		};
+	};
+	26C6258814F59CB900B8A163 /* DrawViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {579, 1508}}";
+			sepNavSelRange = "{254, 0}";
+			sepNavVisRange = "{0, 441}";
+		};
+	};
+	26C6258C14F59CC500B8A163 /* ChallengeViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 228}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 282}";
+		};
+	};
+	26C6258D14F59CC500B8A163 /* ChallengeViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {579, 1196}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 408}";
+		};
+	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = FFF61EF214F310F100980131 /* TsoiMechanism */;
@@ -22,7 +50,7 @@
 					20,
 					341,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 					20,
@@ -37,12 +65,69 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 351473905;
-			PBXWorkspaceStateSaveDate = 351473905;
+			PBXPerProjectTemplateStateSaveDate = 353792390;
+			PBXWorkspaceStateSaveDate = 353792390;
+		};
+		perUserProjectItems = {
+			FF59627A15167177008D9C2C /* PBXTextBookmark */ = FF59627A15167177008D9C2C /* PBXTextBookmark */;
+			FF59629215167194008D9C2C /* PBXTextBookmark */ = FF59629215167194008D9C2C /* PBXTextBookmark */;
+			FF5962B415167433008D9C2C /* PBXTextBookmark */ = FF5962B415167433008D9C2C /* PBXTextBookmark */;
+			FF5962B515167433008D9C2C /* PBXTextBookmark */ = FF5962B515167433008D9C2C /* PBXTextBookmark */;
+			FF5962B615167433008D9C2C /* PBXTextBookmark */ = FF5962B615167433008D9C2C /* PBXTextBookmark */;
 		};
 		sourceControlManager = FFF61F0714F310F500980131 /* Source Control */;
 		userBuildSettings = {
 		};
+	};
+	FF59627A15167177008D9C2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 26C6258C14F59CC500B8A163 /* ChallengeViewController.h */;
+		name = "ChallengeViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 282;
+		vrLoc = 0;
+	};
+	FF59629215167194008D9C2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 26C6258D14F59CC500B8A163 /* ChallengeViewController.m */;
+		name = "ChallengeViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 408;
+		vrLoc = 0;
+	};
+	FF5962B415167433008D9C2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 26C6258714F59CB900B8A163 /* DrawViewController.h */;
+		name = "DrawViewController.h: 17";
+		rLen = 0;
+		rLoc = 322;
+		rType = 0;
+		vrLen = 379;
+		vrLoc = 157;
+	};
+	FF5962B515167433008D9C2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 26C6258814F59CB900B8A163 /* DrawViewController.m */;
+		name = "DrawViewController.m: 12";
+		rLen = 0;
+		rLoc = 254;
+		rType = 0;
+		vrLen = 441;
+		vrLoc = 0;
+	};
+	FF5962B615167433008D9C2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 26C6258814F59CB900B8A163 /* DrawViewController.m */;
+		name = "DrawViewController.m: 12";
+		rLen = 0;
+		rLoc = 254;
+		rType = 0;
+		vrLen = 441;
+		vrLoc = 0;
 	};
 	FFF61EF214F310F100980131 /* TsoiMechanism */ = {
 		isa = PBXExecutable;
@@ -60,6 +145,7 @@
 		dataTipSortType = 0;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
 		enableDebugStr = 1;
 		environmentEntries = (
 		);
