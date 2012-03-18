@@ -249,8 +249,9 @@
     arrowInProgress = TRUE;
     Arrow *arrow = [[Arrow alloc] init];
     arrow.locationA = point;
-    arrow.locationB = CGPointMake(-1.0f, -1.0f);
+	arrow.locationB = CGPointMake(-1.0f, -1.0f);
     arrow.order = arrowOrder;
+	//NSLog(@"ArrowStart order = %d",arrowOrder);
     [arrowStack addObject:arrow];
     [arrow release];
 }
@@ -283,6 +284,7 @@
     {
         arrowOrder++;
         lastArrow.locationB = point;
+		//NSLog(@"ArrowEnd order = %d",arrowOrder);
     } else
     {
         [arrowStack removeLastObject];
@@ -294,7 +296,10 @@
 -(void) removeLastArrow 
 {
     arrowInProgress = FALSE;
-    arrowOrder--;
+    if (arrowOrder > 1)
+	{
+	arrowOrder--;
+	}
     [arrowStack removeLastObject];
     [self setNeedsDisplay];
 }
@@ -408,13 +413,14 @@
     Problem *currentProblem = [problems getCurrent];
     
     CGPoint locationA = arrow.locationA;
-    CGPoint locationB = arrow.locationB;
-    
+	CGPoint locationB = arrow.locationB;
+	   
     if ((locationA.x < (MOLECULE_WIDTH * MOLECULE_MULTIPLIER)) && (locationB.x < (MOLECULE_WIDTH * MOLECULE_MULTIPLIER)))
     {
         Molecule *moleculeA = [currentProblem.moleculeArray objectAtIndex:0];
         Arrow *arrowA = [moleculeA.arrows valueForKey:[NSString stringWithFormat:@"%i,%i,%i,%i", (int)locationA.x, (int)locationA.y, (int)locationB.x, (int)locationB.y]];
-        if (arrowA != nil)
+        //NSLog(@"ArrowA order1 = %d",arrowA.order);
+		if (arrowA != nil)
         {
             if (arrowA.order == arrow.order)
             {
@@ -428,7 +434,8 @@
         locationB.x -= (MOLECULE_WIDTH * MOLECULE_MULTIPLIER);
         Molecule *moleculeB = [currentProblem.moleculeArray objectAtIndex:1];
         Arrow *arrowB = [moleculeB.arrows valueForKey:[NSString stringWithFormat:@"%i,%i,%i,%i", (int)locationA.x, (int)locationA.y, (int)locationB.x, (int)locationB.y]];
-        if (arrowB != nil)
+       //NSLog(@"ArrowB order1 = %d",arrowB.order);
+		if (arrowB != nil)
         {
             if (arrowB.order == arrow.order)
             {
@@ -446,10 +453,19 @@
             Element *elementB = [moleculeB.elements valueForKey:[NSString stringWithFormat:@"%i,%i", (int)locationB.x, (int)locationB.y]];
             if ((elementA != nil) && (elementB != nil))
             {
+<<<<<<< HEAD
                 if ((elementA.type == ELEMENT_NUCLEOPHILE) && (elementB.type == ELEMENT_ELECTROPHILE))
                 {
                     return TRUE;
                 }
+=======
+				//NSLog(@"elementA type = %d",elementA.type);
+				//NSLog(@"elementB type = %d",elementB.type);
+				if ((elementA.type == ELEMENT_NUCLEOPHILE) && (elementB.type == ELEMENT_ELECTROPHILE))
+				{
+					return TRUE;
+				}
+>>>>>>> Cleaned arrow code
             }
         }
         
