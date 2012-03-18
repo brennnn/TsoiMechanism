@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "ModeViewController.h"
 
-@interface DrawViewController : ModeViewController
+@interface DrawViewController : ModeViewController {
+	UIButton *instructionButton;
+	UIButton *hintButton;
+}
+
+@property (nonatomic, retain) IBOutlet UIButton *instructionButton;
+@property (nonatomic, retain) IBOutlet UIButton *hintButton;
+
+- (IBAction)instructionPressed:(id)sender;
+- (IBAction)hintPressed:(id)sender;
 
 @end
