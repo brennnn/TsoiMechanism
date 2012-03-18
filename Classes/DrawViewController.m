@@ -9,12 +9,14 @@
 #import "DrawViewController.h"
 
 @implementation DrawViewController
+@synthesize instructionButton;
+@synthesize hintButton;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) 
     {
-
+		
     }
     return self;
 }
@@ -23,7 +25,7 @@
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
-
+	
     CGPoint hitbox = [problemView isHitbox:touchPoint];
 	NSLog(@"StartB");
     if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f)) && ([problemView getProblemArrowCount] > [problemView getArrowStackCount])) {
@@ -66,7 +68,7 @@
 					[problemView removeLastArrow];
 					[problemView clearNucleophileMarker];
 				}
-
+				
             }
         } else {
             if ([problemView getArrowStackCount] == 1)
@@ -97,6 +99,41 @@
 
 -(void) dealloc {
     [super dealloc];
+	[instructionButton release];
+	[hintButton release];
+}
+
+//method for the intructionsButton interface builder action
+- (IBAction)instructionPressed:(id)sender{
+	UIAlertView *instructionView = [[UIAlertView alloc]initWithTitle:@"How to Play" message:@"Draw arrows to show the bonds" delegate:nil cancelButtonTitle:@"Return to Game" otherButtonTitles:nil];
+	[instructionView show];
+	[instructionView release];
+}
+
+//method for the hintButton interface builder action
+- (IBAction)hintPressed:(id)sender{
+	
+	//Array of random hints, add and change as many hints here as you want
+	NSMutableArray *hintArray = [[NSMutableArray alloc] init];
+	[hintArray addObject:@"Are you sure that is the right bond?"];
+	[hintArray addObject:@"Try a different element!"];
+	[hintArray addObject:@"How many bonds are there in this problem?"];
+	[hintArray addObject:@"Try a different bond"];
+	[hintArray addObject:@"That arrow might not go there"];
+	
+	//just finding the number of variables in the array of hints
+	int numObjects = [hintArray count];
+	
+	//random integer used help display a random message in the alertview
+	int randomInt = arc4random() % (numObjects);
+	
+	//creates random hint in a form of a variable that can be called in the alertview
+	NSString *randomHint = [NSString stringWithFormat:[hintArray objectAtIndex: randomInt]];
+	
+	//alertview that displays hint
+	UIAlertView *hintView = [[UIAlertView alloc]initWithTitle:@"Hint!" message:randomHint delegate:self cancelButtonTitle:@"Return to Game" otherButtonTitles:nil];
+	[hintView show];
+	[hintView release];
 }
 
 @end
