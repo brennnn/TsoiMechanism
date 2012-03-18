@@ -9,14 +9,13 @@
 #import "DrawViewController.h"
 
 @implementation DrawViewController
-@synthesize instructionButton;
 @synthesize hintButton;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) 
     {
-		
+		[self setDrawInstructions];
     }
     return self;
 }
@@ -122,8 +121,12 @@
 
 -(void) dealloc {
     [super dealloc];
-	[instructionButton release];
 	[hintButton	release];
+}
+
+-(void)setDrawInstructions
+{
+	self.instructionsLabel.text = @"Draw arrows from the highlighted elements and bonds in order to complete the problem. Drawing an incorrect arrow will cause a hint to pop up. Click the hint button to receive a hint otherwise. When you finish drawing all the correct arrows, a confirmation to go to the next problem will appear.";
 }
 
 -(IBAction)hintPressed:(id)sender{
