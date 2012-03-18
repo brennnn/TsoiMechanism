@@ -71,6 +71,7 @@
 					NSLog(@"Arrow does not Match");
 					[problemView removeLastArrow];
 					[problemView clearNucleophileMarker];
+					[self hintPopUp];
 				}
             }
 			
@@ -85,6 +86,7 @@
 				{
 					NSLog(@"Arrow does not Match past first");
 					[problemView removeLastArrow];
+					[self hintPopUp];
 				}
 				
 			}
@@ -92,7 +94,10 @@
 		else
 		{
             [problemView removeLastArrow];
-			[problemView clearNucleophileMarker];
+			if ([problemView getArrowStackCount] < 1)
+			{
+				[problemView clearNucleophileMarker];	
+			}
 			//NSLog(@"After test: %d",arrowStack);
 		}
 		
@@ -123,6 +128,10 @@
 
 -(IBAction)hintPressed:(id)sender{
 	
+	[self hintPopUp];
+}
+
+-(void)hintPopUp{
 	NSMutableArray *hintArray = [[NSMutableArray alloc] init];
 	
 	[hintArray addObject:@"Are you sure that is the right bond?"];

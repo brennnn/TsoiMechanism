@@ -296,7 +296,7 @@
 -(void) removeLastArrow 
 {
     arrowInProgress = FALSE;
-    if (arrowOrder > 1)
+    if (arrowOrder > [self getArrowStackCount])
 	{
 	arrowOrder--;
 	}
