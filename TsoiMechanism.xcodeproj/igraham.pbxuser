@@ -6,49 +6,10 @@
 			FFF61EF214F310F100980131 /* TsoiMechanism */,
 		);
 	};
-	26C6255414F5981A00B8A163 /* ProblemView.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1651, 1729}}";
-			sepNavSelRange = "{4012, 0}";
-			sepNavVisRange = "{3016, 1620}";
-		};
-	};
-	26C6255514F5981A00B8A163 /* ProblemView.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1671, 11583}}";
-			sepNavSelRange = "{17626, 0}";
-			sepNavVisRange = "{0, 1296}";
-		};
-	};
-	26C6258714F59CB900B8A163 /* DrawViewController.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {592, 449}}";
-			sepNavSelRange = "{538, 0}";
-			sepNavVisRange = "{0, 538}";
-		};
-	};
-	26C6258814F59CB900B8A163 /* DrawViewController.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1391, 1859}}";
-			sepNavSelRange = "{4812, 0}";
-			sepNavVisRange = "{3309, 1503}";
-		};
-	};
-	26C6259814F59E1400B8A163 /* test.xml */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {691, 1118}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{314, 987}";
-			sepNavWindowFrame = "{{223, 430}, {750, 558}}";
-		};
-	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = FFF61EF214F310F100980131 /* TsoiMechanism */;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* TsoiMechanism */;
-		addToTargets = (
-			1D6058900D05DD3D006BFB54 /* TsoiMechanism */,
-		);
 		codeSenseManager = FFF61F0814F310F500980131 /* Code sense */;
 		executables = (
 			FFF61EF214F310F100980131 /* TsoiMechanism */,
@@ -59,9 +20,9 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					414,
+					341,
 					20,
-					48,
+					48.16259765625,
 					43,
 					43,
 					20,
@@ -76,69 +37,12 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 353790412;
-			PBXWorkspaceStateSaveDate = 353790412;
-		};
-		perUserProjectItems = {
-			FF5961D5151666C0008D9C2C /* PBXTextBookmark */ = FF5961D5151666C0008D9C2C /* PBXTextBookmark */;
-			FF5961D6151666C0008D9C2C /* PBXTextBookmark */ = FF5961D6151666C0008D9C2C /* PBXTextBookmark */;
-			FF59623115166A6E008D9C2C /* PBXTextBookmark */ = FF59623115166A6E008D9C2C /* PBXTextBookmark */;
-			FF59623215166A6E008D9C2C /* PBXTextBookmark */ = FF59623215166A6E008D9C2C /* PBXTextBookmark */;
-			FF59623A15166AEB008D9C2C /* PBXTextBookmark */ = FF59623A15166AEB008D9C2C /* PBXTextBookmark */;
+			PBXPerProjectTemplateStateSaveDate = 351473905;
+			PBXWorkspaceStateSaveDate = 351473905;
 		};
 		sourceControlManager = FFF61F0714F310F500980131 /* Source Control */;
 		userBuildSettings = {
 		};
-	};
-	FF5961D5151666C0008D9C2C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 26C6255514F5981A00B8A163 /* ProblemView.m */;
-		name = "ProblemView.m: 572";
-		rLen = 0;
-		rLoc = 17626;
-		rType = 0;
-		vrLen = 1296;
-		vrLoc = 0;
-	};
-	FF5961D6151666C0008D9C2C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 26C6255414F5981A00B8A163 /* ProblemView.h */;
-		name = "ProblemView.h: 112";
-		rLen = 0;
-		rLoc = 4012;
-		rType = 0;
-		vrLen = 1620;
-		vrLoc = 3016;
-	};
-	FF59623115166A6E008D9C2C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 26C6258714F59CB900B8A163 /* DrawViewController.h */;
-		name = "DrawViewController.h: 24";
-		rLen = 0;
-		rLoc = 538;
-		rType = 0;
-		vrLen = 538;
-		vrLoc = 0;
-	};
-	FF59623215166A6E008D9C2C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 26C6258814F59CB900B8A163 /* DrawViewController.m */;
-		name = "DrawViewController.m: 52";
-		rLen = 0;
-		rLoc = 225;
-		rType = 0;
-		vrLen = 1099;
-		vrLoc = 0;
-	};
-	FF59623A15166AEB008D9C2C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 26C6258814F59CB900B8A163 /* DrawViewController.m */;
-		name = "DrawViewController.m: 140";
-		rLen = 0;
-		rLoc = 4812;
-		rType = 0;
-		vrLen = 1503;
-		vrLoc = 3309;
 	};
 	FFF61EF214F310F100980131 /* TsoiMechanism */ = {
 		isa = PBXExecutable;
@@ -156,7 +60,6 @@
 		dataTipSortType = 0;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
-		dylibVariantSuffix = "";
 		enableDebugStr = 1;
 		environmentEntries = (
 		);

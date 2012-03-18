@@ -446,10 +446,10 @@
             Element *elementB = [moleculeB.elements valueForKey:[NSString stringWithFormat:@"%i,%i", (int)locationB.x, (int)locationB.y]];
             if ((elementA != nil) && (elementB != nil))
             {
-				if ((elementA.type == ELEMENT_NUCLEOPHILE) && (elementB.type == ELEMENT_ELECTROPHILE))
-				{
-					return TRUE;
-				}
+                if ((elementA.type == ELEMENT_NUCLEOPHILE) && (elementB.type == ELEMENT_ELECTROPHILE))
+                {
+                    return TRUE;
+                }
             }
         }
         
@@ -460,15 +460,14 @@
             locationA.x -= (MOLECULE_WIDTH * MOLECULE_MULTIPLIER);
             Molecule *moleculeA = [currentProblem.moleculeArray objectAtIndex:1];
             Molecule *moleculeB = [currentProblem.moleculeArray objectAtIndex:0];
-			
             Element *elementA = [moleculeA.elements valueForKey:[NSString stringWithFormat:@"%i,%i", (int)locationA.x, (int)locationA.y]];
             Element *elementB = [moleculeB.elements valueForKey:[NSString stringWithFormat:@"%i,%i", (int)locationB.x, (int)locationB.y]];
             if ((elementA != nil) && (elementB != nil))
             {
-				if ((elementA.type == ELEMENT_NUCLEOPHILE) && (elementB.type == ELEMENT_ELECTROPHILE))
-				{
-					return TRUE;   
-				}
+                if ((elementA.type == ELEMENT_NUCLEOPHILE) && (elementB.type == ELEMENT_ELECTROPHILE))
+                {
+                    return TRUE;
+                }
             }
         }
         
