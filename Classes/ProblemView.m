@@ -453,19 +453,16 @@
             Element *elementB = [moleculeB.elements valueForKey:[NSString stringWithFormat:@"%i,%i", (int)locationB.x, (int)locationB.y]];
             if ((elementA != nil) && (elementB != nil))
             {
-<<<<<<< HEAD
                 if ((elementA.type == ELEMENT_NUCLEOPHILE) && (elementB.type == ELEMENT_ELECTROPHILE))
                 {
                     return TRUE;
                 }
-=======
 				//NSLog(@"elementA type = %d",elementA.type);
 				//NSLog(@"elementB type = %d",elementB.type);
 				if ((elementA.type == ELEMENT_NUCLEOPHILE) && (elementB.type == ELEMENT_ELECTROPHILE))
 				{
 					return TRUE;
 				}
->>>>>>> Cleaned arrow code
             }
         }
         

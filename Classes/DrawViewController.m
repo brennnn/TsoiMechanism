@@ -26,13 +26,9 @@
     CGPoint touchPoint = [touch locationInView:problemView];
 	
     CGPoint hitbox = [problemView isHitbox:touchPoint];
-<<<<<<< HEAD
-    if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f))) {
-=======
 	//NSLog(@"StartB");
 	//NSLog(@"Before test: %d",[problemView getArrowStackCount]);
     if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f)) && ([problemView getProblemArrowCount] > [problemView getArrowStackCount])) {
->>>>>>> Cleaned arrow code
         [problemView startArrow:hitbox];
         if ([problemView getArrowStackCount] == 1)
         {
@@ -53,15 +49,11 @@
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
-<<<<<<< HEAD
-    
-=======
 	//NSString *arrowCount = (NSString *) [problemView getProblemArrowCount]; // How many Arrows in the problem are needed
 	//NSString *arrowStack = (NSString *) [problemView getArrowStackCount]; // How many arrows where used
 	//NSString *arrowIsHitBox = (NSString *) CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f)); // Is arrow on hitbox
 	//NSLog(@"StartE");
 	//NSLog(@"Before test: %d",arrowStack);
->>>>>>> Cleaned arrow code
     if ([problemView isArrowInProgress]) {
         CGPoint hitbox = [problemView isHitbox:touchPoint];
         if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f)))
@@ -69,9 +61,6 @@
             [problemView endArrow:hitbox];
             if ([problemView getArrowStackCount] == 1)
             {
-<<<<<<< HEAD
-                [problemView showElectrophileMarker:hitbox];
-=======
 				//Checks to see if the current arrow drawn is on the correct hitbox and direction
 				if([problemView doesLastArrowMatchProblem]) {
 					NSLog(@"Arrow Match");
@@ -83,17 +72,10 @@
 					[problemView removeLastArrow];
 					[problemView clearNucleophileMarker];
 				}
->>>>>>> Cleaned arrow code
             }
 			
 			if ([problemView getArrowStackCount] > 1)
             {
-<<<<<<< HEAD
-                [problemView clearElectrophileMarker];
-            }
-            [problemView removeLastArrow];
-        }
-=======
 				//NSLog(@"%d",!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f)));
 				if([problemView doesLastArrowMatchProblem]) {
 					NSLog(@"Arrow Match past first");
@@ -114,7 +96,6 @@
 			//NSLog(@"After test: %d",arrowStack);
 		}
 		
->>>>>>> Cleaned arrow code
     }
 }
 
