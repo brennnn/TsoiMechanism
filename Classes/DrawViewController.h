@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ModeViewController.h"
 
-@interface DrawViewController : ModeViewController
+@interface DrawViewController : ModeViewController <UIAlertViewDelegate>
 {
 	UIButton *hintButton;
 }

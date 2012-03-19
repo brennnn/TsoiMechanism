@@ -80,6 +80,12 @@
 				if([problemView doesLastArrowMatchProblem]) {
 					NSLog(@"Arrow Match past first");
 					[problemView showElectrophileMarker:hitbox];
+					if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
+					{
+						UIAlertView *hintView = [[UIAlertView alloc]initWithTitle:@"Success!" message:@"Go to the next problem." delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+						[hintView show];
+						[hintView release];
+					}
 				}
 				else
 				{
@@ -132,6 +138,18 @@
 -(IBAction)hintPressed:(id)sender{
 	
 	[self hintPopUp];
+}
+
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	// the user clicked one of the OK/Cancel buttons
+	if ([problemView doesAllArrowsMatchProblem])
+	{
+		[self goToNextProblem];
+	}
+	else
+	{
+		NSLog(@"cancel");
+	}
 }
 
 -(void)hintPopUp{
