@@ -25,9 +25,9 @@ int answered = 0;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {
-    if (self = [super initWithNibName:nil bundle:nibBundleOrNil]) 
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) 
     {
-
+		
     }
     return self;
 }
@@ -51,6 +51,8 @@ int answered = 0;
 	[epLabel setHidden:YES];
 	[epImage setHidden:YES];
 	[epSuccessImage setHidden:NO];
+	
+	[self moveImage:epSuccessImage duration:0.25 scale:2 x:30 y:-30];
 }
 
 -(void) showNpSuccessImage
@@ -58,6 +60,8 @@ int answered = 0;
 	[npLabel setHidden:YES];
 	[npImage setHidden:YES];
 	[npSuccessImage setHidden:NO];
+	
+	[self moveImage:npSuccessImage duration:0.25 scale:2 x:-10 y:-30];
 }
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -66,12 +70,12 @@ int answered = 0;
 //    [problemView clearElectrophileMarker];
 //    [problemView clearNucleophileMarker];
     
-	if (CGRectContainsPoint(epImage.frame, touchPoint)) // if user clicks on electrophile
+	if (CGRectContainsPoint(epImage.frame, touchPoint) && !epImage.isHidden) // if user clicks on electrophile
 	{
 		draggingType = ELECTROKNUCKLES; // set type being dragged as Ep
 		[problemView createMovableMarker:touchPoint ofType:1]; // create an Ep movable marker
 	}
-	else if (CGRectContainsPoint(npImage.frame, touchPoint)) // else if user clicks on a nucleophile
+	else if (CGRectContainsPoint(npImage.frame, touchPoint) && !npImage.isHidden) // else if user clicks on a nucleophile
 	{
 		draggingType = NUCLEOSONIC; // set type being dragged as Np
 		[problemView createMovableMarker:touchPoint ofType:2]; // create an Np movable marker
@@ -179,17 +183,30 @@ int answered = 0;
 {
 	draggingType = 0;
 	
+	
 	[nextButton setHidden:YES];
 	[self showEpImageAndText];
 	[self showNpImageAndText];
 	
-	[problemView showNextProblem];
+	[self moveImage:epSuccessImage duration:0.5 scale:1 x:0 y:0];
+	[self moveImage:npSuccessImage duration:0.5 scale:1 x:0 y:0];
+	
+//	[self moveImage:epSuccessImage duration:0.25 scale:2 x:30 y:-30];
+//	[self moveImage:npSuccessImage duration:0.25 scale:2 x:-10 y:-30];
+	
+	[self goToNextProblem];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self newProblem];
+	
+//	[self newProblem];
+	
+	[nextButton setHidden:YES];
+	[self showEpImageAndText];
+	[self showNpImageAndText];
+	
 }
 
 - (void)viewDidUnload
@@ -209,6 +226,28 @@ int answered = 0;
     return ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight));
 }
 
+// Taken from http://iphonedevelopertips.com/user-interface/move-an-image-with-animation.html
+- (void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
+			scale:(int)scale x:(CGFloat)x y:(CGFloat)y
+{
+	// Setup the animation
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:duration];
+//	[UIView setAnimationCurve:curve];
+	[UIView setAnimationBeginsFromCurrentState:YES];
+	
+	// The transform matrix
+	CGAffineTransform transform = CGAffineTransformMakeTranslation(x, y);
+	image.transform = transform;
+	
+	CGAffineTransform scaleTo = CGAffineTransformScale(transform, scale, scale);//CGAffineTransformMakeTranslation(x, y);
+	image.transform = scaleTo;
+	
+	// Commit the changes
+	[UIView commitAnimations];
+	
+}
+
 -(void) dealloc {
 	[epImage release];
 	[npImage release];
@@ -222,28 +261,3 @@ int answered = 0;
 
 
 @end
-
-	
-// Do the following if user releases on a element or bond:
-//    if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f))) {
-//		
-//		if ([problemView isHitbox:touchPoint ofType:0]) {
-//			NSLog(@"it's 0");
-//		}
-//		
-//        if ([problemView getMovableMarkerType] == ELEMENT_ELECTROPHILE)
-//        {
-//            [problemView showElectrophileMarker:hitbox];
-//        } else if ([problemView getMovableMarkerType] == ELEMENT_NUCLEOPHILE)
-//        {
-//            [problemView showNucleophileMarker:hitbox];
-//        }
-//    }
-    
-	
-//	if ([problemView isMemberOfClass:[Element class]]) {
-//		NSLog(@"You got it!");
-//	}
-//	else {
-//		NSLog(@"Guess again!");
-//	}

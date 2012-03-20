@@ -51,6 +51,7 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrame">{{77, 231}, {76, 69}}</string>
 								<reference key="NSSuperview" ref="242445277"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="192674728"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
@@ -66,6 +67,7 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrame">{{327, 231}, {76, 69}}</string>
 								<reference key="NSSuperview" ref="242445277"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="902170880"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
@@ -81,6 +83,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{63, 202}, {104, 21}}</string>
 								<reference key="NSSuperview" ref="242445277"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="21086609"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -111,6 +114,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{299, 202}, {133, 21}}</string>
 								<reference key="NSSuperview" ref="242445277"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="722552496"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -132,8 +136,9 @@
 							<object class="IBUIImageView" id="487317683">
 								<reference key="NSNextResponder" ref="242445277"/>
 								<int key="NSvFlags">-2147483356</int>
-								<string key="NSFrame">{{58, 167}, {84, 128}}</string>
+								<string key="NSFrame">{{90, 224}, {46, 70}}</string>
 								<reference key="NSSuperview" ref="242445277"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="481020556"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
@@ -147,8 +152,9 @@
 							<object class="IBUIImageView" id="192674728">
 								<reference key="NSNextResponder" ref="242445277"/>
 								<int key="NSvFlags">-2147483356</int>
-								<string key="NSFrame">{{330, 168}, {107, 128}}</string>
+								<string key="NSFrame">{{342, 222}, {61, 72}}</string>
 								<reference key="NSSuperview" ref="242445277"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="361130636"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
@@ -164,6 +170,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{204, 248}, {72, 37}}</string>
 								<reference key="NSSuperview" ref="242445277"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="487317683"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -197,6 +204,7 @@
 						</object>
 						<string key="NSFrameSize">{480, 300}</string>
 						<reference key="NSSuperview" ref="43231701"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1058142363"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -213,6 +221,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{1, 278}, {165, 21}}</string>
 						<reference key="NSSuperview" ref="43231701"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="596662890"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -236,6 +245,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{426, 276}, {47, 21}}</string>
 						<reference key="NSSuperview" ref="43231701"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -256,6 +266,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{28, 0}, {452, 21}}</string>
 						<reference key="NSSuperview" ref="43231701"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="170626488"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -277,6 +288,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrameSize">{30, 30}</string>
 						<reference key="NSSuperview" ref="43231701"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="402732086"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -304,6 +316,7 @@
 				</object>
 				<string key="NSFrame">{{0, 20}, {480, 300}}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="242445277"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -604,7 +617,170 @@
 			<nil key="sourceID"/>
 			<int key="maxID">36</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">IdentifyViewController</string>
+					<string key="superclassName">ModeViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">tappedNext:</string>
+						<string key="NS.object.0">UIButton</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">tappedNext:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">tappedNext:</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>epImage</string>
+							<string>epLabel</string>
+							<string>epSuccessImage</string>
+							<string>nextButton</string>
+							<string>npImage</string>
+							<string>npLabel</string>
+							<string>npSuccessImage</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIImageView</string>
+							<string>UILabel</string>
+							<string>UIImageView</string>
+							<string>UIButton</string>
+							<string>UIImageView</string>
+							<string>UILabel</string>
+							<string>UIImageView</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>epImage</string>
+							<string>epLabel</string>
+							<string>epSuccessImage</string>
+							<string>nextButton</string>
+							<string>npImage</string>
+							<string>npLabel</string>
+							<string>npSuccessImage</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">epImage</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">epLabel</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">epSuccessImage</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">nextButton</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">npImage</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">npLabel</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">npSuccessImage</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/IdentifyViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ModeViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">exitView:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">exitView:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">exitView:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>instructionsLabel</string>
+							<string>problemNumberLabel</string>
+							<string>problemView</string>
+							<string>scoreLabel</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UILabel</string>
+							<string>UILabel</string>
+							<string>ProblemView</string>
+							<string>UILabel</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>instructionsLabel</string>
+							<string>problemNumberLabel</string>
+							<string>problemView</string>
+							<string>scoreLabel</string>
+						</object>
+						<object class="NSArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">instructionsLabel</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">problemNumberLabel</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">problemView</string>
+								<string key="candidateClassName">ProblemView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">scoreLabel</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ModeViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ProblemView</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ProblemView.h</string>
+					</object>
+				</object>
+			</object>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
