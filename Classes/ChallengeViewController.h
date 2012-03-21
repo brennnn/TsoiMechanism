@@ -17,4 +17,6 @@
 
 @property (nonatomic) bool isSecondTry;
 
+-(IBAction)nextProblem:(id)sender;
+
 @end

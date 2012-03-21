@@ -16,6 +16,7 @@
     int score;
     IBOutlet UILabel *scoreLabel;
     IBOutlet UILabel *instructionsLabel;
+	IBOutlet UIAlertView *responseText;
 }
 
 @property (nonatomic, retain) IBOutlet ProblemView *problemView;

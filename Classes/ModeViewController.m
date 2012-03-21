@@ -19,6 +19,12 @@
         score = 0;
         problemNumber = 1;
     }
+	responseText = [[UIAlertView alloc] 
+					initWithTitle:@"ALERT!"
+					message:@"" 
+					delegate:self 
+					cancelButtonTitle:@"Continue" 
+					otherButtonTitles:nil];
     return self;
 }
 
@@ -29,6 +35,11 @@
         problemNumber++;
         [problemNumberLabel setText:[NSString stringWithFormat:@"%i/%i", problemNumber, MAX_PROBLEMS]];
     }
+	else {
+		responseText.message = [NSString stringWithFormat:@"CONGRATULATIONS!! Your score was %i !", score];
+		[responseText show];
+	}
+
 }
 
 -(void) addScore:(int) amount
