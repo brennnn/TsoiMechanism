@@ -113,7 +113,7 @@
 
 -(IBAction)eraseAct:(id)sender
 {
-    if (tries > 1)
+    if (tries <= 1)
     {
         [problemView removeLastArrow];
     }
