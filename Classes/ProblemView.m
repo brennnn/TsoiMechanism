@@ -294,7 +294,10 @@
 -(void) removeLastArrow 
 {
     arrowInProgress = FALSE;
-    arrowOrder--;
+    if (arrowOrder > [self getArrowStackCount])
+	{
+        arrowOrder--;
+	}
     [arrowStack removeLastObject];
     [self setNeedsDisplay];
 }
