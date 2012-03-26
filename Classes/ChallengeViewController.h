@@ -12,9 +12,11 @@
 @interface ChallengeViewController : ModeViewController {
 	IBOutlet UIButton *submitButton;
 	IBOutlet UIButton *nextButton;
-	bool isSecondTry;
+	int tries;
 }
 
--(IBAction)nextProblem:(id)sender;
+-(IBAction)nextAct:(id)sender;
+-(IBAction)submitAct:(id)sender;
+-(IBAction)eraseAct:(id)sender;
 
 @end

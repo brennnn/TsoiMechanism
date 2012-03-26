@@ -23,7 +23,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *problemNumberLabel;
 @property (nonatomic, retain) IBOutlet UILabel *scoreLabel;
 @property (nonatomic, retain) IBOutlet UILabel *instructionsLabel;
-@property (nonatomic, retain) IBOutlet UIAlertView *responseText;
+@property (nonatomic, retain) UIAlertView *responseText;
 
 // Increments and displays problemNumber and calls the next problem to be shown
 -(void) goToNextProblem;

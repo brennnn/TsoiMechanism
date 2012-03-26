@@ -38,6 +38,7 @@
 	else {
 		responseText.message = [NSString stringWithFormat:@"CONGRATULATIONS!! Your score was %i !", score];
 		[responseText show];
+        [self.navigationController popViewControllerAnimated:YES];
 	}
     
 }

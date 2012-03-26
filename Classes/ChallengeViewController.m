@@ -16,12 +16,16 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) 
     {
         [instructionsLabel setText:@"Draw the arrows to the appropiate spots"];
-		isSecondTry = FALSE;
+		tries = 0;
     }
     return self;
 }
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (tries > 1)
+    {
+        return;
+    }
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
     
@@ -73,7 +77,7 @@
 
 -(void)answerIncorrect
 {
-    if (isSecondTry)
+    if (tries > 0)
     {
         submitButton.hidden = YES;
         nextButton.hidden = NO;
@@ -81,18 +85,38 @@
     }
     else
     {
-        isSecondTry = TRUE;
         responseText.message = @"That was incorrect. Try again.";
     }
+    tries++;
     [self removeScore:50];
     [responseText show];
 }
 
--(IBAction)nextProblem:(id)sender
+-(IBAction)nextAct:(id)sender
 {
     nextButton.hidden = YES; 
     submitButton.hidden = NO;
+    tries = 0;
     [self goToNextProblem];
+}
+
+-(IBAction)submitAct:(id)sender
+{
+    if ([problemView doesAllArrowsMatchProblem])
+    {
+        [self answerCorrect];
+    } else
+    {
+        [self answerIncorrect];
+    }
+}
+
+-(IBAction)eraseAct:(id)sender
+{
+    if (tries > 1)
+    {
+        [problemView removeLastArrow];
+    }
 }
 
 - (void)viewDidLoad
