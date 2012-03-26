@@ -17,7 +17,11 @@
 @property (retain, nonatomic) IBOutlet UILabel *epLabel;
 @property (retain, nonatomic) IBOutlet UIImageView *npSuccessImage;
 @property (retain, nonatomic) IBOutlet UIImageView *epSuccessImage;
-- (IBAction)tappedNext:(UIButton *)sender;
 @property (retain, nonatomic) IBOutlet UIButton *nextButton;
+
+-(IBAction)tappedNext:(UIButton *)sender;
+-(void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration scale:(int)scale x:(CGFloat)x y:(CGFloat)y;
+-(void)recordAnswer;
+-(void)newProblem;
 
 @end
