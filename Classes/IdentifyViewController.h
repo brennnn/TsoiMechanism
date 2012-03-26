@@ -10,6 +10,15 @@
 #import "ModeViewController.h"
 
 @interface IdentifyViewController : ModeViewController
+{
+    IBOutlet UIImageView *epImage;
+    IBOutlet UIImageView *npImage;
+    IBOutlet UILabel *npLabel;
+    IBOutlet UILabel *epLabel;
+    IBOutlet UIImageView *npSuccessImage;
+    IBOutlet UIImageView *epSuccessImage;
+    IBOutlet UIButton *nextButton;    
+}
 
 @property (retain, nonatomic) IBOutlet UIImageView *epImage;
 @property (retain, nonatomic) IBOutlet UIImageView *npImage;
