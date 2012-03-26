@@ -7,7 +7,6 @@
 //
 
 #import "IdentifyViewController.h"
-#import "Element.h"
 
 @implementation IdentifyViewController
 @synthesize nextButton;

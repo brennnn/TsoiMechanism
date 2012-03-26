@@ -109,27 +109,6 @@
     }
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [problemView showProblemMarkers];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight));
-}
-
--(void) dealloc {
-    [super dealloc];
-	[hintButton	release];
-}
-
 -(void)setDrawInstructions
 {
 	self.instructionsLabel.text = @"Draw arrows from the highlighted elements and bonds in order to complete the problem. Drawing an incorrect arrow will cause a hint to pop up. Click the hint button to receive a hint otherwise. When you finish drawing all the correct arrows, a confirmation to go to the next problem will appear.";
@@ -164,10 +143,31 @@
 	int numObjects = [hintArray count];
 	int randomInt = arc4random() % (numObjects);
 	
-	NSString *randomHint = [NSString stringWithFormat:[hintArray objectAtIndex: randomInt]];
+	NSString *randomHint = [NSString stringWithString:[hintArray objectAtIndex: randomInt]];
 	UIAlertView *hintView = [[UIAlertView alloc]initWithTitle:@"Hint!" message:randomHint delegate:self cancelButtonTitle:@"Return to Game" otherButtonTitles:nil];
 	[hintView show];
 	[hintView release];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [problemView showProblemMarkers];
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight));
+}
+
+-(void) dealloc {
+    [super dealloc];
+	[hintButton	release];
 }
 
 @end

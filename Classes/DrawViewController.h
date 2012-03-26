@@ -17,5 +17,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *hintButton;
 
 -(IBAction)hintPressed:(id)sender;
+-(void) setDrawInstructions;
+-(void) hintPopUp;
 
 @end
