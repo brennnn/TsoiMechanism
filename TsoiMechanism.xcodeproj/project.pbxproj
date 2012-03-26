@@ -36,6 +36,10 @@
 		26C625C214F5F2DA00B8A163 /* Bond.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6255F14F5982300B8A163 /* Bond.m */; };
 		26C625C314F5F2DA00B8A163 /* Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6256114F5982300B8A163 /* Arrow.m */; };
 		26C625C614F6178400B8A163 /* Marker.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C625C514F6178400B8A163 /* Marker.m */; };
+		26D2254C15204A82008AD169 /* knuckles-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D2254815204A82008AD169 /* knuckles-success.png */; };
+		26D2254D15204A82008AD169 /* knuckles.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D2254915204A82008AD169 /* knuckles.png */; };
+		26D2254E15204A82008AD169 /* sonic-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D2254A15204A82008AD169 /* sonic-success.png */; };
+		26D2254F15204A82008AD169 /* sonic.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D2254B15204A82008AD169 /* sonic.png */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +88,10 @@
 		26C625A814F59E4000B8A163 /* RootViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "RootViewController~iPad.xib"; path = "Views/RootViewController~iPad.xib"; sourceTree = "<group>"; };
 		26C625C414F6178400B8A163 /* Marker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marker.h; sourceTree = "<group>"; };
 		26C625C514F6178400B8A163 /* Marker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marker.m; sourceTree = "<group>"; };
+		26D2254815204A82008AD169 /* knuckles-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "knuckles-success.png"; path = "Images/knuckles-success.png"; sourceTree = "<group>"; };
+		26D2254915204A82008AD169 /* knuckles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knuckles.png; path = Images/knuckles.png; sourceTree = "<group>"; };
+		26D2254A15204A82008AD169 /* sonic-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sonic-success.png"; path = "Images/sonic-success.png"; sourceTree = "<group>"; };
+		26D2254B15204A82008AD169 /* sonic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sonic.png; path = Images/sonic.png; sourceTree = "<group>"; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* TsoiMechanism_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TsoiMechanism_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -176,6 +184,10 @@
 		26C6256314F5983E00B8A163 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				26D2254815204A82008AD169 /* knuckles-success.png */,
+				26D2254915204A82008AD169 /* knuckles.png */,
+				26D2254A15204A82008AD169 /* sonic-success.png */,
+				26D2254B15204A82008AD169 /* sonic.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -332,6 +344,10 @@
 				26C625AD14F59E4000B8A163 /* RootViewController~iPad.xib in Resources */,
 				265DB5A114F6A8540070D769 /* MainWindow.xib in Resources */,
 				265DB5A814F6A8E10070D769 /* MainWindow~iPad.xib in Resources */,
+				26D2254C15204A82008AD169 /* knuckles-success.png in Resources */,
+				26D2254D15204A82008AD169 /* knuckles.png in Resources */,
+				26D2254E15204A82008AD169 /* sonic-success.png in Resources */,
+				26D2254F15204A82008AD169 /* sonic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
