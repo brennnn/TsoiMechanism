@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Problem>
+<Molecule>
+<Element>
+<Location x="78" y="62"/>
+<Label>O</Label>
+<Charge>2</Charge>
+<Electrons>6</Electrons>
+<Type>2</Type>
+</Element>
+<Element>
+<Location x="63" y="62"/>
+<Label>CH3</Label>
+<Charge>1</Charge>
+<Electrons>0</Electrons>
+<Type>0</Type>
+</Element>
+<Element>
+<Location x="71" y="62"/>
+<Label>CH2</Label>
+<Charge>1</Charge>
+<Electrons>0</Electrons>
+<Type>0</Type>
+</Element>
+</Molecule>
+<Molecule>
+<Element>
+<Location x="94" y="47"/>
+<Label>C</Label>
+<Charge>1</Charge>
+<Electrons>0</Electrons>
+<Type>1</Type>
+</Element>
+<Element>
+<Location x="71" y="70"/>
+<Label>C</Label>
+<Charge>1</Charge>
+<Electrons>0</Electrons>
+<Type>0</Type>
+</Element>
+<Element>
+<Location x="117" y="70"/>
+<Label>Br</Label>
+<Charge>1</Charge>
+<Electrons>0</Electrons>
+<Type>0</Type>
+</Element>
+<Bond>
+<LocationA x="94" y="47"/>
+<LocationB x="117" y="70"/>
+<BondOrder>1</BondOrder>
+</Bond>
+<Bond>
+<LocationA x="71" y="70"/>
+<LocationB x="94" y="47"/>
+<BondOrder>1</BondOrder>
+</Bond>
+</Molecule>
+</Problem>

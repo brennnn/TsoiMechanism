@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Problem>
+<Molecule>
+<Element>
+<Location x="137" y="111"/>
+<Label>C</Label>
+<Charge>2</Charge>
+<Electrons>2</Electrons>
+<Type>2</Type>
+</Element>
+<Element>
+<Location x="137" y="151"/>
+<Label>H</Label>
+<Charge>1</Charge>
+<Electrons>0</Electrons>
+<Type>0</Type>
+</Element>
+<Element>
+<Location x="90" y="111"/>
+<Label>H</Label>
+<Charge>1</Charge>
+<Electrons>0</Electrons>
+<Type>0</Type>
+</Element>
+<Element>
+<Location x="137" y="72"/>
+<Label>H</Label>
+<Charge>1</Charge>
+<Electrons>0</Electrons>
+<Type>0</Type>
+</Element>
+<Bond>
+<LocationA x="137" y="111"/>
+<LocationB x="137" y="72"/>
+<BondOrder>1</BondOrder>
+</Bond>
+<Bond>
+<LocationA x="137" y="111"/>
+<LocationB x="137" y="151"/>
+<BondOrder>1</BondOrder>
+</Bond>
+<Bond>
+<LocationA x="90" y="111"/>
+<LocationB x="137" y="111"/>
+<BondOrder>1</BondOrder>
+</Bond>
+</Molecule>
+<Molecule>
+<Element>
+<Location x="74" y="111"/>
+<Label>H</Label>
+<Charge>0</Charge>
+<Electrons>0</Electrons>
+<Type>1</Type>
+</Element>
+<Element>
+<Location x="169" y="111"/>
+<Label>H</Label>
+<Charge>0</Charge>
+<Electrons>0</Electrons>
+<Type>0</Type>
+</Element>
+<Element>
+<Location x="121" y="111"/>
+<Label>O</Label>
+<Charge>0</Charge>
+<Electrons>4</Electrons>
+<Type>0</Type>
+</Element>
+<Bond>
+<LocationA x="121" y="111"/>
+<LocationB x="169" y="111"/>
+<BondOrder>1</BondOrder>
+</Bond>
+<Bond>
+<LocationA x="74" y="111"/>
+<LocationB x="121" y="111"/>
+<BondOrder>1</BondOrder>
+</Bond>
+<Arrow>
+<LocationA x="98" y="111"/>
+<LocationB x="121" y="111"/>
+<Order>1</Order>
+</Arrow>
+</Molecule>
+</Problem>
