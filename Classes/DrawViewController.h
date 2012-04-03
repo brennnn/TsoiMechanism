@@ -13,11 +13,19 @@
 {
 	UIButton *hintButton;
 }
+@property (retain, nonatomic) IBOutlet UIImageView *cannon;
+@property (retain, nonatomic) IBOutlet UIImageView *gear;
+@property (retain, nonatomic) IBOutlet UIImageView *cannon2;
+@property (retain, nonatomic) IBOutlet UIImageView *gear2;
 
 @property (nonatomic, retain) IBOutlet UIButton *hintButton;
+@property (retain, nonatomic) IBOutlet UIImageView *laser;
+@property (retain, nonatomic) IBOutlet UIImageView *laser2;
 
 -(IBAction)hintPressed:(id)sender;
 -(void) setDrawInstructions;
 -(void) hintPopUp;
+
+-(UIImage*) getArrowImageFrom:(CGPoint) pointA and:(CGPoint) pointB;
 
 @end

@@ -555,7 +555,8 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, rect);
-    CGContextSetRGBFillColor(context, 1.0f, 1.0f, 1.0f, 1.0f);
+    CGContextSetRGBFillColor(context, 0, 0, 0, 0);
+
     CGContextFillRect(context, rect);
     
     

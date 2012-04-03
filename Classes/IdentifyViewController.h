@@ -13,24 +13,21 @@
 {
     IBOutlet UIImageView *epImage;
     IBOutlet UIImageView *npImage;
-    IBOutlet UILabel *npLabel;
-    IBOutlet UILabel *epLabel;
-    IBOutlet UIImageView *npSuccessImage;
-    IBOutlet UIImageView *epSuccessImage;
     IBOutlet UIButton *nextButton;    
 }
 
 @property (retain, nonatomic) IBOutlet UIImageView *epImage;
 @property (retain, nonatomic) IBOutlet UIImageView *npImage;
-@property (retain, nonatomic) IBOutlet UILabel *npLabel;
-@property (retain, nonatomic) IBOutlet UILabel *epLabel;
-@property (retain, nonatomic) IBOutlet UIImageView *npSuccessImage;
-@property (retain, nonatomic) IBOutlet UIImageView *epSuccessImage;
 @property (retain, nonatomic) IBOutlet UIButton *nextButton;
+@property (retain, nonatomic) IBOutlet UIImageView *cannon;
+@property (retain, nonatomic) IBOutlet UIImageView *gear;
+@property (retain, nonatomic) IBOutlet UIImageView *laser;
+@property (retain, nonatomic) IBOutlet UIImageView *background;
 
--(IBAction)tappedNext:(UIButton *)sender;
--(void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration scale:(int)scale x:(CGFloat)x y:(CGFloat)y;
--(void)recordAnswer;
--(void)newProblem;
+
+-(IBAction) tappedNext:(UIButton *)sender;
+-(void) moveImage:(UIImageView *)image duration:(NSTimeInterval)duration scale:(int)scale x:(CGFloat)x y:(CGFloat)y;
+-(void) recordAnswer;
+-(void) newProblem;
 
 @end
