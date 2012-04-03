@@ -11,8 +11,12 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		264F79B4152A799E00757C1F /* ChallengeViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264F79AF152A799E00757C1F /* ChallengeViewController~ipad.xib */; };
+		264F79B5152A799E00757C1F /* DrawViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264F79B0152A799E00757C1F /* DrawViewController~ipad.xib */; };
+		264F79B6152A799E00757C1F /* IdentifyViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264F79B1152A799E00757C1F /* IdentifyViewController~ipad.xib */; };
+		264F79B7152A799E00757C1F /* MainWindow~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264F79B2152A799E00757C1F /* MainWindow~ipad.xib */; };
+		264F79B8152A799E00757C1F /* RootViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264F79B3152A799E00757C1F /* RootViewController~ipad.xib */; };
 		265DB5A114F6A8540070D769 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265DB5A014F6A8540070D769 /* MainWindow.xib */; };
-		265DB5A814F6A8E10070D769 /* MainWindow~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265DB5A714F6A8E10070D769 /* MainWindow~iPad.xib */; };
 		266BA54214F8311000B06C88 /* ModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BA54114F8311000B06C88 /* ModeViewController.m */; };
 		26C6257914F59A4600B8A163 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6257714F59A4600B8A163 /* RootViewController.m */; };
 		26C6258414F59C8D00B8A163 /* IdentifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258214F59C8D00B8A163 /* IdentifyViewController.m */; };
@@ -23,10 +27,6 @@
 		26C625A014F59E2F00B8A163 /* IdentifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259B14F59E2F00B8A163 /* IdentifyViewController.xib */; };
 		26C625A214F59E2F00B8A163 /* DrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259D14F59E2F00B8A163 /* DrawViewController.xib */; };
 		26C625A314F59E2F00B8A163 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259E14F59E2F00B8A163 /* RootViewController.xib */; };
-		26C625A914F59E4000B8A163 /* ChallengeViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C625A414F59E4000B8A163 /* ChallengeViewController~iPad.xib */; };
-		26C625AA14F59E4000B8A163 /* IdentifyViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C625A514F59E4000B8A163 /* IdentifyViewController~iPad.xib */; };
-		26C625AC14F59E4000B8A163 /* DrawViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C625A714F59E4000B8A163 /* DrawViewController~iPad.xib */; };
-		26C625AD14F59E4000B8A163 /* RootViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C625A814F59E4000B8A163 /* RootViewController~iPad.xib */; };
 		26C625BC14F5F2DA00B8A163 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6255114F597F600B8A163 /* GDataXMLNode.m */; };
 		26C625BD14F5F2DA00B8A163 /* ProblemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6255514F5981A00B8A163 /* ProblemView.m */; };
 		26C625BE14F5F2DA00B8A163 /* Problems.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6255714F5981A00B8A163 /* Problems.m */; };
@@ -49,8 +49,12 @@
 		1D3623250D0F684500981E51 /* TsoiMechanismAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TsoiMechanismAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* TsoiMechanism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TsoiMechanism.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		264F79AF152A799E00757C1F /* ChallengeViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "ChallengeViewController~ipad.xib"; path = "Views/ChallengeViewController~ipad.xib"; sourceTree = "<group>"; };
+		264F79B0152A799E00757C1F /* DrawViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "DrawViewController~ipad.xib"; path = "Views/DrawViewController~ipad.xib"; sourceTree = "<group>"; };
+		264F79B1152A799E00757C1F /* IdentifyViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "IdentifyViewController~ipad.xib"; path = "Views/IdentifyViewController~ipad.xib"; sourceTree = "<group>"; };
+		264F79B2152A799E00757C1F /* MainWindow~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow~ipad.xib"; path = "Views/MainWindow~ipad.xib"; sourceTree = "<group>"; };
+		264F79B3152A799E00757C1F /* RootViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "RootViewController~ipad.xib"; path = "Views/RootViewController~ipad.xib"; sourceTree = "<group>"; };
 		265DB5A014F6A8540070D769 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = Views/MainWindow.xib; sourceTree = "<group>"; };
-		265DB5A714F6A8E10070D769 /* MainWindow~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow~iPad.xib"; path = "Views/MainWindow~iPad.xib"; sourceTree = "<group>"; };
 		266BA54014F8311000B06C88 /* ModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeViewController.h; sourceTree = "<group>"; };
 		266BA54114F8311000B06C88 /* ModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeViewController.m; sourceTree = "<group>"; };
 		26C6255014F597F600B8A163 /* GDataXMLNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -82,10 +86,6 @@
 		26C6259B14F59E2F00B8A163 /* IdentifyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IdentifyViewController.xib; path = Views/IdentifyViewController.xib; sourceTree = "<group>"; };
 		26C6259D14F59E2F00B8A163 /* DrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DrawViewController.xib; path = Views/DrawViewController.xib; sourceTree = "<group>"; };
 		26C6259E14F59E2F00B8A163 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RootViewController.xib; path = Views/RootViewController.xib; sourceTree = "<group>"; };
-		26C625A414F59E4000B8A163 /* ChallengeViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "ChallengeViewController~iPad.xib"; path = "Views/ChallengeViewController~iPad.xib"; sourceTree = "<group>"; };
-		26C625A514F59E4000B8A163 /* IdentifyViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "IdentifyViewController~iPad.xib"; path = "Views/IdentifyViewController~iPad.xib"; sourceTree = "<group>"; };
-		26C625A714F59E4000B8A163 /* DrawViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "DrawViewController~iPad.xib"; path = "Views/DrawViewController~iPad.xib"; sourceTree = "<group>"; };
-		26C625A814F59E4000B8A163 /* RootViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "RootViewController~iPad.xib"; path = "Views/RootViewController~iPad.xib"; sourceTree = "<group>"; };
 		26C625C414F6178400B8A163 /* Marker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marker.h; sourceTree = "<group>"; };
 		26C625C514F6178400B8A163 /* Marker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marker.m; sourceTree = "<group>"; };
 		26D2254815204A82008AD169 /* knuckles-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "knuckles-success.png"; path = "Images/knuckles-success.png"; sourceTree = "<group>"; };
@@ -203,11 +203,11 @@
 		26C6256D14F598C700B8A163 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
-				265DB5A714F6A8E10070D769 /* MainWindow~iPad.xib */,
-				26C625A814F59E4000B8A163 /* RootViewController~iPad.xib */,
-				26C625A514F59E4000B8A163 /* IdentifyViewController~iPad.xib */,
-				26C625A714F59E4000B8A163 /* DrawViewController~iPad.xib */,
-				26C625A414F59E4000B8A163 /* ChallengeViewController~iPad.xib */,
+				264F79B2152A799E00757C1F /* MainWindow~ipad.xib */,
+				264F79B3152A799E00757C1F /* RootViewController~ipad.xib */,
+				264F79B1152A799E00757C1F /* IdentifyViewController~ipad.xib */,
+				264F79B0152A799E00757C1F /* DrawViewController~ipad.xib */,
+				264F79AF152A799E00757C1F /* ChallengeViewController~ipad.xib */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -341,16 +341,16 @@
 				26C625A014F59E2F00B8A163 /* IdentifyViewController.xib in Resources */,
 				26C625A214F59E2F00B8A163 /* DrawViewController.xib in Resources */,
 				26C625A314F59E2F00B8A163 /* RootViewController.xib in Resources */,
-				26C625A914F59E4000B8A163 /* ChallengeViewController~iPad.xib in Resources */,
-				26C625AA14F59E4000B8A163 /* IdentifyViewController~iPad.xib in Resources */,
-				26C625AC14F59E4000B8A163 /* DrawViewController~iPad.xib in Resources */,
-				26C625AD14F59E4000B8A163 /* RootViewController~iPad.xib in Resources */,
 				265DB5A114F6A8540070D769 /* MainWindow.xib in Resources */,
-				265DB5A814F6A8E10070D769 /* MainWindow~iPad.xib in Resources */,
 				26D2254C15204A82008AD169 /* knuckles-success.png in Resources */,
 				26D2254D15204A82008AD169 /* knuckles.png in Resources */,
 				26D2254E15204A82008AD169 /* sonic-success.png in Resources */,
 				26D2254F15204A82008AD169 /* sonic.png in Resources */,
+				264F79B4152A799E00757C1F /* ChallengeViewController~ipad.xib in Resources */,
+				264F79B5152A799E00757C1F /* DrawViewController~ipad.xib in Resources */,
+				264F79B6152A799E00757C1F /* IdentifyViewController~ipad.xib in Resources */,
+				264F79B7152A799E00757C1F /* MainWindow~ipad.xib in Resources */,
+				264F79B8152A799E00757C1F /* RootViewController~ipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
