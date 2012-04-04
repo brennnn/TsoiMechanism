@@ -133,6 +133,31 @@
     return CGPointMake(-1.0f, -1.0f);
 }
 
+
+-(BOOL) isType:(int)type ofHitbox:(CGPoint)hitbox
+{
+    int moleculeIndex = 0;
+    if (hitbox.x > (MOLECULE_WIDTH * MOLECULE_MULTIPLIER)) 
+    {
+        moleculeIndex = 1;
+        hitbox.x -= (MOLECULE_WIDTH * MOLECULE_MULTIPLIER);
+    }
+    
+    Molecule *molecule = [[problems getCurrent].moleculeArray objectAtIndex:moleculeIndex];
+    
+    Element *element = [molecule.elements valueForKey:[NSString stringWithFormat:@"%i,%i", (int)hitbox.x,(int)hitbox.y]];
+    
+    if (element != nil)
+    {
+        if (element.type == type)
+        {
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
 -(void) showElectrophileMarker:(CGPoint)point
 {
     if (electrophileMarker != nil)
@@ -413,7 +438,29 @@
     CGPoint locationA = arrow.locationA;
     CGPoint locationB = arrow.locationB;
     
-    if ((locationA.x < (MOLECULE_WIDTH * MOLECULE_MULTIPLIER)) && (locationB.x < (MOLECULE_WIDTH * MOLECULE_MULTIPLIER)))
+    BOOL RightA = FALSE;
+    BOOL RightB = FALSE;
+    
+    if (locationA.x > (MOLECULE_WIDTH * MOLECULE_MULTIPLIER))
+    {
+        locationA.x -= (MOLECULE_WIDTH * MOLECULE_MULTIPLIER);
+        RightA = TRUE;
+    }
+    if (locationB.x > (MOLECULE_WIDTH * MOLECULE_MULTIPLIER))
+    {
+        locationB.x -= (MOLECULE_WIDTH * MOLECULE_MULTIPLIER);
+        RightB = TRUE;
+    }
+    
+    if (MOLECULE_MULTIPLIER > 1.0f)
+    {
+        locationA.x /= MOLECULE_MULTIPLIER;
+        locationA.y /= MOLECULE_MULTIPLIER;
+        locationB.x /= MOLECULE_MULTIPLIER;
+        locationB.y /= MOLECULE_MULTIPLIER;
+    }
+    
+    if ((RightA == FALSE) && (RightB == FALSE))
     {
         Molecule *moleculeA = [currentProblem.moleculeArray objectAtIndex:0];
         Arrow *arrowA = [moleculeA.arrows valueForKey:[NSString stringWithFormat:@"%i,%i,%i,%i", (int)locationA.x, (int)locationA.y, (int)locationB.x, (int)locationB.y]];
@@ -425,10 +472,8 @@
             }
         }
         
-    } else if ((locationA.x > (MOLECULE_WIDTH * MOLECULE_MULTIPLIER)) && (locationB.x > (MOLECULE_WIDTH * MOLECULE_MULTIPLIER)))
+    } else if ((RightA == TRUE) && (RightB == TRUE))
     {
-        locationA.x -= (MOLECULE_WIDTH * MOLECULE_MULTIPLIER);
-        locationB.x -= (MOLECULE_WIDTH * MOLECULE_MULTIPLIER);
         Molecule *moleculeB = [currentProblem.moleculeArray objectAtIndex:1];
         Arrow *arrowB = [moleculeB.arrows valueForKey:[NSString stringWithFormat:@"%i,%i,%i,%i", (int)locationA.x, (int)locationA.y, (int)locationB.x, (int)locationB.y]];
         if (arrowB != nil)
@@ -438,11 +483,10 @@
                 return TRUE;
             }
         }
-    } else if ((locationA.x < (MOLECULE_WIDTH * MOLECULE_MULTIPLIER)) && (locationB.x > (MOLECULE_WIDTH * MOLECULE_MULTIPLIER)))
+    } else if ((RightA == FALSE) && (RightB == TRUE))
     {
         if (arrow.order == 1)
         {
-            locationB.x -= (MOLECULE_WIDTH * MOLECULE_MULTIPLIER);
             Molecule *moleculeA = [currentProblem.moleculeArray objectAtIndex:0];
             Molecule *moleculeB = [currentProblem.moleculeArray objectAtIndex:1];
             Element *elementA = [moleculeA.elements valueForKey:[NSString stringWithFormat:@"%i,%i", (int)locationA.x, (int)locationA.y]];
@@ -456,11 +500,10 @@
             }
         }
         
-    } else if ((locationA.x > (MOLECULE_WIDTH * MOLECULE_MULTIPLIER)) && (locationB.x < (MOLECULE_WIDTH * MOLECULE_MULTIPLIER)))
+    } else if ((RightA == TRUE) && (RightB == FALSE))
     {
         if (arrow.order == 1)
         {
-            locationA.x -= (MOLECULE_WIDTH * MOLECULE_MULTIPLIER);
             Molecule *moleculeA = [currentProblem.moleculeArray objectAtIndex:1];
             Molecule *moleculeB = [currentProblem.moleculeArray objectAtIndex:0];
             Element *elementA = [moleculeA.elements valueForKey:[NSString stringWithFormat:@"%i,%i", (int)locationA.x, (int)locationA.y]];
@@ -562,13 +605,13 @@
     if (electrophileMarker != nil)
     {
         CGContextSetRGBFillColor(context, 1.0f, 0.0f, 0.0f, 0.3f);
-        CGContextFillEllipseInRect(context, CGRectMake((electrophileMarker.point.x * MOLECULE_MULTIPLIER) - (HITBOX_SIZE / 2.0f), (electrophileMarker.point.y * MOLECULE_MULTIPLIER) - (HITBOX_SIZE / 2.0f), HITBOX_SIZE, HITBOX_SIZE));
+        CGContextFillEllipseInRect(context, CGRectMake(electrophileMarker.point.x - (HITBOX_SIZE / 2.0f), electrophileMarker.point.y - (HITBOX_SIZE / 2.0f), HITBOX_SIZE, HITBOX_SIZE));
     }
     
     if (nucleophileMarker != nil)
     {
         CGContextSetRGBFillColor(context, 0.0f, 0.0f, 1.0f, 0.3f);
-        CGContextFillEllipseInRect(context, CGRectMake((nucleophileMarker.point.x * MOLECULE_MULTIPLIER) - (HITBOX_SIZE / 2.0f), (nucleophileMarker.point.y * MOLECULE_MULTIPLIER) - (HITBOX_SIZE / 2.0f), HITBOX_SIZE, HITBOX_SIZE));
+        CGContextFillEllipseInRect(context, CGRectMake(nucleophileMarker.point.x - (HITBOX_SIZE / 2.0f), nucleophileMarker.point.y - (HITBOX_SIZE / 2.0f), HITBOX_SIZE, HITBOX_SIZE));
     }
 
     if (showProblemMarkers == TRUE)

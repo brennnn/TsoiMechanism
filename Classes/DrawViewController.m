@@ -23,7 +23,7 @@
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
-	
+
     CGPoint hitbox = [problemView isHitbox:touchPoint];
 	//NSLog(@"StartB");
 	//NSLog(@"Before test: %d",[problemView getArrowStackCount]);

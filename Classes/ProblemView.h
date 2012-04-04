@@ -41,6 +41,9 @@
 // CGPoint of that center; overwise returns a CGPoint of -1,-1 to represent no hitbox was found.
 -(CGPoint) isHitbox:(CGPoint)point ofType:(int) type;
 
+// Dermines if |hitbox| is of |type|, where hitbox is a point returned from a isHitbox: method.
+-(BOOL) isType:(int)type ofHitbox:(CGPoint)hitbox;
+
 // Shows a Electrophile Marker at |point|.
 -(void) showElectrophileMarker:(CGPoint)point;
 
