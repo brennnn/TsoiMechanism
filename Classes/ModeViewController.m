@@ -10,7 +10,7 @@
 
 @implementation ModeViewController
 
-@synthesize problemView, problemNumberLabel, scoreLabel, instructionsLabel;
+@synthesize problemView, problemNumberLabel, scoreLabel, instructionsLabel, responseText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -19,6 +19,12 @@
         score = 0;
         problemNumber = 1;
     }
+	responseText = [[UIAlertView alloc] 
+					initWithTitle:@"ALERT!"
+					message:@"" 
+					delegate:self 
+					cancelButtonTitle:@"Continue" 
+					otherButtonTitles:nil];
     return self;
 }
 
@@ -29,6 +35,12 @@
         problemNumber++;
         [problemNumberLabel setText:[NSString stringWithFormat:@"%i/%i", problemNumber, MAX_PROBLEMS]];
     }
+	else {
+		responseText.message = [NSString stringWithFormat:@"CONGRATULATIONS!! Your score was %i !", score];
+		[responseText show];
+        [self.navigationController popViewControllerAnimated:YES];
+	}
+    
 }
 
 -(void) addScore:(int) amount
@@ -64,6 +76,7 @@
 }
 
 -(void) dealloc {
+    [responseText release];
     [problemView release];
     [super dealloc];
 }
