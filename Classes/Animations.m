@@ -142,7 +142,6 @@
 					 [explode startAnimating];
 				 }
 				 completion:^(BOOL finished){
-					 NSLog(@"Explosion done!");
 					 explode = nil;
 					 [explode release];
 				 }];

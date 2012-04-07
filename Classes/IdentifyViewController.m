@@ -29,6 +29,8 @@
 
 SystemSoundID explosion;
 NSArray *explosionFrames; // The animation frames (images) of the explosion
+NSArray *explosionBlueFrames;
+NSArray *explosionRedFrames;
 double iPadScale;
 
 enum { NONE, ELECTROKNUCKLES, NUCLEOSONIC };
@@ -65,16 +67,22 @@ int answered = 0;
 	[self showEpImageAndText];
 	[self showNpImageAndText];
 	
-	NSMutableArray *tempImages = [[NSMutableArray alloc] init];
+	NSMutableArray *tempYellowImages = [[NSMutableArray alloc] init];
+	NSMutableArray *tempRedImages = [[NSMutableArray alloc] init];
+	NSMutableArray *tempBlueImages = [[NSMutableArray alloc] init];
 	
 	[self.view bringSubviewToFront:cannon];
 	
-	for (int i=1; i < 17+1; i++)
+	for (int i=0; i < 17; i++)
 	{
-		[tempImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"explosion%d.png", i]]];
+		[tempYellowImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"explosion%d.png", i+1]]];
+		[tempRedImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"explode_red%d.png", i]]];
+		[tempRedImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"explode_blue%d.png", i]]];
 	}
 	
-	explosionFrames = (NSArray*) tempImages;
+	explosionFrames = (NSArray*) tempYellowImages;
+	explosionRedFrames = (NSArray*) tempRedImages;
+	explosionBlueFrames = (NSArray*) tempBlueImages;
 	
 	cannon.layer.anchorPoint = CGPointMake(0.5, 0.72);
 	cannon.center = CGPointMake(cannon.center.x, cannon.center.y + 15);
@@ -152,14 +160,6 @@ int answered = 0;
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
-    
-//	float dy = cannon.center.y - touchPoint.y;
-//	float dx = cannon.center.x - touchPoint.x;
-
-//	currentCannonAngle = atan2(dy,dx) - DEGREES_TO_RADIANS(90);
-	
-//	cannon.transform = CGAffineTransformMakeRotation(currentCannonAngle);
-//	gear.transform = CGAffineTransformMakeRotation(-atan2(dy,dx));
 	
 	[Animations rotateCannon:cannon towardPoint:touchPoint];
 	[Animations rotateGear:gear towardPoint:touchPoint];
@@ -196,7 +196,7 @@ int answered = 0;
 			else
 			{
 				[Animations fireLaser:laser fromCannon:cannon toPoint:touchPoint];
-				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionFrames];
+				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionRedFrames];
 				
 				[self fadeInDraggableMarker:epImage];
 			}
@@ -217,7 +217,7 @@ int answered = 0;
 			else
 			{
 				[Animations fireLaser:laser fromCannon:cannon toPoint:touchPoint];
-				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionFrames];
+				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionBlueFrames];
 				
 				[self fadeInDraggableMarker:npImage];
 			}
