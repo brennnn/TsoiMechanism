@@ -172,6 +172,12 @@ int answered = 0;
     CGPoint touchPoint = [touch locationInView:problemView]; // get the (X,Y) coordinates that were touched
     CGPoint hitbox;
 	
+	// Check to see
+	if (CGPointEqualToPoint([problemView isHitbox:touchPoint], CGPointMake(-1.0f, -1.0f)))
+	{
+		NSLog(@"No hitbox");
+	}
+	
 	switch (draggingType) // based on the dragging type, do the following on the release of a finger:
 	{
 		case NONE:
