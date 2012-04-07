@@ -73,11 +73,11 @@ int answered = 0;
 	
 	[self.view bringSubviewToFront:cannon];
 	
-	for (int i=0; i < 17; i++)
+	for (int i=0; i <= 15; i++)
 	{
 		[tempYellowImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"explosion%d.png", i+1]]];
 		[tempRedImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"explode_red%d.png", i]]];
-		[tempRedImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"explode_blue%d.png", i]]];
+		[tempBlueImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"explode_blue%d.png", i]]];
 	}
 	
 	explosionFrames = (NSArray*) tempYellowImages;
