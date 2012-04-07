@@ -15,6 +15,51 @@
 
 #define HITBOX_SIZE (iPad ? 80.0f : 40.0f)
 
+#define MOLECULE_COLOR_RED 0.0f
+#define MOLECULE_COLOR_GREEN 0.0f
+#define MOLECULE_COLOR_BLUE 0.0f
+#define MOLECULE_COLOR_ALPHA 1.0f
+
+#define EP_MARKER_COLOR_RED 1.0f
+#define EP_MARKER_COLOR_GREEN 0.0f
+#define EP_MARKER_COLOR_BLUE 0.0f
+#define EP_MARKER_COLOR_ALPHA 0.3f
+
+#define NP_MARKER_COLOR_RED 0.0f
+#define NP_MARKER_COLOR_GREEN 0.0f
+#define NP_MARKER_COLOR_BLUE 1.0f
+#define NP_MARKER_COLOR_ALPHA 0.3f
+
+#define PROBLEM_MARKER_COLOR_RED 0.0f
+#define PROBLEM_MARKER_COLOR_GREEN 0.5
+#define PROBLEM_MARKER_COLOR_BLUE 0.5f
+#define PROBLEM_MARKER_COLOR_ALPHA 0.3f
+
+#define EP_MOVABLE_MARKER_COLOR_RED 1.0f
+#define EP_MOVABLE_MARKER_COLOR_GREEN 0.0f
+#define EP_MOVABLE_MARKER_COLOR_BLUE 0.0f
+#define EP_MOVABLE_MARKER_COLOR_ALPHA 0.6f
+
+#define NP_MOVABLE_MARKER_COLOR_RED 0.0f
+#define NP_MOVABLE_MARKER_COLOR_GREEN 0.0f
+#define NP_MOVABLE_MARKER_COLOR_BLUE 1.0f
+#define NP_MOVABLE_MARKER_COLOR_ALPHA 0.6f
+
+#define MOVABLE_MARKER_TEXT_COLOR_RED 0.0f
+#define MOVABLE_MARKER_TEXT_COLOR_GREEN 0.0f
+#define MOVABLE_MARKER_TEXT_COLOR_BLUE 0.0f
+#define MOVABLE_MARKER_TEXT_COLOR_ALPHA 1.0f
+
+#define HITBOX_COLOR_RED 0.5f
+#define HITBOX_COLOR_GREEN 0.1f
+#define HITBOX_COLOR_BLUE 1.0f
+#define HITBOX_COLOR_ALPHA 0.5f
+
+#define ARROW_COLOR_RED 140.0f/255.0f
+#define ARROW_COLOR_GREEN 200.0f/255.0f
+#define ARROW_COLOR_BLUE 60.0f/255.0f
+#define ARROW_COLOR_ALPHA 1.0f
+
 @implementation ProblemView
 
 @synthesize problems, electrophileMarker, nucleophileMarker, problemMarkersArray, movableMarker, arrowStack;
@@ -602,16 +647,15 @@
 
     CGContextFillRect(context, rect);
     
-    
     if (electrophileMarker != nil)
     {
-        CGContextSetRGBFillColor(context, 1.0f, 0.0f, 0.0f, 0.3f);
+        CGContextSetRGBFillColor(context, EP_MARKER_COLOR_RED, EP_MARKER_COLOR_GREEN, EP_MARKER_COLOR_BLUE, EP_MARKER_COLOR_ALPHA);
         CGContextFillEllipseInRect(context, CGRectMake(electrophileMarker.point.x - (HITBOX_SIZE / 2.0f), electrophileMarker.point.y - (HITBOX_SIZE / 2.0f), HITBOX_SIZE, HITBOX_SIZE));
     }
     
     if (nucleophileMarker != nil)
     {
-        CGContextSetRGBFillColor(context, 0.0f, 0.0f, 1.0f, 0.3f);
+        CGContextSetRGBFillColor(context, NP_MARKER_COLOR_RED, NP_MARKER_COLOR_GREEN, NP_MARKER_COLOR_BLUE, NP_MARKER_COLOR_ALPHA);
         CGContextFillEllipseInRect(context, CGRectMake(nucleophileMarker.point.x - (HITBOX_SIZE / 2.0f), nucleophileMarker.point.y - (HITBOX_SIZE / 2.0f), HITBOX_SIZE, HITBOX_SIZE));
     }
 
@@ -630,15 +674,12 @@
             
             if (drawMarker == TRUE)
             {
-                CGContextSetRGBFillColor(context, 0.0f, 0.5f, 0.5f, 0.3f);
+                CGContextSetRGBFillColor(context, PROBLEM_MARKER_COLOR_RED, PROBLEM_MARKER_COLOR_GREEN, PROBLEM_MARKER_COLOR_BLUE, PROBLEM_MARKER_COLOR_ALPHA);
                 CGContextFillEllipseInRect(context, CGRectMake(marker.point.x - (HITBOX_SIZE / 2.0f), marker.point.y - (HITBOX_SIZE / 2.0f), HITBOX_SIZE, HITBOX_SIZE));
             }
         }
  
     }
-    
-    
-
     
     for (int i = 0; i < 2; i++) 
     {
@@ -655,7 +696,7 @@
         for (Element *element in [molecule.elements allValues]) 
         {
             CGContextSelectFont(context, "Helvetica", (24.0f * MOLECULE_MULTIPLIER), kCGEncodingMacRoman);
-            CGContextSetRGBFillColor(context, 0.0f, 0.0f, 0.0f, 1.0f);
+            CGContextSetRGBFillColor(context, MOLECULE_COLOR_RED, MOLECULE_COLOR_GREEN, MOLECULE_COLOR_BLUE, MOLECULE_COLOR_ALPHA);
             
             CGAffineTransform flipMatrix = CGAffineTransformIdentity;
             flipMatrix.d = -1;
@@ -674,7 +715,8 @@
         {
 
             CGContextSetLineWidth(context, 2.0f * MOLECULE_MULTIPLIER);
-            CGContextSetRGBFillColor(context, 0.0f, 0.0f, 0.0f, 1.0f);
+            CGContextSetRGBFillColor(context, MOLECULE_COLOR_RED, MOLECULE_COLOR_GREEN, MOLECULE_COLOR_BLUE, MOLECULE_COLOR_ALPHA);
+            CGContextSetRGBStrokeColor(context, MOLECULE_COLOR_RED, MOLECULE_COLOR_GREEN, MOLECULE_COLOR_BLUE, MOLECULE_COLOR_ALPHA);
             
             CGPoint locationA = CGPointMake(bond.locationA.x * MOLECULE_MULTIPLIER, bond.locationA.y * MOLECULE_MULTIPLIER);
             CGPoint locationB = CGPointMake(bond.locationB.x * MOLECULE_MULTIPLIER, bond.locationB.y * MOLECULE_MULTIPLIER);
@@ -760,19 +802,20 @@
 
         }
     }
+
     
     if (movableMarker != nil)
     {
         NSString *label;
         if (movableMarker.type == ELEMENT_ELECTROPHILE)
         {
-            CGContextSetRGBFillColor(context, 1.0f, 0.0f, 0.0f, 0.6f);
-            CGContextSetRGBStrokeColor(context, 1.0f, 0.0f, 0.0f, 0.3f);
+            CGContextSetRGBFillColor(context, EP_MOVABLE_MARKER_COLOR_RED, EP_MOVABLE_MARKER_COLOR_GREEN, EP_MOVABLE_MARKER_COLOR_BLUE, EP_MOVABLE_MARKER_COLOR_ALPHA);
+            CGContextSetRGBStrokeColor(context, EP_MOVABLE_MARKER_COLOR_RED, EP_MOVABLE_MARKER_COLOR_GREEN, EP_MOVABLE_MARKER_COLOR_BLUE, 0.3f);
             label = [[NSString alloc] initWithString:@"EP"];
         } else if (movableMarker.type == ELEMENT_NUCLEOPHILE)
         {
-            CGContextSetRGBFillColor(context, 0.0f, 0.0f, 1.0f, 0.6f);
-            CGContextSetRGBStrokeColor(context, 0.0f, 0.0f, 1.0f, 0.3f);
+            CGContextSetRGBFillColor(context, NP_MOVABLE_MARKER_COLOR_RED, NP_MOVABLE_MARKER_COLOR_GREEN, NP_MOVABLE_MARKER_COLOR_BLUE, NP_MOVABLE_MARKER_COLOR_ALPHA);
+            CGContextSetRGBStrokeColor(context, NP_MOVABLE_MARKER_COLOR_RED, NP_MOVABLE_MARKER_COLOR_GREEN, NP_MOVABLE_MARKER_COLOR_BLUE, 0.3f);
             label = [[NSString alloc] initWithString:@"NP"];
         } else 
         {
@@ -786,7 +829,7 @@
         
         
         CGContextSelectFont(context, "Helvetica", (24.0f * MOLECULE_MULTIPLIER), kCGEncodingMacRoman);
-        CGContextSetRGBFillColor(context, 0.0f, 0.0f, 0.0f, 1.0f);
+        CGContextSetRGBFillColor(context, MOVABLE_MARKER_TEXT_COLOR_RED, MOVABLE_MARKER_TEXT_COLOR_GREEN, MOVABLE_MARKER_TEXT_COLOR_BLUE, MOVABLE_MARKER_TEXT_COLOR_ALPHA);
         
         CGAffineTransform flipMatrix = CGAffineTransformIdentity;
         flipMatrix.d = -1;
@@ -822,7 +865,7 @@
                 CGPoint hitbox = [self isHitbox:lastArrow.locationB];
                 if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f)) && !CGPointEqualToPoint(hitbox, lastArrow.locationA)) 
                 {
-                    CGContextSetRGBStrokeColor(context, 0.5f, 0.1f, 1.0f, 0.5f);
+                    CGContextSetRGBStrokeColor(context, HITBOX_COLOR_RED, HITBOX_COLOR_GREEN, HITBOX_COLOR_BLUE, HITBOX_COLOR_ALPHA);
                     CGContextSetLineWidth(context, 2.0f * MOLECULE_MULTIPLIER);
                     CGContextStrokeEllipseInRect(context, CGRectMake(hitbox.x - (HITBOX_SIZE / 2.0f), hitbox.y - (HITBOX_SIZE / 2.0f), HITBOX_SIZE, HITBOX_SIZE));
                 }
@@ -833,7 +876,7 @@
         {
             if (!CGPointEqualToPoint(arrow.locationB, CGPointMake(-1.0f, -1.0f))) 
             {
-                CGContextSetRGBStrokeColor(context, 140.0f/255.0f, 200.0f/255.0f, 60.0f/255.0f, 1.0f);
+                CGContextSetRGBStrokeColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_COLOR_ALPHA);
                 CGContextSetLineWidth(context, 2.0f * MOLECULE_MULTIPLIER);
                 CGContextMoveToPoint(context, arrow.locationA.x, arrow.locationA.y);
 
@@ -856,7 +899,7 @@
                 CGContextStrokePath(context);
                 
                 
-                CGContextSetRGBFillColor(context, 140.0f/255.0f, 200.0f/255.0f, 60.0f/255.0f, 0.5f);
+                CGContextSetRGBFillColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_COLOR_ALPHA);
                 CGContextFillEllipseInRect(context, CGRectMake(arrow.locationB.x - (10.0f / 2.0f), arrow.locationB.y - (10.0f / 2.0f), 10.0f,10.0f));
                 
 //                float length = 10.0f;
