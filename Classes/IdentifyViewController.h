@@ -13,7 +13,7 @@
 {
     IBOutlet UIImageView *epImage;
     IBOutlet UIImageView *npImage;
-    IBOutlet UIButton *nextButton;    
+    IBOutlet UIButton *nextButton;
 }
 
 @property (retain, nonatomic) IBOutlet UIImageView *epImage;
