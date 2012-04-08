@@ -43,14 +43,14 @@
 						<string key="NSFrameSize">{480, 320}</string>
 						<reference key="NSSuperview" ref="766365843"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="301186957"/>
+						<reference key="NSNextKeyView" ref="9202355"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">burn-grunge-iPhone.png</string>
+							<string key="NSResourceName">dungeon_2.png</string>
 						</object>
 					</object>
 					<object class="IBUIView" id="9202355">
@@ -72,43 +72,6 @@
 									<string key="NSResourceName">table.png</string>
 								</object>
 							</object>
-							<object class="IBUIButton" id="883416463">
-								<reference key="NSNextResponder" ref="9202355"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{204, 240}, {72, 37}}</string>
-								<reference key="NSSuperview" ref="9202355"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="469571584"/>
-								<bool key="IBUIOpaque">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIContentHorizontalAlignment">0</int>
-								<int key="IBUIContentVerticalAlignment">0</int>
-								<int key="IBUIButtonType">1</int>
-								<string key="IBUINormalTitle">Hint</string>
-								<object class="NSColor" key="IBUIHighlightedTitleColor" id="798782265">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MQA</bytes>
-								</object>
-								<object class="NSColor" key="IBUINormalTitleColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-								</object>
-								<object class="NSColor" key="IBUINormalTitleShadowColor" id="432024188">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MC41AA</bytes>
-								</object>
-								<object class="IBUIFontDescription" key="IBUIFontDescription">
-									<string key="name">Helvetica-Bold</string>
-									<string key="family">Helvetica</string>
-									<int key="traits">2</int>
-									<double key="pointSize">15</double>
-								</object>
-								<object class="NSFont" key="IBUIFont">
-									<string key="NSName">Helvetica-Bold</string>
-									<double key="NSSize">15</double>
-									<int key="NSfFlags">16</int>
-								</object>
-							</object>
 							<object class="IBUIImageView" id="568313193">
 								<reference key="NSNextResponder" ref="9202355"/>
 								<int key="NSvFlags">292</int>
@@ -119,9 +82,9 @@
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage" id="59268340">
+								<object class="NSCustomResource" key="IBUIImage" id="594874525">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">laser2.png</string>
+									<string key="NSResourceName">laser_red_new.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="469571584">
@@ -134,7 +97,7 @@
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<reference key="IBUIImage" ref="59268340"/>
+								<reference key="IBUIImage" ref="594874525"/>
 							</object>
 							<object class="IBUIImageView" id="736271131">
 								<reference key="NSNextResponder" ref="9202355"/>
@@ -192,6 +155,45 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<reference key="IBUIImage" ref="202992632"/>
 							</object>
+							<object class="IBUIButton" id="883416463">
+								<reference key="NSNextResponder" ref="9202355"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{426, -56}, {49, 110}}</string>
+								<reference key="NSSuperview" ref="9202355"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="469571584"/>
+								<bool key="IBUIOpaque">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<int key="IBUIContentHorizontalAlignment">0</int>
+								<int key="IBUIContentVerticalAlignment">0</int>
+								<object class="NSColor" key="IBUIHighlightedTitleColor" id="798782265">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MQA</bytes>
+								</object>
+								<object class="NSColor" key="IBUINormalTitleColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+								</object>
+								<object class="NSColor" key="IBUINormalTitleShadowColor" id="432024188">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MC41AA</bytes>
+								</object>
+								<object class="NSCustomResource" key="IBUINormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">light_off.png</string>
+								</object>
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
+									<string key="name">Helvetica-Bold</string>
+									<string key="family">Helvetica</string>
+									<int key="traits">2</int>
+									<double key="pointSize">15</double>
+								</object>
+								<object class="NSFont" key="IBUIFont">
+									<string key="NSName">Helvetica-Bold</string>
+									<double key="NSSize">15</double>
+									<int key="NSfFlags">16</int>
+								</object>
+							</object>
 						</array>
 						<string key="NSFrameSize">{480, 300}</string>
 						<reference key="NSSuperview" ref="766365843"/>
@@ -242,6 +244,7 @@
 						<string key="NSFrame">{{426, 276}, {47, 21}}</string>
 						<reference key="NSSuperview" ref="766365843"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -263,7 +266,7 @@
 						<string key="NSFrame">{{28, 0}, {452, 21}}</string>
 						<reference key="NSSuperview" ref="766365843"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="136944643"/>
+						<reference key="NSNextKeyView" ref="301186957"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -285,7 +288,7 @@
 						<string key="NSFrame">{{-5, -5}, {63, 63}}</string>
 						<reference key="NSSuperview" ref="766365843"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="9202355"/>
+						<reference key="NSNextKeyView" ref="136944643"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -502,10 +505,10 @@
 							<reference ref="7748883"/>
 							<reference ref="127123185"/>
 							<reference ref="83151309"/>
-							<reference ref="883416463"/>
 							<reference ref="736271131"/>
 							<reference ref="95764972"/>
 							<reference ref="469571584"/>
+							<reference ref="883416463"/>
 							<reference ref="568313193"/>
 						</array>
 						<reference key="parent" ref="766365843"/>
@@ -596,17 +599,20 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DrawViewController</string>
 					<string key="superclassName">ModeViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">hintPressed:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">hintPressed:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="hintPressed:">id</string>
+						<string key="tappedNext:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="hintPressed:">
 							<string key="name">hintPressed:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+						<object class="IBActionInfo" key="tappedNext:">
+							<string key="name">tappedNext:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="cannon">UIImageView</string>
 						<string key="cannon2">UIImageView</string>
@@ -615,6 +621,7 @@
 						<string key="hintButton">UIButton</string>
 						<string key="laser">UIImageView</string>
 						<string key="laser2">UIImageView</string>
+						<string key="nextButton">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="cannon">
@@ -644,6 +651,10 @@
 						<object class="IBToOneOutletInfo" key="laser2">
 							<string key="name">laser2</string>
 							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="nextButton">
+							<string key="name">nextButton</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -717,10 +728,11 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="burn-grunge-iPhone.png">{960, 640}</string>
 			<string key="cannon.png">{1500, 2000}</string>
+			<string key="dungeon_2.png">{1000, 800}</string>
 			<string key="gear_ultimate.png">{1200, 1178}</string>
-			<string key="laser2.png">{32, 43}</string>
+			<string key="laser_red_new.png">{357, 376}</string>
+			<string key="light_off.png">{216, 535}</string>
 			<string key="screw copy.png">{175, 175}</string>
 			<string key="table.png">{1024, 750}</string>
 		</dictionary>

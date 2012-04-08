@@ -172,11 +172,7 @@ int answered = 0;
     CGPoint touchPoint = [touch locationInView:problemView]; // get the (X,Y) coordinates that were touched
     CGPoint hitbox;
 	
-	// Check to see
-	if (CGPointEqualToPoint([problemView isHitbox:touchPoint], CGPointMake(-1.0f, -1.0f)))
-	{
-		NSLog(@"No hitbox");
-	}
+	
 	
 	switch (draggingType) // based on the dragging type, do the following on the release of a finger:
 	{
@@ -204,6 +200,12 @@ int answered = 0;
 				[Animations fireLaser:laser fromCannon:cannon toPoint:touchPoint];
 				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionRedFrames];
 				
+				// If actually put on a element or bond:
+				if (!CGPointEqualToPoint([problemView isHitbox:touchPoint], CGPointMake(-1.0f, -1.0f)))
+				{
+					[Animations shakeView:problemView power:4.0];
+				}
+				
 				[self fadeInDraggableMarker:epImage];
 			}
 			
@@ -224,6 +226,12 @@ int answered = 0;
 			{
 				[Animations fireLaser:laser fromCannon:cannon toPoint:touchPoint];
 				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionBlueFrames];
+				
+				// If actually put on a element or bond:
+				if (!CGPointEqualToPoint([problemView isHitbox:touchPoint], CGPointMake(-1.0f, -1.0f)))
+				{
+					[Animations shakeView:problemView power:4.0];
+				}
 				
 				[self fadeInDraggableMarker:npImage];
 			}

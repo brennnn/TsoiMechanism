@@ -148,6 +148,28 @@
 	
 }
 
+// Taken from: http://stackoverflow.com/questions/1632364/shake-visual-effect-on-iphone-not-shaking-the-device
++ (void)shakeView:(UIView *)viewToShake power:(CGFloat)t
+{
+//    CGFloat t = 8.0;
+    CGAffineTransform translateRight  = CGAffineTransformTranslate(CGAffineTransformIdentity, t, 0.0);
+    CGAffineTransform translateLeft = CGAffineTransformTranslate(CGAffineTransformIdentity, -t, 0.0);
+	
+    viewToShake.transform = translateLeft;
+	
+    [UIView animateWithDuration:0.07 delay:0.0 options:UIViewAnimationOptionAutoreverse|UIViewAnimationOptionRepeat animations:^{
+        [UIView setAnimationRepeatCount:2.0];
+        viewToShake.transform = translateRight;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [UIView animateWithDuration:0.05 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                viewToShake.transform = CGAffineTransformIdentity;
+            } completion:NULL];
+        }
+    }];
+}
+
+//+(void) pointView toRight
 
 // Might need to stay if BG is animated
 

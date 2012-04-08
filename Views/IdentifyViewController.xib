@@ -43,12 +43,13 @@
 						<string key="NSFrameSize">{480, 300}</string>
 						<reference key="NSSuperview" ref="1071968987"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="54063178"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">burn-grunge-iPhone.png</string>
+							<string key="NSResourceName">dungeon_2.png</string>
 						</object>
 					</object>
 					<object class="IBUIView" id="54063178">
@@ -61,7 +62,7 @@
 								<string key="NSFrame">{{-5, 32}, {491, 268}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="694556416"/>
+								<reference key="NSNextKeyView" ref="388058205"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -76,13 +77,13 @@
 								<string key="NSFrame">{{230, 259}, {20, 12}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="348673516"/>
+								<reference key="NSNextKeyView" ref="488322545"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">laser2.png</string>
+									<string key="NSResourceName">laser_red_new.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="488322545">
@@ -91,7 +92,7 @@
 								<string key="NSFrame">{{214, 273}, {53, 53}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="284480041"/>
+								<reference key="NSNextKeyView" ref="146105078"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -107,7 +108,7 @@
 								<string key="NSFrame">{{44, 212}, {130, 59}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="979346113"/>
+								<reference key="NSNextKeyView" ref="694556416"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">3</int>
@@ -197,14 +198,14 @@
 								<string key="NSFrame">{{341, 171}, {52, 47}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
+								<reference key="NSNextKeyView" ref="284480041"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">ep_marker.png</string>
+									<string key="NSResourceName">ep_marker_2.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="694556416">
@@ -213,14 +214,14 @@
 								<string key="NSFrame">{{84, 169}, {51, 47}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="754943966"/>
+								<reference key="NSNextKeyView" ref="979346113"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">np_marker.png</string>
+									<string key="NSResourceName">np_marker_2.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="146105078">
@@ -229,6 +230,7 @@
 								<string key="NSFrame">{{290, 209}, {170, 71}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="348673516"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -243,6 +245,7 @@
 								<string key="NSFrame">{{32, 209}, {170, 71}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="754943966"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -267,7 +270,7 @@
 						<string key="NSFrame">{{1, 278}, {165, 21}}</string>
 						<reference key="NSSuperview" ref="1071968987"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="530452440"/>
+						<reference key="NSNextKeyView" ref="339599671"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -288,6 +291,7 @@
 						<string key="NSFrame">{{426, 276}, {47, 21}}</string>
 						<reference key="NSSuperview" ref="1071968987"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -309,7 +313,7 @@
 						<string key="NSFrame">{{28, 0}, {452, 21}}</string>
 						<reference key="NSSuperview" ref="1071968987"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="441994052"/>
+						<reference key="NSNextKeyView" ref="530452440"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -328,10 +332,10 @@
 					<object class="IBUIButton" id="530452440">
 						<reference key="NSNextResponder" ref="1071968987"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{204, 248}, {72, 37}}</string>
+						<string key="NSFrame">{{419, 111}, {50, 50}}</string>
 						<reference key="NSSuperview" ref="1071968987"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="339599671"/>
+						<reference key="NSNextKeyView" ref="441994052"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -345,6 +349,10 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="352887493"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">next.png</string>
+						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
 							<double key="pointSize">15</double>
@@ -359,7 +367,7 @@
 				<string key="NSFrame">{{0, 20}, {480, 300}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="54063178"/>
+				<reference key="NSNextKeyView" ref="130600237"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -767,12 +775,13 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="burn-grunge-iPhone.png">{960, 640}</string>
 			<string key="cannon.png">{1500, 2000}</string>
-			<string key="ep_marker.png">{300, 300}</string>
+			<string key="dungeon_2.png">{1000, 800}</string>
+			<string key="ep_marker_2.png">{357, 347}</string>
 			<string key="gear_ultimate.png">{1200, 1178}</string>
-			<string key="laser2.png">{32, 43}</string>
-			<string key="np_marker.png">{300, 300}</string>
+			<string key="laser_red_new.png">{357, 376}</string>
+			<string key="next.png">{164, 142}</string>
+			<string key="np_marker_2.png">{357, 347}</string>
 			<string key="scale_nogear.png">{2800, 1054}</string>
 			<string key="screw copy.png">{175, 175}</string>
 			<string key="table.png">{1024, 750}</string>
