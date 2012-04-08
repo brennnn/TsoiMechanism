@@ -7,9 +7,13 @@
 //
 
 #import "ChallengeViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @implementation ChallengeViewController
+@synthesize megalaser;
 
+SystemSoundID laserFire;
+CGRect originalFrame;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {
@@ -89,7 +93,7 @@
     }
     tries++;
     [self removeScore:50];
-    [responseText show];
+//    [responseText show];
 }
 
 -(IBAction)nextAct:(id)sender
@@ -108,7 +112,29 @@
     } else
     {
         [self answerIncorrect];
+		AudioServicesPlayAlertSound(laserFire);
+		[self playFireAnimation];
     }
+}
+
+-(void) playFireAnimation
+{
+	megalaser.frame = originalFrame;
+	[megalaser setHidden:NO];
+	
+	[UIView animateWithDuration:2.0 
+						  delay:1.5 
+						options:UIViewAnimationOptionCurveEaseOut 
+					 animations:^{
+						 megalaser.alpha = 0.0;
+						 megalaser.bounds = CGRectMake(megalaser.center.x, megalaser.center.y, megalaser.bounds.size.width/4, megalaser.bounds.size.height);
+						 megalaser.alpha = 0.0;
+					 }
+					 completion:^(BOOL finished){
+						 [megalaser setHidden:YES];
+						 megalaser.alpha = 1.0;
+					 }];
+	
 }
 
 -(IBAction)eraseAct:(id)sender
@@ -122,11 +148,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	[megalaser setHidden:YES];
+	originalFrame = megalaser.frame;
+	
+	// Initialize sound
+	NSString *path  = [[NSBundle mainBundle] pathForResource :@"laser-boom" ofType:@"wav"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSURL *pathURL = [NSURL fileURLWithPath:path];
+        AudioServicesCreateSystemSoundID((CFURLRef) pathURL, &laserFire);
+		//		AudioServicesPlaySystemSound(explosion);
+    }
+    else
+    {
+        NSLog(@"error, file not found: %@", path);
+    }
 }
 
 - (void)viewDidUnload
 {
+    [self setMegalaser:nil];
     [super viewDidUnload];
+	AudioServicesDisposeSystemSoundID(laserFire);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -135,6 +179,7 @@
 }
 
 -(void) dealloc {
+    [megalaser release];
     [super dealloc];
 }
 

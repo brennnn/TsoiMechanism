@@ -15,6 +15,8 @@
 	int tries;
 }
 
+@property (retain, nonatomic) IBOutlet UIImageView *megalaser;
+
 -(IBAction)nextAct:(id)sender;
 -(IBAction)submitAct:(id)sender;
 -(IBAction)eraseAct:(id)sender;

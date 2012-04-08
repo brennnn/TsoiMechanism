@@ -70,6 +70,18 @@
 		6525DF911530074D002D333E /* explode_red13.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DF811530074D002D333E /* explode_red13.png */; };
 		6525DF921530074D002D333E /* explode_red14.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DF821530074D002D333E /* explode_red14.png */; };
 		6525DF931530074D002D333E /* explode_red15.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DF831530074D002D333E /* explode_red15.png */; };
+		6525DF9D1530F321002D333E /* ep_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DF9C1530F321002D333E /* ep_marker.png */; };
+		6525DFA01530F623002D333E /* dungeon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DF9F1530F623002D333E /* dungeon.png */; };
+		6525DFA31530F717002D333E /* np_marker_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFA11530F717002D333E /* np_marker_2.png */; };
+		6525DFA41530F717002D333E /* ep_marker_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFA21530F717002D333E /* ep_marker_2.png */; };
+		6525DFA61530F7AF002D333E /* dungeon_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFA51530F7AF002D333E /* dungeon_2.png */; };
+		6525DFA81530FB54002D333E /* laser_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFA71530FB54002D333E /* laser_red.png */; };
+		6525DFAB15310430002D333E /* cannon_lip_3D.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFA915310430002D333E /* cannon_lip_3D.png */; };
+		6525DFAC15310430002D333E /* cannon_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFAA15310430002D333E /* cannon_top.png */; };
+		6525DFAE15310892002D333E /* laser_cannon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFAD15310891002D333E /* laser_cannon.wav */; };
+		6525DFB0153112E0002D333E /* laser_fire.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFAF153112E0002D333E /* laser_fire.wav */; };
+		6525DFB215311976002D333E /* laser-boom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFB115311975002D333E /* laser-boom.wav */; };
+		6525DFB415313AB7002D333E /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFB315313AB7002D333E /* next.png */; };
 		659EAF5B152A8A20005EE158 /* burn-grunge-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF3E152A8A20005EE158 /* burn-grunge-iPhone.png */; };
 		659EAF5C152A8A20005EE158 /* burn-grunge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF3F152A8A20005EE158 /* burn-grunge.jpg */; };
 		659EAF5D152A8A20005EE158 /* cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF40152A8A20005EE158 /* cannon.png */; };
@@ -183,6 +195,18 @@
 		6525DF811530074D002D333E /* explode_red13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = explode_red13.png; path = explode_red/explode_red13.png; sourceTree = "<group>"; };
 		6525DF821530074D002D333E /* explode_red14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = explode_red14.png; path = explode_red/explode_red14.png; sourceTree = "<group>"; };
 		6525DF831530074D002D333E /* explode_red15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = explode_red15.png; path = explode_red/explode_red15.png; sourceTree = "<group>"; };
+		6525DF9C1530F321002D333E /* ep_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ep_marker.png; sourceTree = "<group>"; };
+		6525DF9F1530F623002D333E /* dungeon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dungeon.png; sourceTree = "<group>"; };
+		6525DFA11530F717002D333E /* np_marker_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = np_marker_2.png; sourceTree = "<group>"; };
+		6525DFA21530F717002D333E /* ep_marker_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ep_marker_2.png; sourceTree = "<group>"; };
+		6525DFA51530F7AF002D333E /* dungeon_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dungeon_2.png; sourceTree = "<group>"; };
+		6525DFA71530FB54002D333E /* laser_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser_red.png; sourceTree = "<group>"; };
+		6525DFA915310430002D333E /* cannon_lip_3D.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannon_lip_3D.png; sourceTree = "<group>"; };
+		6525DFAA15310430002D333E /* cannon_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannon_top.png; sourceTree = "<group>"; };
+		6525DFAD15310891002D333E /* laser_cannon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser_cannon.wav; sourceTree = "<group>"; };
+		6525DFAF153112E0002D333E /* laser_fire.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser_fire.wav; sourceTree = "<group>"; };
+		6525DFB115311975002D333E /* laser-boom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "laser-boom.wav"; sourceTree = "<group>"; };
+		6525DFB315313AB7002D333E /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		659EAF3E152A8A20005EE158 /* burn-grunge-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burn-grunge-iPhone.png"; sourceTree = "<group>"; };
 		659EAF3F152A8A20005EE158 /* burn-grunge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "burn-grunge.jpg"; sourceTree = "<group>"; };
 		659EAF40152A8A20005EE158 /* cannon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannon.png; sourceTree = "<group>"; };
@@ -302,6 +326,14 @@
 		26C6256314F5983E00B8A163 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6525DFB315313AB7002D333E /* next.png */,
+				6525DFA915310430002D333E /* cannon_lip_3D.png */,
+				6525DFAA15310430002D333E /* cannon_top.png */,
+				6525DFA71530FB54002D333E /* laser_red.png */,
+				6525DFA51530F7AF002D333E /* dungeon_2.png */,
+				6525DFA11530F717002D333E /* np_marker_2.png */,
+				6525DFA21530F717002D333E /* ep_marker_2.png */,
+				6525DF9F1530F623002D333E /* dungeon.png */,
 				6525DF741530074D002D333E /* explode_red0.png */,
 				6525DF751530074D002D333E /* explode_red1.png */,
 				6525DF761530074D002D333E /* explode_red2.png */,
@@ -359,6 +391,7 @@
 				659EAF54152A8A20005EE158 /* laser.png */,
 				659EAF55152A8A20005EE158 /* laser2.png */,
 				659EAF56152A8A20005EE158 /* np_marker.png */,
+				6525DF9C1530F321002D333E /* ep_marker.png */,
 				659EAF57152A8A20005EE158 /* scale_nogear.png */,
 				659EAF58152A8A20005EE158 /* screw copy.png */,
 				659EAF59152A8A20005EE158 /* table.png */,
@@ -405,10 +438,10 @@
 				652582BB152D77AD006EFCE0 /* Animations.m */,
 				26C6257614F59A4600B8A163 /* RootViewController.h */,
 				26C6257714F59A4600B8A163 /* RootViewController.m */,
-				266BA54014F8311000B06C88 /* ModeViewController.h */,
-				266BA54114F8311000B06C88 /* ModeViewController.m */,
 				26C6258114F59C8C00B8A163 /* IdentifyViewController.h */,
 				26C6258214F59C8D00B8A163 /* IdentifyViewController.m */,
+				266BA54014F8311000B06C88 /* ModeViewController.h */,
+				266BA54114F8311000B06C88 /* ModeViewController.m */,
 				26C6258714F59CB900B8A163 /* DrawViewController.h */,
 				26C6258814F59CB900B8A163 /* DrawViewController.m */,
 				26C6258C14F59CC500B8A163 /* ChallengeViewController.h */,
@@ -441,6 +474,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6525DFB115311975002D333E /* laser-boom.wav */,
+				6525DFAD15310891002D333E /* laser_cannon.wav */,
+				6525DFAF153112E0002D333E /* laser_fire.wav */,
 				26C6256414F5984300B8A163 /* XMLs */,
 				26C6256314F5983E00B8A163 /* Images */,
 				26C6256214F5983400B8A163 /* Views */,
@@ -584,6 +620,18 @@
 				6525DF911530074D002D333E /* explode_red13.png in Resources */,
 				6525DF921530074D002D333E /* explode_red14.png in Resources */,
 				6525DF931530074D002D333E /* explode_red15.png in Resources */,
+				6525DF9D1530F321002D333E /* ep_marker.png in Resources */,
+				6525DFA01530F623002D333E /* dungeon.png in Resources */,
+				6525DFA31530F717002D333E /* np_marker_2.png in Resources */,
+				6525DFA41530F717002D333E /* ep_marker_2.png in Resources */,
+				6525DFA61530F7AF002D333E /* dungeon_2.png in Resources */,
+				6525DFA81530FB54002D333E /* laser_red.png in Resources */,
+				6525DFAB15310430002D333E /* cannon_lip_3D.png in Resources */,
+				6525DFAC15310430002D333E /* cannon_top.png in Resources */,
+				6525DFAE15310892002D333E /* laser_cannon.wav in Resources */,
+				6525DFB0153112E0002D333E /* laser_fire.wav in Resources */,
+				6525DFB215311976002D333E /* laser-boom.wav in Resources */,
+				6525DFB415313AB7002D333E /* next.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

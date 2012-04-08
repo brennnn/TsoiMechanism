@@ -43,12 +43,13 @@
 						<string key="NSFrameSize">{1024, 748}</string>
 						<reference key="NSSuperview" ref="134574535"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="77438492"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">burn-grunge.jpg</string>
+							<string key="NSResourceName">dungeon_2.png</string>
 						</object>
 					</object>
 					<object class="IBUIView" id="77438492">
@@ -76,7 +77,7 @@
 								<string key="NSFrame">{{412, 689}, {201, 150}}</string>
 								<reference key="NSSuperview" ref="77438492"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="261691028"/>
+								<reference key="NSNextKeyView" ref="33123795"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -98,7 +99,7 @@
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">laser2.png</string>
+									<string key="NSResourceName">laser_red.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="305301279">
@@ -113,7 +114,7 @@
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">np_marker.png</string>
+									<string key="NSResourceName">np_marker_2.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="142791393">
@@ -137,13 +138,13 @@
 								<string key="NSFrame">{{707, 489}, {142, 107}}</string>
 								<reference key="NSSuperview" ref="77438492"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="110821862"/>
+								<reference key="NSNextKeyView" ref="1052642630"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">ep_marker.png</string>
+									<string key="NSResourceName">ep_marker_2.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="369984100">
@@ -152,7 +153,7 @@
 								<string key="NSFrame">{{431, 530}, {162, 216}}</string>
 								<reference key="NSSuperview" ref="77438492"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="1052642630"/>
+								<reference key="NSNextKeyView" ref="652242531"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -168,6 +169,7 @@
 								<string key="NSFrame">{{454, 668}, {117, 43}}</string>
 								<reference key="NSSuperview" ref="77438492"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="261691028"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -203,7 +205,7 @@
 								<string key="NSFrame">{{626, 583}, {349, 128}}</string>
 								<reference key="NSSuperview" ref="77438492"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="652242531"/>
+								<reference key="NSNextKeyView" ref="110821862"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -215,7 +217,7 @@
 								<string key="NSFrame">{{-5, -5}, {100, 100}}</string>
 								<reference key="NSSuperview" ref="77438492"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="77438492"/>
+								<reference key="NSNextKeyView" ref="400541130"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -245,7 +247,7 @@
 						<string key="NSFrameSize">{1024, 768}</string>
 						<reference key="NSSuperview" ref="134574535"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="400541130"/>
+						<reference key="NSNextKeyView" ref="781846181"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -260,6 +262,7 @@
 						<string key="NSFrame">{{911, 707}, {101, 41}}</string>
 						<reference key="NSSuperview" ref="134574535"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -267,9 +270,12 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">1/10</string>
-						<object class="NSColor" key="IBUITextColor" id="9289315">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MQA</bytes>
+							<object class="NSColorSpace" key="NSCustomColorSpace" id="649748400">
+								<int key="NSID">2</int>
+							</object>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
@@ -299,7 +305,10 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText"/>
-						<reference key="IBUITextColor" ref="9289315"/>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MCAwIDAAA</bytes>
+						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<float key="IBUIMinimumFontSize">10</float>
@@ -321,7 +330,11 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">Score: 0</string>
-						<reference key="IBUITextColor" ref="9289315"/>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MQA</bytes>
+							<reference key="NSCustomColorSpace" ref="649748400"/>
+						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<float key="IBUIMinimumFontSize">10</float>
@@ -332,13 +345,11 @@
 				<string key="NSFrame">{{0, 20}, {1024, 748}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="781846181"/>
+				<reference key="NSNextKeyView" ref="414932140"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
-					<object class="NSColorSpace" key="NSCustomColorSpace">
-						<int key="NSID">2</int>
-					</object>
+					<reference key="NSCustomColorSpace" ref="649748400"/>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
 					<int key="IBUIStatusBarStyle">2</int>
@@ -735,12 +746,12 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="burn-grunge.jpg">{1500, 1125}</string>
 			<string key="cannon.png">{1500, 2000}</string>
-			<string key="ep_marker.png">{300, 300}</string>
+			<string key="dungeon_2.png">{1000, 800}</string>
+			<string key="ep_marker_2.png">{357, 347}</string>
 			<string key="gear_ultimate.png">{1200, 1178}</string>
-			<string key="laser2.png">{32, 43}</string>
-			<string key="np_marker.png">{300, 300}</string>
+			<string key="laser_red.png">{400, 400}</string>
+			<string key="np_marker_2.png">{357, 347}</string>
 			<string key="scale_nogear.png">{2800, 1054}</string>
 			<string key="screw copy.png">{175, 175}</string>
 			<string key="table.png">{1024, 750}</string>
