@@ -19,6 +19,7 @@
 @synthesize hintButton;
 @synthesize laser;
 @synthesize laser2;
+@synthesize nextButton;
 
 // This is defined in Math.h
 #define M_PI 3.14159265358979323846264338327950288   /* pi */
@@ -52,8 +53,6 @@ double currentCannon2Angle;
 //	problemView.backgroundColor = [UIColor redColor];
 //	self.view.backgroundColor = [UIColor redColor];
 	
-	
-	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 	{
 		// The device is an iPad running iPhone 3.2 or later.
@@ -62,6 +61,8 @@ double currentCannon2Angle;
 	else {
 		iPadScale = 1.0;
 	}
+	
+	nextButton.hidden = YES;
 	
 	deadArrow = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height)];
 	deadArrow.userInteractionEnabled = NO;
@@ -126,46 +127,19 @@ double currentCannon2Angle;
         }
     }
 	
-	[self rotateCannon:cannon TowardPointX:touchPoint.x Y:touchPoint.y];
-	[self rotateGear:gear TowardPointX:touchPoint.x Y:touchPoint.y];
+//	[self rotateCannon:cannon TowardPointX:touchPoint.x Y:touchPoint.y];
+//	[self rotateGear:gear TowardPointX:touchPoint.x Y:touchPoint.y];
 	
-	[self rotateCannon:cannon2 TowardPointX:touchPoint.x Y:touchPoint.y];
-	[self rotateGear:gear2 TowardPointX:touchPoint.x Y:touchPoint.y];
+	//	[self rotateCannon:cannon2 TowardPointX:touchPoint.x Y:touchPoint.y];
+	//	[self rotateGear:gear2 TowardPointX:touchPoint.x Y:touchPoint.y];
+	
+	[Animations rotateCannon:cannon towardPoint:touchPoint duration:0.5];
+	[Animations rotateGear:gear towardPoint:touchPoint duration:0.5];
+	
+	[Animations rotateCannon:cannon2 towardPoint:touchPoint duration:0.5];
+	[Animations rotateGear:gear2 towardPoint:touchPoint duration:0.5];
 }
 
--(void) rotateCannon:(UIView*)c TowardPointX:(int)x Y:(int)y;
-{
-	// Setup the animation
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:0.5];
-	[UIView setAnimationCurve:2];
-	[UIView setAnimationBeginsFromCurrentState:YES];
-	
-	float dy = c.center.y - y;
-	float dx = c.center.x - x;
-	
-	c.transform = CGAffineTransformMakeRotation(atan2(dy,dx) - DEGREES_TO_RADIANS(90));
-	
-	// Commit the changes
-	[UIView commitAnimations];
-}
-
--(void) rotateGear:(UIView*)g TowardPointX:(int)x Y:(int)y;
-{
-	// Setup the animation
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:0.5];
-	[UIView setAnimationCurve:2];
-	[UIView setAnimationBeginsFromCurrentState:YES];
-	
-	float dy = g.center.y - y;
-	float dx = g.center.x - x;
-	
-	g.transform = CGAffineTransformMakeRotation(-atan2(dy,dx) - DEGREES_TO_RADIANS(13));
-	
-	// Commit the changes
-	[UIView commitAnimations];
-}
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
@@ -173,17 +147,20 @@ double currentCannon2Angle;
     
     if ([problemView isArrowInProgress]) {
         [problemView setArrowEnd:touchPoint];
+		
+		[Animations rotateCannon:cannon2 towardPoint:touchPoint];
+		[Animations rotateGear:gear2 towardPoint:touchPoint];
     }
-	
-	if ([problemView isArrowInProgress]) {
-		
-		float dy = cannon2.center.y - touchPoint.y;
-		float dx = cannon2.center.x - touchPoint.x;
-		
-		cannon2.transform = CGAffineTransformMakeRotation(atan2(dy,dx) - DEGREES_TO_RADIANS(90));
-		gear2.transform = CGAffineTransformMakeRotation(-atan2(dy,dx) - DEGREES_TO_RADIANS(13));
-	}
-	
+//	
+//	if ([problemView isArrowInProgress]) {
+//		
+//		float dy = cannon2.center.y - touchPoint.y;
+//		float dx = cannon2.center.x - touchPoint.x;
+//		
+//		cannon2.transform = CGAffineTransformMakeRotation(atan2(dy,dx) - DEGREES_TO_RADIANS(90));
+//		gear2.transform = CGAffineTransformMakeRotation(-atan2(dy,dx) - DEGREES_TO_RADIANS(13));
+//	}
+//	
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -216,9 +193,10 @@ double currentCannon2Angle;
 					[Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
 					[Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
 					
-					[deadArrow setImage:[self getArrowImageFrom:touchPoint and:firstPoint]];
-					deadArrow.center = CGPointMake(self.view.center.x, self.view.center.y - 50);
-					[self dropArrow];
+//					[deadArrow setImage:[self getArrowImageFrom:touchPoint and:firstPoint]];
+//					deadArrow.center = CGPointMake(self.view.center.x, self.view.center.y - 50);
+//					[self dropArrow];
+					[Animations shakeView:problemView power:8.0];
 				}
             }
 			
@@ -237,7 +215,7 @@ double currentCannon2Angle;
 //						[hintView release];
 						
 						// Problem was correct!
-						
+						nextButton.hidden = NO;
 					}
 				}
 				else
@@ -255,9 +233,10 @@ double currentCannon2Angle;
 //					[self hintPopUp];
 					
 //					[self getArrowImageFrom:firstPoint and:touchPoint];
-					[deadArrow setImage:[self getArrowImageFrom:touchPoint and:firstPoint]];
-					deadArrow.center = CGPointMake(self.view.center.x, self.view.center.y - 50);
-					[self dropArrow];
+//					[deadArrow setImage:[self getArrowImageFrom:touchPoint and:firstPoint]];
+//					deadArrow.center = CGPointMake(self.view.center.x, self.view.center.y - 50);
+//					[self dropArrow];
+					[Animations shakeView:problemView power:8.0];
 				}
 				
 			}
@@ -295,24 +274,29 @@ double currentCannon2Angle;
 	self.instructionsLabel.text = @"Draw arrows from the highlighted elements and bonds in order to complete the problem. Drawing an incorrect arrow will cause a hint to pop up. Click the hint button to receive a hint otherwise. When you finish drawing all the correct arrows, a confirmation to go to the next problem will appear.";
 }
 
+- (IBAction)tappedNext:(id)sender {
+	[self goToNextProblem];
+	nextButton.hidden = YES;
+}
+
 -(IBAction)hintPressed:(id)sender{
 	
 	[self hintPopUp];
 }
 
-- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	// the user clicked one of the OK/Cancel buttons
-	if ([problemView doesAllArrowsMatchProblem])
-	{
-		[self goToNextProblem];
-	}
-	else
-	{
-		NSLog(@"cancel");
-	}
-}
+//- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+//	// the user clicked one of the OK/Cancel buttons
+//	if ([problemView doesAllArrowsMatchProblem])
+//	{
+//		[self goToNextProblem];
+//	}
+//	else
+//	{
+//		NSLog(@"cancel");
+//	}
+//}
 
--(void)hintPopUp{
+-(void)hintPopUp {
 	NSMutableArray *hintArray = [[NSMutableArray alloc] init];
 	
 	[hintArray addObject:@"Are you sure that is the right bond?"];
@@ -340,6 +324,7 @@ double currentCannon2Angle;
 	[self setGear2:nil];
 	[self setLaser:nil];
 	[self setLaser2:nil];
+	[self setNextButton:nil];
     [super viewDidUnload];
 }
 
@@ -396,12 +381,46 @@ double currentCannon2Angle;
 	[gear2 release];
 	[laser release];
 	[laser2 release];
+	[nextButton release];
     [super dealloc];
 	[hintButton	release];
 }
 
 @end
 
+//-(void) rotateCannon:(UIView*)c TowardPointX:(int)x Y:(int)y;
+//{
+//	// Setup the animation
+//	[UIView beginAnimations:nil context:NULL];
+//	[UIView setAnimationDuration:0.5];
+//	[UIView setAnimationCurve:2];
+//	[UIView setAnimationBeginsFromCurrentState:YES];
+//	
+//	float dy = c.center.y - y;
+//	float dx = c.center.x - x;
+//	
+//	c.transform = CGAffineTransformMakeRotation(atan2(dy,dx) - DEGREES_TO_RADIANS(90));
+//	
+//	// Commit the changes
+//	[UIView commitAnimations];
+//}
+//
+//-(void) rotateGear:(UIView*)g TowardPointX:(int)x Y:(int)y;
+//{
+//	// Setup the animation
+//	[UIView beginAnimations:nil context:NULL];
+//	[UIView setAnimationDuration:0.5];
+//	[UIView setAnimationCurve:2];
+//	[UIView setAnimationBeginsFromCurrentState:YES];
+//	
+//	float dy = g.center.y - y;
+//	float dx = g.center.x - x;
+//	
+//	g.transform = CGAffineTransformMakeRotation(-atan2(dy,dx) - DEGREES_TO_RADIANS(13));
+//	
+//	// Commit the changes
+//	[UIView commitAnimations];
+//}
 
 //-(void) fireLaserFromFirstCannon
 //{

@@ -34,6 +34,7 @@
 // ??
 +(void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration scale:(int)scale toPoint:(CGPoint)point;
 
++ (void)shakeView:(UIView *)viewToShake power:(CGFloat)t;
 
 +(double) getAngleOfView:(UIView*)view;
 +(int) getiPadScale;

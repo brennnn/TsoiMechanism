@@ -8,12 +8,19 @@
 
 #import "ChallengeViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "Animations.h"
 
 @implementation ChallengeViewController
 @synthesize megalaser;
+@synthesize charge;
+@synthesize undoButtons;
+@synthesize cannonContainerView;
 
 SystemSoundID laserFire;
+SystemSoundID laserCharge;
+
 CGRect originalFrame;
+CGPoint originalProblemViewPos;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {
@@ -23,6 +30,47 @@ CGRect originalFrame;
 		tries = 0;
     }
     return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	
+	originalProblemViewPos = problemView.center;
+	
+	[nextButton setHidden:YES];
+	
+	[megalaser setHidden:YES];
+	originalFrame = megalaser.frame;
+	
+	[charge setHidden:YES];
+	charge.alpha = 0.0;
+	
+	// Initialize sound
+	NSString *path  = [[NSBundle mainBundle] pathForResource :@"laser_release" ofType:@"wav"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSURL *pathURL = [NSURL fileURLWithPath:path];
+        AudioServicesCreateSystemSoundID((CFURLRef) pathURL, &laserFire);
+		//		AudioServicesPlaySystemSound(explosion);
+    }
+    else
+    {
+        NSLog(@"error, file not found: %@", path);
+    }
+	
+	// Initialize sound
+	path  = [[NSBundle mainBundle] pathForResource :@"laser_charging" ofType:@"wav"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSURL *pathURL = [NSURL fileURLWithPath:path];
+        AudioServicesCreateSystemSoundID((CFURLRef) pathURL, &laserCharge);
+		//		AudioServicesPlaySystemSound(explosion);
+    }
+    else
+    {
+        NSLog(@"error, file not found: %@", path);
+    }
 }
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -73,6 +121,7 @@ CGRect originalFrame;
 -(void) answerCorrect
 {
     submitButton.hidden = YES;
+	undoButtons.hidden = YES;
     nextButton.hidden = NO;
     responseText.message = @"CORRECT!!! Hit [Next] to move to the next problem!";
     [responseText show];
@@ -84,12 +133,17 @@ CGRect originalFrame;
     if (tries > 0)
     {
         submitButton.hidden = YES;
-        nextButton.hidden = NO;
+		undoButtons.hidden = YES;
+//        nextButton.hidden = NO;
         responseText.message = @"I'm Sorry, you're out of tries. Hit [Next] to move to the next problem.";
+		AudioServicesPlayAlertSound(laserFire);
+		[self playFireAnimation];
     }
     else
     {
         responseText.message = @"That was incorrect. Try again.";
+		AudioServicesPlayAlertSound(laserCharge);
+		[self playFlashCharge];
     }
     tries++;
     [self removeScore:50];
@@ -98,7 +152,9 @@ CGRect originalFrame;
 
 -(IBAction)nextAct:(id)sender
 {
+	[self slideInProblemView];
     nextButton.hidden = YES; 
+	undoButtons.hidden = NO;
     submitButton.hidden = NO;
     tries = 0;
     [self goToNextProblem];
@@ -112,15 +168,28 @@ CGRect originalFrame;
     } else
     {
         [self answerIncorrect];
-		AudioServicesPlayAlertSound(laserFire);
-		[self playFireAnimation];
     }
+}
+
+-(void) slideInProblemView
+{
+	[UIView animateWithDuration:1.0 
+						  delay:0.0 
+						options:UIViewAnimationOptionCurveEaseOut
+					 animations:^{
+						 problemView.center = originalProblemViewPos;
+					 }
+					 completion:NULL];
 }
 
 -(void) playFireAnimation
 {
 	megalaser.frame = originalFrame;
 	[megalaser setHidden:NO];
+	
+	problemView.center = CGPointMake(self.view.frame.size.width*2, problemView.center.y);
+	
+	[Animations shakeView:cannonContainerView power:20.0];
 	
 	[UIView animateWithDuration:2.0 
 						  delay:1.5 
@@ -133,8 +202,34 @@ CGRect originalFrame;
 					 completion:^(BOOL finished){
 						 [megalaser setHidden:YES];
 						 megalaser.alpha = 1.0;
+						 [nextButton setHidden:NO];
 					 }];
 	
+}
+
+-(void) playFlashCharge
+{
+	[charge setHidden:YES];
+	charge.alpha = 0.0;
+	
+	[UIView animateWithDuration:0.5 
+						  delay:0.0 
+						options:UIViewAnimationOptionCurveEaseIn
+					 animations:^{
+						 [charge setHidden:NO];
+						 charge.alpha = 1.0;
+					 }
+					 completion:^(BOOL finished){
+						 [UIView animateWithDuration:0.5 
+											   delay:0.0 
+											 options:UIViewAnimationOptionCurveEaseOut 
+										  animations:^{
+											  charge.alpha = 0.0;
+										  } 
+										  completion:^(BOOL finished){
+											  [charge setHidden:YES];
+										  }];
+					 }];
 }
 
 -(IBAction)eraseAct:(id)sender
@@ -145,32 +240,15 @@ CGRect originalFrame;
     }
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	
-	[megalaser setHidden:YES];
-	originalFrame = megalaser.frame;
-	
-	// Initialize sound
-	NSString *path  = [[NSBundle mainBundle] pathForResource :@"laser-boom" ofType:@"wav"];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
-    {
-        NSURL *pathURL = [NSURL fileURLWithPath:path];
-        AudioServicesCreateSystemSoundID((CFURLRef) pathURL, &laserFire);
-		//		AudioServicesPlaySystemSound(explosion);
-    }
-    else
-    {
-        NSLog(@"error, file not found: %@", path);
-    }
-}
-
 - (void)viewDidUnload
 {
     [self setMegalaser:nil];
+	[self setCharge:nil];
+	[self setUndoButtons:nil];
+	[self setCannonContainerView:nil];
     [super viewDidUnload];
 	AudioServicesDisposeSystemSoundID(laserFire);
+	AudioServicesDisposeSystemSoundID(laserCharge);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -180,6 +258,13 @@ CGRect originalFrame;
 
 -(void) dealloc {
     [megalaser release];
+	[charge release];
+	
+	[submitButton release];
+	[nextButton release];
+	
+	[undoButtons release];
+	[cannonContainerView release];
     [super dealloc];
 }
 
