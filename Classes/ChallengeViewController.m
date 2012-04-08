@@ -209,6 +209,7 @@ NSArray *frames;
 
 -(void) playFireAnimation
 {
+	[megalaser startAnimating];
 	megalaser.frame = originalFrame;
 	[megalaser setHidden:NO];
 	
@@ -228,6 +229,7 @@ NSArray *frames;
 						 [megalaser setHidden:YES];
 						 megalaser.alpha = 1.0;
 						 [nextButton setHidden:NO];
+						 [megalaser stopAnimating];
 					 }];
 	
 }
