@@ -22,6 +22,8 @@ SystemSoundID laserCharge;
 CGRect originalFrame;
 CGPoint originalProblemViewPos;
 
+NSArray *frames;
+
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) 
@@ -36,11 +38,16 @@ CGPoint originalProblemViewPos;
 {
     [super viewDidLoad];
 	
+	frames = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"laser_red.png"], [UIImage imageNamed:@"laser_red2.png"], nil];
+	
 	originalProblemViewPos = problemView.center;
 	
 	[nextButton setHidden:YES];
 	
 	[megalaser setHidden:YES];
+	[megalaser stopAnimating];
+	[self pulsateLaser];
+	
 	originalFrame = megalaser.frame;
 	
 	[charge setHidden:YES];
@@ -71,6 +78,24 @@ CGPoint originalProblemViewPos;
     {
         NSLog(@"error, file not found: %@", path);
     }
+}
+
+-(void) pulsateLaser
+{			   
+//	[megalaser setImage:[UIImage imageNamed:@"laser_red2.png"]];
+	[UIView animateWithDuration: 1.0
+						  delay: 0.0
+						options: UIViewAnimationOptionCurveLinear
+					 animations:^{
+						 megalaser.animationImages = frames;
+						 megalaser.animationDuration = 0.1;
+						 megalaser.animationRepeatCount = 1000;
+						 
+						 [megalaser startAnimating];
+					 }
+					 completion:^(BOOL finished){
+					 }];
+	
 }
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -265,6 +290,9 @@ CGPoint originalProblemViewPos;
 	
 	[undoButtons release];
 	[cannonContainerView release];
+	
+	[frames release];
+	
     [super dealloc];
 }
 

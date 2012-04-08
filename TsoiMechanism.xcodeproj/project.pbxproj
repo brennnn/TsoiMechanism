@@ -91,6 +91,7 @@
 		6525DFC6153177B8002D333E /* laser_charging.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFC5153177B8002D333E /* laser_charging.wav */; };
 		6525DFC915317A7B002D333E /* erase.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFC715317A7A002D333E /* erase.png */; };
 		6525DFCA15317A7B002D333E /* submit.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFC815317A7B002D333E /* submit.png */; };
+		6583F8BE153256A500774CA2 /* laser_red2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6583F8BD153256A500774CA2 /* laser_red2.png */; };
 		659EAF5B152A8A20005EE158 /* burn-grunge-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF3E152A8A20005EE158 /* burn-grunge-iPhone.png */; };
 		659EAF5C152A8A20005EE158 /* burn-grunge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF3F152A8A20005EE158 /* burn-grunge.jpg */; };
 		659EAF5D152A8A20005EE158 /* cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF40152A8A20005EE158 /* cannon.png */; };
@@ -225,6 +226,7 @@
 		6525DFC5153177B8002D333E /* laser_charging.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser_charging.wav; sourceTree = "<group>"; };
 		6525DFC715317A7A002D333E /* erase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erase.png; sourceTree = "<group>"; };
 		6525DFC815317A7B002D333E /* submit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submit.png; sourceTree = "<group>"; };
+		6583F8BD153256A500774CA2 /* laser_red2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser_red2.png; sourceTree = "<group>"; };
 		659EAF3E152A8A20005EE158 /* burn-grunge-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burn-grunge-iPhone.png"; sourceTree = "<group>"; };
 		659EAF3F152A8A20005EE158 /* burn-grunge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "burn-grunge.jpg"; sourceTree = "<group>"; };
 		659EAF40152A8A20005EE158 /* cannon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannon.png; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		26C6256314F5983E00B8A163 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6583F8BD153256A500774CA2 /* laser_red2.png */,
 				6525DFC315317361002D333E /* charge_new.png */,
 				6525DFBF15316E2E002D333E /* charge.png */,
 				6525DFC715317A7A002D333E /* erase.png */,
@@ -668,6 +671,7 @@
 				6525DFC6153177B8002D333E /* laser_charging.wav in Resources */,
 				6525DFC915317A7B002D333E /* erase.png in Resources */,
 				6525DFCA15317A7B002D333E /* submit.png in Resources */,
+				6583F8BE153256A500774CA2 /* laser_red2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
