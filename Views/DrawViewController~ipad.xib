@@ -48,7 +48,7 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">burn-grunge.jpg</string>
+							<string key="NSResourceName">dungeon_2.png</string>
 						</object>
 					</object>
 					<object class="IBUIView" id="1054973552">
@@ -107,9 +107,9 @@
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<object class="NSCustomResource" key="IBUIImage" id="1062644587">
+								<object class="NSCustomResource" key="IBUIImage" id="678763118">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">laser2.png</string>
+									<string key="NSResourceName">laser_red_new.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="969948828">
@@ -122,7 +122,7 @@
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<reference key="IBUIImage" ref="1062644587"/>
+								<reference key="IBUIImage" ref="678763118"/>
 							</object>
 							<object class="IBUIImageView" id="464518198">
 								<reference key="NSNextResponder" ref="1054973552"/>
@@ -283,7 +283,6 @@
 						<string key="NSFrame">{{-5, -5}, {100, 100}}</string>
 						<reference key="NSSuperview" ref="527761561"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -711,10 +710,10 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="burn-grunge.jpg">{1500, 1125}</string>
 			<string key="cannon.png">{1500, 2000}</string>
+			<string key="dungeon_2.png">{1000, 800}</string>
 			<string key="gear_ultimate.png">{1200, 1178}</string>
-			<string key="laser2.png">{32, 43}</string>
+			<string key="laser_red_new.png">{357, 376}</string>
 			<string key="screw copy.png">{175, 175}</string>
 			<string key="table.png">{1024, 750}</string>
 		</dictionary>

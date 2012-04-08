@@ -82,6 +82,7 @@
 		6525DFB0153112E0002D333E /* laser_fire.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFAF153112E0002D333E /* laser_fire.wav */; };
 		6525DFB215311976002D333E /* laser-boom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFB115311975002D333E /* laser-boom.wav */; };
 		6525DFB415313AB7002D333E /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFB315313AB7002D333E /* next.png */; };
+		6525DFB615314A45002D333E /* laser_red_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFB515314A45002D333E /* laser_red_new.png */; };
 		659EAF5B152A8A20005EE158 /* burn-grunge-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF3E152A8A20005EE158 /* burn-grunge-iPhone.png */; };
 		659EAF5C152A8A20005EE158 /* burn-grunge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF3F152A8A20005EE158 /* burn-grunge.jpg */; };
 		659EAF5D152A8A20005EE158 /* cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF40152A8A20005EE158 /* cannon.png */; };
@@ -207,6 +208,7 @@
 		6525DFAF153112E0002D333E /* laser_fire.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser_fire.wav; sourceTree = "<group>"; };
 		6525DFB115311975002D333E /* laser-boom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "laser-boom.wav"; sourceTree = "<group>"; };
 		6525DFB315313AB7002D333E /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		6525DFB515314A45002D333E /* laser_red_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser_red_new.png; sourceTree = "<group>"; };
 		659EAF3E152A8A20005EE158 /* burn-grunge-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burn-grunge-iPhone.png"; sourceTree = "<group>"; };
 		659EAF3F152A8A20005EE158 /* burn-grunge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "burn-grunge.jpg"; sourceTree = "<group>"; };
 		659EAF40152A8A20005EE158 /* cannon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannon.png; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 		26C6256314F5983E00B8A163 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6525DFB515314A45002D333E /* laser_red_new.png */,
 				6525DFB315313AB7002D333E /* next.png */,
 				6525DFA915310430002D333E /* cannon_lip_3D.png */,
 				6525DFAA15310430002D333E /* cannon_top.png */,
@@ -438,10 +441,10 @@
 				652582BB152D77AD006EFCE0 /* Animations.m */,
 				26C6257614F59A4600B8A163 /* RootViewController.h */,
 				26C6257714F59A4600B8A163 /* RootViewController.m */,
-				26C6258114F59C8C00B8A163 /* IdentifyViewController.h */,
-				26C6258214F59C8D00B8A163 /* IdentifyViewController.m */,
 				266BA54014F8311000B06C88 /* ModeViewController.h */,
 				266BA54114F8311000B06C88 /* ModeViewController.m */,
+				26C6258114F59C8C00B8A163 /* IdentifyViewController.h */,
+				26C6258214F59C8D00B8A163 /* IdentifyViewController.m */,
 				26C6258714F59CB900B8A163 /* DrawViewController.h */,
 				26C6258814F59CB900B8A163 /* DrawViewController.m */,
 				26C6258C14F59CC500B8A163 /* ChallengeViewController.h */,
@@ -632,6 +635,7 @@
 				6525DFB0153112E0002D333E /* laser_fire.wav in Resources */,
 				6525DFB215311976002D333E /* laser-boom.wav in Resources */,
 				6525DFB415313AB7002D333E /* next.png in Resources */,
+				6525DFB615314A45002D333E /* laser_red_new.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

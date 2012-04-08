@@ -14,6 +14,10 @@
     IBOutlet UIImageView *epImage;
     IBOutlet UIImageView *npImage;
     IBOutlet UIButton *nextButton;
+	IBOutlet UIImageView *cannon;
+	IBOutlet UIImageView *gear;
+	IBOutlet UIImageView *laser;
+	IBOutlet UIImageView *background;
 }
 
 @property (retain, nonatomic) IBOutlet UIImageView *epImage;

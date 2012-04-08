@@ -99,7 +99,7 @@
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">laser_red.png</string>
+									<string key="NSResourceName">laser_red_new.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="305301279">
@@ -166,7 +166,7 @@
 							<object class="IBUIButton" id="33123795">
 								<reference key="NSNextResponder" ref="77438492"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{454, 668}, {117, 43}}</string>
+								<string key="NSFrame">{{887, 319}, {117, 102}}</string>
 								<reference key="NSSuperview" ref="77438492"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="261691028"/>
@@ -175,8 +175,6 @@
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<int key="IBUIButtonType">1</int>
-								<string key="IBUINormalTitle">Next</string>
 								<object class="NSColor" key="IBUIHighlightedTitleColor" id="1041011149">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
@@ -188,6 +186,10 @@
 								<object class="NSColor" key="IBUINormalTitleShadowColor" id="592785601">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
+								</object>
+								<object class="NSCustomResource" key="IBUINormalImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">next.png</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">2</int>
@@ -273,7 +275,7 @@
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
-							<object class="NSColorSpace" key="NSCustomColorSpace" id="649748400">
+							<object class="NSColorSpace" key="NSCustomColorSpace" id="211668903">
 								<int key="NSID">2</int>
 							</object>
 						</object>
@@ -333,7 +335,7 @@
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
-							<reference key="NSCustomColorSpace" ref="649748400"/>
+							<reference key="NSCustomColorSpace" ref="211668903"/>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
@@ -349,7 +351,7 @@
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
-					<reference key="NSCustomColorSpace" ref="649748400"/>
+					<reference key="NSCustomColorSpace" ref="211668903"/>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
 					<int key="IBUIStatusBarStyle">2</int>
@@ -750,7 +752,8 @@
 			<string key="dungeon_2.png">{1000, 800}</string>
 			<string key="ep_marker_2.png">{357, 347}</string>
 			<string key="gear_ultimate.png">{1200, 1178}</string>
-			<string key="laser_red.png">{400, 400}</string>
+			<string key="laser_red_new.png">{357, 376}</string>
+			<string key="next.png">{164, 142}</string>
 			<string key="np_marker_2.png">{357, 347}</string>
 			<string key="scale_nogear.png">{2800, 1054}</string>
 			<string key="screw copy.png">{175, 175}</string>

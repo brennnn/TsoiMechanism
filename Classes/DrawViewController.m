@@ -9,6 +9,7 @@
 #import "DrawViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import "Animations.h"
 
 @implementation DrawViewController
 @synthesize cannon;
@@ -208,10 +209,12 @@ double currentCannon2Angle;
 					[problemView removeLastArrow];
 					[problemView clearNucleophileMarker];
 //					[self hintPopUp];
-					[self createExplosionAt:firstPoint];
-					[self fireLaserFromFirstCannon];
-					[self fireLaserFromCannon2ToPoint:touchPoint];
-					[self createExplosionAt:touchPoint];
+					
+					[Animations fireLaser:laser fromCannon:cannon toPoint:firstPoint];
+					[Animations fireLaser:laser2 fromCannon:cannon2 toPoint:touchPoint];
+					
+					[Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
+					[Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
 					
 					[deadArrow setImage:[self getArrowImageFrom:touchPoint and:firstPoint]];
 					deadArrow.center = CGPointMake(self.view.center.x, self.view.center.y - 50);
@@ -241,11 +244,14 @@ double currentCannon2Angle;
 				{
 					NSLog(@"Arrow does not Match past first");
 					[problemView removeLastArrow];
-//					NSLog(@"firstPoint (%i, %i); touchPoint (%i, %i)", firstPoint.x, firstPoint.y, touchPoint.x, touchPoint.y);
-					[self createExplosionAt:firstPoint];
-					[self createExplosionAt:touchPoint];
-					[self fireLaserFromFirstCannon];
-					[self fireLaserFromCannon2ToPoint:touchPoint];
+					
+					[Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
+					[Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
+					
+					[Animations fireLaser:laser fromCannon:cannon toPoint:firstPoint];
+					[Animations fireLaser:laser2 fromCannon:cannon2 toPoint:touchPoint];
+					
+					
 //					[self hintPopUp];
 					
 //					[self getArrowImageFrom:firstPoint and:touchPoint];
@@ -269,12 +275,6 @@ double currentCannon2Angle;
     }
 }
 
-//-(void) createArrowFallingFromPoint:(CGPoint)pointA toPoint:(CGPoint)pointB
-//{
-//	NSLog(@"I was called!");
-//	
-//}
-
 -(void) dropArrow
 {	
 	// Setup the animation
@@ -283,34 +283,12 @@ double currentCannon2Angle;
 	[UIView setAnimationCurve:5];
 	[UIView setAnimationBeginsFromCurrentState:YES];
 	
-//	float dy = c.center.y - y;
-//	float dx = c.center.x - x;
-	
-//	c.transform = CGAffineTransformMakeRotation(atan2(dy,dx) - DEGREES_TO_RADIANS(95));
-	
 	deadArrow.center = CGPointMake(self.view.center.x, self.view.center.y*4);
 	
 	// Commit the changes
 	[UIView commitAnimations];
 }
 
--(void) createExplosionAt:(CGPoint)location
-{
-	AudioServicesPlaySystemSound(explosion); // Play explosion sound FX
-	UIImageView *explode = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 140.0/2 * iPadScale, 200.0/2 * iPadScale)];
-	
-	explode.center = location;
-	
-	explode.animationImages = myImages;
-	explode.animationDuration = 1.0;
-	explode.animationRepeatCount = 1;
-	
-	[self.view addSubview:explode];
-	[explode startAnimating];
-	
-	[explode release];
-	
-}
 
 -(void)setDrawInstructions
 {
@@ -370,60 +348,6 @@ double currentCannon2Angle;
     return ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight));
 }
 
--(void) fireLaserFromFirstCannon
-{
-	[laser setAlpha:1.0];
-	
-	double distance = sqrt(pow((firstPoint.x - laser.center.x), 2.0) + pow(firstPoint.y - laser.center.y, 2.0));
-	
-	laser.bounds = CGRectMake(cannon.center.x, cannon.center.y, 20 * iPadScale, distance);
-	laser.center = cannon.center;
-	
-	float dy = cannon.center.y - firstPoint.y;
-	float dx = cannon.center.x - firstPoint.x;
-	
-	float angle = atan2(dy,dx) - DEGREES_TO_RADIANS(90);
-	
-	laser.transform = CGAffineTransformMakeRotation(angle);
-	
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:1.0];
-	[UIView setAnimationCurve:10];
-	//	[UIView setAnimationBeginsFromCurrentState:YES];
-	
-	[laser setAlpha:0.0];
-	
-	// Commit the changes
-	[UIView commitAnimations];
-}
-
--(void) fireLaserFromCannon2ToPoint:(CGPoint)touchPoint
-{
-	[laser2 setAlpha:1.0];
-	
-	double distance = sqrt(pow((touchPoint.x - laser2.center.x), 2.0) + pow(touchPoint.y - laser2.center.y, 2.0));
-	
-	laser2.bounds = CGRectMake(cannon.center.x, cannon.center.y, 20 * iPadScale, distance);
-	laser2.center = cannon2.center;
-	
-	float dy = cannon2.center.y - touchPoint.y;
-	float dx = cannon2.center.x - touchPoint.x;
-	
-	float angle = atan2(dy,dx) - DEGREES_TO_RADIANS(90);
-	
-	laser2.transform = CGAffineTransformMakeRotation(angle);
-	
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:1.0];
-	[UIView setAnimationCurve:10];
-	//	[UIView setAnimationBeginsFromCurrentState:YES];
-	
-	[laser2 setAlpha:0.0];
-	
-	// Commit the changes
-	[UIView commitAnimations];
-}
-
 -(UIImage*) getArrowImageFrom:(CGPoint) pointA and:(CGPoint) pointB
 {
 	float width = 480.0f;
@@ -477,3 +401,98 @@ double currentCannon2Angle;
 }
 
 @end
+
+
+//-(void) fireLaserFromFirstCannon
+//{
+//	[laser setAlpha:1.0];
+//	
+//	double distance = sqrt(pow((firstPoint.x - laser.center.x), 2.0) + pow(firstPoint.y - laser.center.y, 2.0));
+//	
+//	laser.bounds = CGRectMake(cannon.center.x, cannon.center.y, 20 * iPadScale, distance);
+//	laser.center = cannon.center;
+//	
+//	float dy = cannon.center.y - firstPoint.y;
+//	float dx = cannon.center.x - firstPoint.x;
+//	
+//	float angle = atan2(dy,dx) - DEGREES_TO_RADIANS(90);
+//	
+//	laser.transform = CGAffineTransformMakeRotation(angle);
+//	
+//	[UIView beginAnimations:nil context:NULL];
+//	[UIView setAnimationDuration:1.0];
+//	[UIView setAnimationCurve:10];
+//	//	[UIView setAnimationBeginsFromCurrentState:YES];
+//	
+//	[laser setAlpha:0.0];
+//	
+//	// Commit the changes
+//	[UIView commitAnimations];
+//}
+//
+//-(void) fireLaserFromCannon2ToPoint:(CGPoint)touchPoint
+//{
+//	[laser2 setAlpha:1.0];
+//	
+//	double distance = sqrt(pow((touchPoint.x - laser2.center.x), 2.0) + pow(touchPoint.y - laser2.center.y, 2.0));
+//	
+//	laser2.bounds = CGRectMake(cannon.center.x, cannon.center.y, 20 * iPadScale, distance);
+//	laser2.center = cannon2.center;
+//	
+//	float dy = cannon2.center.y - touchPoint.y;
+//	float dx = cannon2.center.x - touchPoint.x;
+//	
+//	float angle = atan2(dy,dx) - DEGREES_TO_RADIANS(90);
+//	
+//	laser2.transform = CGAffineTransformMakeRotation(angle);
+//	
+//	[UIView beginAnimations:nil context:NULL];
+//	[UIView setAnimationDuration:1.0];
+//	[UIView setAnimationCurve:10];
+//	//	[UIView setAnimationBeginsFromCurrentState:YES];
+//	
+//	[laser2 setAlpha:0.0];
+//	
+//	// Commit the changes
+//	[UIView commitAnimations];
+//}
+
+//					[self createExplosionAt:firstPoint];
+//					[self createExplosionAt:touchPoint];
+//					[self fireLaserFromFirstCannon];
+//					[self fireLaserFromCannon2ToPoint:touchPoint];
+
+//					NSLog(@"firstPoint (%i, %i); touchPoint (%i, %i)", firstPoint.x, firstPoint.y, touchPoint.x, touchPoint.y);
+//					[self createExplosionAt:firstPoint];
+//					[self createExplosionAt:touchPoint];
+//					[self fireLaserFromFirstCannon];
+//					[self fireLaserFromCannon2ToPoint:touchPoint];
+
+//-(void) createArrowFallingFromPoint:(CGPoint)pointA toPoint:(CGPoint)pointB
+//{
+//	NSLog(@"I was called!");
+//	
+//}
+
+//	float dy = c.center.y - y;
+//	float dx = c.center.x - x;
+
+//	c.transform = CGAffineTransformMakeRotation(atan2(dy,dx) - DEGREES_TO_RADIANS(95));
+
+//-(void) createExplosionAt:(CGPoint)location
+//{
+//	AudioServicesPlaySystemSound(explosion); // Play explosion sound FX
+//	UIImageView *explode = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 140.0/2 * iPadScale, 200.0/2 * iPadScale)];
+//	
+//	explode.center = location;
+//	
+//	explode.animationImages = myImages;
+//	explode.animationDuration = 1.0;
+//	explode.animationRepeatCount = 1;
+//	
+//	[self.view addSubview:explode];
+//	[explode startAnimating];
+//	
+//	[explode release];
+//	
+//}
