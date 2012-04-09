@@ -97,7 +97,6 @@ int answered = 0;
     {
         NSURL *pathURL = [NSURL fileURLWithPath:path];
         AudioServicesCreateSystemSoundID((CFURLRef) pathURL, &explosion);
-		//		AudioServicesPlaySystemSound(explosion);
     }
     else
     {
@@ -125,7 +124,8 @@ int answered = 0;
 	[npImage setHidden:YES];
 }
 
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
+{
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
     
@@ -138,7 +138,6 @@ int answered = 0;
 		[problemView createMovableMarker:touchPoint ofType:1]; // create an Ep movable marker
 		epImage.hidden = YES;
 		[epImage setUserInteractionEnabled:NO];
-//		[epImage setAlpha:0.0];
 	}
 	else if (CGRectContainsPoint(npImage.frame, touchPoint) && !npImage.isHidden && [npImage isUserInteractionEnabled]) // else if user clicks on a nucleophile
 	{
@@ -152,12 +151,11 @@ int answered = 0;
 	{
 		draggingType = NONE; // set type being dragged as nothing
 	}
-	
-	//	
-	//    [problemView createMovableMarker:touchPoint ofType:(arc4random()%2)+1];
+
 }
 
--(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event 
+{
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
 	
@@ -167,7 +165,8 @@ int answered = 0;
     [problemView setMovableMarkerPosition:touchPoint];
 }
 
--(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event 
+{
     UITouch *touch = [[event allTouches] anyObject]; // make a touch variable to easily reference touch events
     CGPoint touchPoint = [touch locationInView:problemView]; // get the (X,Y) coordinates that were touched
     CGPoint hitbox;
@@ -350,7 +349,8 @@ int answered = 0;
     return ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight));
 }
 
--(void) dealloc {
+-(void) dealloc 
+{
 	AudioServicesDisposeSystemSoundID(explosion);
 	[epImage release];
 	[npImage release];
@@ -365,192 +365,3 @@ int answered = 0;
 
 
 @end
-
-//-(void) createExplosionAtX:(int)x Y:(int)y
-//{
-//	AudioServicesPlaySystemSound(explosion); // Play explosion sound FX
-//	UIImageView *explode = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 140.0/2 * iPadScale, 200.0/2 * iPadScale)];
-//	
-//	explode.center = CGPointMake(x, y);
-//	
-//	explode.animationImages = explosionFrames;
-//	explode.animationDuration = 1.0;
-//	explode.animationRepeatCount = 1;
-//	
-//	[self.view addSubview:explode];
-//	[explode startAnimating];
-//	
-//	[explode release];
-//	
-//}
-
-//-(void) createExplosionAtX:(int)x Y:(int)y
-//{
-//	AudioServicesPlaySystemSound(explosion); // Play explosion sound FX
-//	UIImageView *explode = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 140.0/2 * iPadScale, 200.0/2 * iPadScale)];
-//	
-//	explode.center = CGPointMake(x, y);
-//	
-//	explode.animationImages = explosionFrames;
-//	explode.animationDuration = 1.0;
-//	explode.animationRepeatCount = 1;
-//	
-//	[self.view addSubview:explode];
-//	[explode startAnimating];
-//	
-//	[explode release];
-//	
-//}
-
-//- (void) fadeInMarkers
-//{
-//	// If neither are hidden, why do anything!?!?!?!
-//	if (!npImage.isHidden && !epImage.isHidden) {
-//		return;
-//	}
-//	
-//	int yPos;
-//	int currentMarker;
-//	
-//	if (npImage.isHidden) {
-//		yPos = npImage.center.y;
-//		currentMarker = NUCLEOSONIC;
-//		npImage.center = CGPointMake(npImage.center.x, -30 * iPadScale);
-//	}
-//	else if (epImage.isHidden) {
-//		currentMarker = ELECTROKNUCKLES;
-//		yPos = epImage.center.y;
-//		epImage.center = CGPointMake(epImage.center.x, -30 * iPadScale);
-//	}
-//		
-//	[UIView animateWithDuration:0.4
-//						  delay:1.0
-//						options:UIViewAnimationOptionCurveEaseIn
-//					 animations:^{
-//						if (npImage.isHidden) {
-//							npImage.center = CGPointMake(npImage.center.x, yPos);
-//							npImage.hidden = NO;
-//						}
-//						else if (epImage.isHidden) {
-//							epImage.center = CGPointMake(epImage.center.x, yPos);
-//							epImage.hidden = NO;
-//						}
-//					 }
-//					 completion:^(BOOL finished){
-//						 // once the marker hits the scale, bounce that baby!!!
-//						 [UIView animateWithDuration:0.2
-//											   delay: 0.0
-//											 options: UIViewAnimationOptionCurveEaseOut
-//										  animations:^{
-//											  if (currentMarker == NUCLEOSONIC) {
-//												  npImage.center = CGPointMake(npImage.center.x, npImage.center.y - 30 * iPadScale);
-//												  npImage.hidden = NO;
-//											  }
-//											  else if (currentMarker == ELECTROKNUCKLES) {
-//												  epImage.center = CGPointMake(epImage.center.x, epImage.center.y - 30 * iPadScale);
-//												  epImage.hidden = NO;
-//											  }
-//										  }
-//										  completion:^(BOOL finished){
-//											  // once the marker hits the scale, bounce that baby!!!
-//											  [UIView animateWithDuration:0.2
-//																	delay: 0.0
-//																  options: UIViewAnimationOptionCurveEaseIn
-//															   animations:^{
-//																   if (currentMarker == NUCLEOSONIC) {
-//																	   npImage.center = CGPointMake(npImage.center.x, npImage.center.y + 30 * iPadScale);
-//																	   npImage.hidden = NO;
-//																   }
-//																   else if (currentMarker == ELECTROKNUCKLES) {
-//																	   epImage.center = CGPointMake(epImage.center.x, epImage.center.y + 30 * iPadScale);
-//																	   epImage.hidden = NO;
-//																   }
-//															   }
-//															   completion:^(BOOL finished){
-//																   // once the marker hits the scale, bounce that baby!!!
-//																   [epImage setUserInteractionEnabled:YES];
-//																   [npImage setUserInteractionEnabled:YES];
-//															   }];
-//										  }];
-//					 }];
-//}
-
-
-//// Taken from http://iphonedevelopertips.com/user-interface/move-an-image-with-animation.html
-//- (void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration
-//			scale:(int)scale x:(CGFloat)x y:(CGFloat)y
-//{
-//	// Setup the animation
-//	[UIView beginAnimations:nil context:NULL];
-//	[UIView setAnimationDuration:duration];
-//	[UIView setAnimationBeginsFromCurrentState:YES];
-//	
-//	// The transform matrix
-//	CGAffineTransform transform = CGAffineTransformMakeTranslation(x, y);
-//	image.transform = transform;
-//	
-//	CGAffineTransform scaleTo = CGAffineTransformScale(transform, scale, scale);
-//	image.transform = scaleTo;
-//	
-//	// Commit the changes
-//	[UIView commitAnimations];
-//	
-//}
-
-//-(void) rotateGear:(UIView*)g TowardPointX:(int)x Y:(int)y;
-//{
-//	// Setup the animation
-//	[UIView beginAnimations:nil context:NULL];
-//	[UIView setAnimationDuration:0.5];
-//	[UIView setAnimationCurve:2];
-//	[UIView setAnimationBeginsFromCurrentState:YES];
-//	
-//	float dy = g.center.y - y;
-//	float dx = g.center.x - x;
-//	
-//	g.transform = CGAffineTransformMakeRotation(-atan2(dy,dx) - DEGREES_TO_RADIANS(13));
-//	
-//	// Commit the changes
-//	[UIView commitAnimations];
-//}
-
-//-(void) rotateCannon:(UIView*)c TowardPointX:(int)x Y:(int)y;
-//{
-//	// Setup the animation
-//	[UIView beginAnimations:nil context:NULL];
-//	[UIView setAnimationDuration:0.5];
-//	[UIView setAnimationCurve:2];
-//	[UIView setAnimationBeginsFromCurrentState:YES];
-//	
-//	float dy = c.center.y - y;
-//	float dx = c.center.x - x;
-//	
-//	currentCannonAngle = atan2(dy,dx) - DEGREES_TO_RADIANS(90); // ugh, sloppy and unflexible (assigns only to one cannon)
-//	
-//	cannon.transform = CGAffineTransformMakeRotation(currentCannonAngle);
-//	
-//	// Commit the changes
-//	[UIView commitAnimations];
-//}
-
-//-(void) fireLaserFromCannonToPoint:(CGPoint)touchPoint
-//{
-//	[laser setAlpha:1.0];
-//	
-//	double distance = sqrt(pow((touchPoint.x - laser.center.x), 2.0) + pow(touchPoint.y - laser.center.y, 2.0));
-//	
-//	laser.bounds = CGRectMake(cannon.center.x, cannon.center.y, 20 * iPadScale, distance);
-//	laser.center = cannon.center;
-//	
-//	laser.transform = CGAffineTransformMakeRotation(currentCannonAngle);
-//	
-//	[UIView beginAnimations:nil context:NULL];
-//	[UIView setAnimationDuration:1.0];
-//	[UIView setAnimationCurve:10];
-////	[UIView setAnimationBeginsFromCurrentState:YES];
-//	
-//	[laser setAlpha:0.0];
-//	
-//	// Commit the changes
-//	[UIView commitAnimations];
-//}

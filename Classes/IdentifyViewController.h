@@ -30,7 +30,6 @@
 
 
 -(IBAction) tappedNext:(UIButton *)sender;
--(void) moveImage:(UIImageView *)image duration:(NSTimeInterval)duration scale:(int)scale x:(CGFloat)x y:(CGFloat)y;
 -(void) recordAnswer;
 -(void) newProblem;
 

@@ -432,6 +432,18 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		26E027DB1532C01A00A3AEBE /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				6525DFC5153177B8002D333E /* laser_charging.wav */,
+				6525DFB115311975002D333E /* laser-boom.wav */,
+				6525DFAD15310891002D333E /* laser_cannon.wav */,
+				6525DFAF153112E0002D333E /* laser_fire.wav */,
+				6525DFC115317350002D333E /* laser_release.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,11 +468,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6525DFC5153177B8002D333E /* laser_charging.wav */,
-				6525DFB115311975002D333E /* laser-boom.wav */,
-				6525DFAD15310891002D333E /* laser_cannon.wav */,
-				6525DFAF153112E0002D333E /* laser_fire.wav */,
-				6525DFC115317350002D333E /* laser_release.wav */,
+				26E027DB1532C01A00A3AEBE /* Sounds */,
 				26C6256414F5984300B8A163 /* XMLs */,
 				26C6256314F5983E00B8A163 /* Images */,
 				26C6256214F5983400B8A163 /* Views */,

@@ -28,8 +28,6 @@ NSArray *frames;
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) 
     {
-        [instructionsLabel setText:@"Draw the arrows to the appropiate spots"];
-		tries = 0;
     }
     return self;
 }
@@ -38,6 +36,9 @@ NSArray *frames;
 {
     [super viewDidLoad];
 	
+    [instructionsLabel setText:@"Draw the arrows to the appropiate spots"];
+    tries = 0;
+    
 	frames = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"laser_red.png"], [UIImage imageNamed:@"laser_red2.png"], nil];
 	
 	originalProblemViewPos = problemView.center;
@@ -59,7 +60,6 @@ NSArray *frames;
     {
         NSURL *pathURL = [NSURL fileURLWithPath:path];
         AudioServicesCreateSystemSoundID((CFURLRef) pathURL, &laserFire);
-		//		AudioServicesPlaySystemSound(explosion);
     }
     else
     {
@@ -72,7 +72,6 @@ NSArray *frames;
     {
         NSURL *pathURL = [NSURL fileURLWithPath:path];
         AudioServicesCreateSystemSoundID((CFURLRef) pathURL, &laserCharge);
-		//		AudioServicesPlaySystemSound(explosion);
     }
     else
     {
@@ -82,7 +81,6 @@ NSArray *frames;
 
 -(void) pulsateLaser
 {			   
-//	[megalaser setImage:[UIImage imageNamed:@"laser_red2.png"]];
 	[UIView animateWithDuration: 1.0
 						  delay: 0.0
 						options: UIViewAnimationOptionCurveLinear
@@ -98,7 +96,8 @@ NSArray *frames;
 	
 }
 
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
+{
     if (tries > 1)
     {
         return;
@@ -107,12 +106,14 @@ NSArray *frames;
     CGPoint touchPoint = [touch locationInView:problemView];
     
     CGPoint hitbox = [problemView isHitbox:touchPoint];
-    if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f))) {
+    if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f))) 
+    {
         [problemView startArrow:hitbox];
     }
 }
 
--(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event 
+{
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
     
@@ -121,7 +122,8 @@ NSArray *frames;
     }
 }
 
--(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event 
+{
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchPoint = [touch locationInView:problemView];
     
@@ -129,14 +131,6 @@ NSArray *frames;
         CGPoint hitbox = [problemView isHitbox:touchPoint];
         if (!CGPointEqualToPoint(hitbox, CGPointMake(-1.0f, -1.0f))) {
             [problemView endArrow:hitbox];
-            
-            if ([problemView doesLastArrowMatchProblem])
-            {
-            }
-            if ([problemView doesAllArrowsMatchProblem])
-            {
-            }
-            
         } else {
             [problemView removeLastArrow];
         }
@@ -148,8 +142,6 @@ NSArray *frames;
     submitButton.hidden = YES;
 	undoButtons.hidden = YES;
     nextButton.hidden = NO;
-    responseText.message = @"CORRECT!!! Hit [Next] to move to the next problem!";
-    [responseText show];
     [self addScore:100];
 }
 
@@ -159,20 +151,16 @@ NSArray *frames;
     {
         submitButton.hidden = YES;
 		undoButtons.hidden = YES;
-//        nextButton.hidden = NO;
-        responseText.message = @"I'm Sorry, you're out of tries. Hit [Next] to move to the next problem.";
 		AudioServicesPlayAlertSound(laserFire);
 		[self playFireAnimation];
     }
     else
     {
-        responseText.message = @"That was incorrect. Try again.";
 		AudioServicesPlayAlertSound(laserCharge);
 		[self playFlashCharge];
     }
     tries++;
     [self removeScore:50];
-//    [responseText show];
 }
 
 -(IBAction)nextAct:(id)sender

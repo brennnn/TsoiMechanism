@@ -363,13 +363,16 @@
 
 -(void) removeLastArrow 
 {
-    arrowInProgress = FALSE;
-    if (arrowOrder > [self getArrowStackCount])
-	{
-        arrowOrder--;
-	}
-    [arrowStack removeLastObject];
-    [self setNeedsDisplay];
+    if ([arrowStack count] > 0)
+    {
+        arrowInProgress = FALSE;
+        if (arrowOrder > [self getArrowStackCount])
+        {
+            arrowOrder--;
+        }
+        [arrowStack removeLastObject];
+        [self setNeedsDisplay];
+    }
 }
 
 -(void) removeAllArrows 
