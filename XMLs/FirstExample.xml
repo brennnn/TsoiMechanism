@@ -31,12 +31,12 @@
         <Bond>
             <LocationA x="120" y="120" />
             <LocationB x="60" y="120" />
-            <BondOrder>2</BondOrder>
+            <BondOrder>1</BondOrder>
         </Bond>
         <Bond>
             <LocationA x="120" y="120" />
             <LocationB x="120" y="60" />
-            <BondOrder>3</BondOrder>
+            <BondOrder>1</BondOrder>
         </Bond>
         <Bond>
             <LocationA x="120" y="120" />
@@ -50,14 +50,14 @@
             <Label>O</Label>
             <Charge>0</Charge>
             <Electrons>4</Electrons>
-            <Type>1</Type>
+            <Type>0</Type>
         </Element>
         <Element>
             <Location x="60" y="120" />
             <Label>H</Label>
             <Charge>0</Charge>
             <Electrons>0</Electrons>
-            <Type>0</Type>
+            <Type>1</Type>
         </Element>
         <Element>
             <Location x="180" y="120" />

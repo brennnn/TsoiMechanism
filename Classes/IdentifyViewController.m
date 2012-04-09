@@ -191,11 +191,16 @@ int answered = 0;
 			{
 				[problemView showElectrophileMarker:hitbox]; // create a marker at that spot
 				[self showEpSuccessImage];
-				
+				[self addScore:50];
 				[self recordAnswer];
 			}
 			else
 			{
+                if (score > 0)
+                {
+                    [self removeScore:10];
+                }
+                
 				[Animations fireLaser:laser fromCannon:cannon toPoint:touchPoint];
 				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionRedFrames];
 				
@@ -218,11 +223,16 @@ int answered = 0;
 			{
 				[problemView showNucleophileMarker:hitbox]; // create a marker at that spot
 				[self showNpSuccessImage];
-				
+				[self addScore:50];
 				[self recordAnswer];
 			}
 			else
 			{
+                if (score > 0)
+                {
+                    [self removeScore:10];
+                }
+                
 				[Animations fireLaser:laser fromCannon:cannon toPoint:touchPoint];
 				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionBlueFrames];
 				

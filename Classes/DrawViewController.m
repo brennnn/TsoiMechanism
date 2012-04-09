@@ -250,7 +250,7 @@ double currentCannon2Angle;
 
 -(void)setDrawInstructions
 {
-	self.instructionsLabel.text = @"Draw arrows by from the highlighted elements and bonds in order to complete the problem.";
+	//self.instructionsLabel.text = @"Draw arrows by from the highlighted elements and bonds in order to complete the problem.";
 }
 
 - (IBAction)tappedNext:(id)sender 
