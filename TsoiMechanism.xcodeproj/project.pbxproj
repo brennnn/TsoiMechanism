@@ -18,6 +18,10 @@
 		264F79B8152A799E00757C1F /* RootViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264F79B3152A799E00757C1F /* RootViewController~ipad.xib */; };
 		265DB5A114F6A8540070D769 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265DB5A014F6A8540070D769 /* MainWindow.xib */; };
 		266BA54214F8311000B06C88 /* ModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BA54114F8311000B06C88 /* ModeViewController.m */; };
+		26801469153387480009FDEF /* C3O_and_CN.xml in Resources */ = {isa = PBXBuildFile; fileRef = 26801465153387480009FDEF /* C3O_and_CN.xml */; };
+		2680146A153387480009FDEF /* C4H9_and_HYDROXIDE.xml in Resources */ = {isa = PBXBuildFile; fileRef = 26801466153387480009FDEF /* C4H9_and_HYDROXIDE.xml */; };
+		2680146B153387480009FDEF /* CH3CH2O_and_C2Br.xml in Resources */ = {isa = PBXBuildFile; fileRef = 26801467153387480009FDEF /* CH3CH2O_and_C2Br.xml */; };
+		2680146C153387480009FDEF /* Methane_Water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 26801468153387480009FDEF /* Methane_Water.xml */; };
 		26C6257914F59A4600B8A163 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6257714F59A4600B8A163 /* RootViewController.m */; };
 		26C6258414F59C8D00B8A163 /* IdentifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258214F59C8D00B8A163 /* IdentifyViewController.m */; };
 		26C6258A14F59CB900B8A163 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258814F59CB900B8A163 /* DrawViewController.m */; };
@@ -137,6 +141,10 @@
 		265DB5A014F6A8540070D769 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = Views/MainWindow.xib; sourceTree = "<group>"; };
 		266BA54014F8311000B06C88 /* ModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeViewController.h; sourceTree = "<group>"; };
 		266BA54114F8311000B06C88 /* ModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeViewController.m; sourceTree = "<group>"; };
+		26801465153387480009FDEF /* C3O_and_CN.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = C3O_and_CN.xml; path = XML/C3O_and_CN.xml; sourceTree = "<group>"; };
+		26801466153387480009FDEF /* C4H9_and_HYDROXIDE.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = C4H9_and_HYDROXIDE.xml; path = XML/C4H9_and_HYDROXIDE.xml; sourceTree = "<group>"; };
+		26801467153387480009FDEF /* CH3CH2O_and_C2Br.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = CH3CH2O_and_C2Br.xml; path = XML/CH3CH2O_and_C2Br.xml; sourceTree = "<group>"; };
+		26801468153387480009FDEF /* Methane_Water.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Methane_Water.xml; path = XML/Methane_Water.xml; sourceTree = "<group>"; };
 		26C6255014F597F600B8A163 /* GDataXMLNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		26C6255114F597F600B8A163 /* GDataXMLNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		26C6255414F5981A00B8A163 /* ProblemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProblemView.h; sourceTree = "<group>"; };
@@ -382,6 +390,10 @@
 		26C6256414F5984300B8A163 /* XMLs */ = {
 			isa = PBXGroup;
 			children = (
+				26801465153387480009FDEF /* C3O_and_CN.xml */,
+				26801466153387480009FDEF /* C4H9_and_HYDROXIDE.xml */,
+				26801467153387480009FDEF /* CH3CH2O_and_C2Br.xml */,
+				26801468153387480009FDEF /* Methane_Water.xml */,
 			);
 			name = XMLs;
 			sourceTree = "<group>";
@@ -688,6 +700,10 @@
 				6525DFCA15317A7B002D333E /* submit.png in Resources */,
 				6583F8BE153256A500774CA2 /* laser_red2.png in Resources */,
 				6CCB03AD1532A97500F27B80 /* main_pg.png in Resources */,
+				26801469153387480009FDEF /* C3O_and_CN.xml in Resources */,
+				2680146A153387480009FDEF /* C4H9_and_HYDROXIDE.xml in Resources */,
+				2680146B153387480009FDEF /* CH3CH2O_and_C2Br.xml in Resources */,
+				2680146C153387480009FDEF /* Methane_Water.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
