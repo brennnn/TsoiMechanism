@@ -161,6 +161,13 @@ double currentCannon2Angle;
 					[problemView showElectrophileMarker:hitbox];
                     
                     [self addScore:100];
+                    
+                    if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
+					{
+                        
+						// Problem was correct!
+						nextButton.hidden = NO;
+					}
 				} 
 				else 
 				{

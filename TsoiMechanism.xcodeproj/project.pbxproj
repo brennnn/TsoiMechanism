@@ -22,7 +22,6 @@
 		26C6258414F59C8D00B8A163 /* IdentifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258214F59C8D00B8A163 /* IdentifyViewController.m */; };
 		26C6258A14F59CB900B8A163 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258814F59CB900B8A163 /* DrawViewController.m */; };
 		26C6258F14F59CC500B8A163 /* ChallengeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258D14F59CC500B8A163 /* ChallengeViewController.m */; };
-		26C6259914F59E1400B8A163 /* FirstExample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259814F59E1400B8A163 /* FirstExample.xml */; };
 		26C6259F14F59E2F00B8A163 /* ChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259A14F59E2F00B8A163 /* ChallengeViewController.xib */; };
 		26C625A014F59E2F00B8A163 /* IdentifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259B14F59E2F00B8A163 /* IdentifyViewController.xib */; };
 		26C625A214F59E2F00B8A163 /* DrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C6259D14F59E2F00B8A163 /* DrawViewController.xib */; };
@@ -162,7 +161,6 @@
 		26C6258814F59CB900B8A163 /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		26C6258C14F59CC500B8A163 /* ChallengeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeViewController.h; sourceTree = "<group>"; };
 		26C6258D14F59CC500B8A163 /* ChallengeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeViewController.m; sourceTree = "<group>"; };
-		26C6259814F59E1400B8A163 /* FirstExample.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = FirstExample.xml; path = XMLs/FirstExample.xml; sourceTree = "<group>"; };
 		26C6259A14F59E2F00B8A163 /* ChallengeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChallengeViewController.xib; path = Views/ChallengeViewController.xib; sourceTree = "<group>"; };
 		26C6259B14F59E2F00B8A163 /* IdentifyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IdentifyViewController.xib; path = Views/IdentifyViewController.xib; sourceTree = "<group>"; };
 		26C6259D14F59E2F00B8A163 /* DrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DrawViewController.xib; path = Views/DrawViewController.xib; sourceTree = "<group>"; };
@@ -384,7 +382,6 @@
 		26C6256414F5984300B8A163 /* XMLs */ = {
 			isa = PBXGroup;
 			children = (
-				26C6259814F59E1400B8A163 /* FirstExample.xml */,
 			);
 			name = XMLs;
 			sourceTree = "<group>";
@@ -598,7 +595,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C6259914F59E1400B8A163 /* FirstExample.xml in Resources */,
 				26C6259F14F59E2F00B8A163 /* ChallengeViewController.xib in Resources */,
 				26C625A014F59E2F00B8A163 /* IdentifyViewController.xib in Resources */,
 				26C625A214F59E2F00B8A163 /* DrawViewController.xib in Resources */,

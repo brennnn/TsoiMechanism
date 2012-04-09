@@ -718,7 +718,7 @@
             
             //add charge, electrons
             
-            if (element.electrons > 0)
+            if ((element.electrons > 0) || (element.charge > 0))
             {
                 BOOL upQuad = FALSE;
                 BOOL rightQuad = FALSE;
@@ -729,32 +729,32 @@
                 {
                     if (CGPointEqualToPoint(bond.locationA, element.location))
                     {
-                        if ((bond.locationB.x - bond.locationA.x) < 0)
+                        if (((bond.locationB.x - bond.locationA.x) < 0) && ((bond.locationB.y - bond.locationA.y) == 0))
                         {
                             leftQuad = TRUE;
-                        } else if ((bond.locationB.x - bond.locationA.x) > 0)
+                        } else if (((bond.locationB.x - bond.locationA.x) > 0) && ((bond.locationB.y - bond.locationA.y) == 0))
                         {
                             rightQuad = TRUE;
-                        } else if ((bond.locationB.y - bond.locationA.y) < 0)
+                        } else if (((bond.locationB.y - bond.locationA.y) < 0) && ((bond.locationB.x - bond.locationA.x) == 0))
                         {
                             upQuad = TRUE;
-                        } else if ((bond.locationB.y - bond.locationA.y) > 0)
+                        } else if (((bond.locationB.y - bond.locationA.y) > 0) && ((bond.locationB.x - bond.locationA.x) == 0))
                         {
                             downQuad = TRUE;
                         }
                         
                     } else if (CGPointEqualToPoint(bond.locationB, element.location))
                     {
-                        if ((bond.locationA.x - bond.locationB.x) < 0)
+                        if (((bond.locationA.x - bond.locationB.x) < 0) && ((bond.locationA.y - bond.locationB.y) == 0))
                         {
                             leftQuad = TRUE;
-                        } else if ((bond.locationA.x - bond.locationB.x) > 0)
+                        } else if (((bond.locationA.x - bond.locationB.x) > 0) && ((bond.locationA.y - bond.locationB.y) == 0))
                         {
                             rightQuad = TRUE;
-                        } else if ((bond.locationA.y - bond.locationB.y) < 0)
+                        } else if (((bond.locationA.y - bond.locationB.y) < 0) && ((bond.locationA.x - bond.locationB.x) == 0))
                         {
                             upQuad = TRUE;
-                        } else if ((bond.locationA.y - bond.locationB.y) > 0)
+                        } else if (((bond.locationA.y - bond.locationB.y) > 0) && ((bond.locationA.x - bond.locationB.x) == 0))
                         {
                             downQuad = TRUE;
                         }
@@ -1169,7 +1169,7 @@
     } else 
     {
         float length = sqrtf(dx * dx + dy * dy);
-        float scale = (length + (labelSize.width > labelSize.height ? (labelSize.width / 2.0f) : (labelSize.height / 2.0f))) / length;
+        float scale = (length - (labelSize.width > labelSize.height ? (labelSize.width / 2.0f) : (labelSize.height / 2.0f))) / length;
         dx *= scale;
         dy *= scale;
         inset.x = dx;
