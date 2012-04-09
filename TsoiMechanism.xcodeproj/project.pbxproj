@@ -121,6 +121,7 @@
 		659EAF75152A8A20005EE158 /* screw copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF58152A8A20005EE158 /* screw copy.png */; };
 		659EAF76152A8A20005EE158 /* table.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF59152A8A20005EE158 /* table.png */; };
 		659EAF79152A8A7B005EE158 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659EAF78152A8A7B005EE158 /* AudioToolbox.framework */; };
+		6CCB03AD1532A97500F27B80 /* main_pg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCB03AC1532A97500F27B80 /* main_pg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -256,6 +257,7 @@
 		659EAF58152A8A20005EE158 /* screw copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screw copy.png"; sourceTree = "<group>"; };
 		659EAF59152A8A20005EE158 /* table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table.png; sourceTree = "<group>"; };
 		659EAF78152A8A7B005EE158 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6CCB03AC1532A97500F27B80 /* main_pg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_pg.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TsoiMechanism-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TsoiMechanism-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -359,62 +361,14 @@
 				6525DFAA15310430002D333E /* cannon_top.png */,
 				6525DFA71530FB54002D333E /* laser_red.png */,
 				6525DFA51530F7AF002D333E /* dungeon_2.png */,
+				6CCB03AC1532A97500F27B80 /* main_pg.png */,
 				6525DFA11530F717002D333E /* np_marker_2.png */,
 				6525DFA21530F717002D333E /* ep_marker_2.png */,
 				6525DF9F1530F623002D333E /* dungeon.png */,
-				6525DF741530074D002D333E /* explode_red0.png */,
-				6525DF751530074D002D333E /* explode_red1.png */,
-				6525DF761530074D002D333E /* explode_red2.png */,
-				6525DF771530074D002D333E /* explode_red3.png */,
-				6525DF781530074D002D333E /* explode_red4.png */,
-				6525DF791530074D002D333E /* explode_red5.png */,
-				6525DF7A1530074D002D333E /* explode_red6.png */,
-				6525DF7B1530074D002D333E /* explode_red7.png */,
-				6525DF7C1530074D002D333E /* explode_red8.png */,
-				6525DF7D1530074D002D333E /* explode_red9.png */,
-				6525DF7E1530074D002D333E /* explode_red10.png */,
-				6525DF7F1530074D002D333E /* explode_red11.png */,
-				6525DF801530074D002D333E /* explode_red12.png */,
-				6525DF811530074D002D333E /* explode_red13.png */,
-				6525DF821530074D002D333E /* explode_red14.png */,
-				6525DF831530074D002D333E /* explode_red15.png */,
-				6525DF5315300739002D333E /* explode_blue0.png */,
-				6525DF5415300739002D333E /* explode_blue1.png */,
-				6525DF5515300739002D333E /* explode_blue2.png */,
-				6525DF5615300739002D333E /* explode_blue3.png */,
-				6525DF5715300739002D333E /* explode_blue4.png */,
-				6525DF5815300739002D333E /* explode_blue5.png */,
-				6525DF5915300739002D333E /* explode_blue6.png */,
-				6525DF5A15300739002D333E /* explode_blue7.png */,
-				6525DF5B15300739002D333E /* explode_blue8.png */,
-				6525DF5C15300739002D333E /* explode_blue9.png */,
-				6525DF5D15300739002D333E /* explode_blue10.png */,
-				6525DF5E15300739002D333E /* explode_blue11.png */,
-				6525DF5F15300739002D333E /* explode_blue12.png */,
-				6525DF6015300739002D333E /* explode_blue13.png */,
-				6525DF6115300739002D333E /* explode_blue14.png */,
-				6525DF6215300739002D333E /* explode_blue15.png */,
+				6CCB03AA1532952600F27B80 /* Explosion */,
 				659EAF3E152A8A20005EE158 /* burn-grunge-iPhone.png */,
 				659EAF3F152A8A20005EE158 /* burn-grunge.jpg */,
 				659EAF40152A8A20005EE158 /* cannon.png */,
-				659EAF41152A8A20005EE158 /* explosion.wav */,
-				659EAF42152A8A20005EE158 /* explosion1.png */,
-				659EAF43152A8A20005EE158 /* explosion2.png */,
-				659EAF44152A8A20005EE158 /* explosion3.png */,
-				659EAF45152A8A20005EE158 /* explosion4.png */,
-				659EAF46152A8A20005EE158 /* explosion5.png */,
-				659EAF47152A8A20005EE158 /* explosion6.png */,
-				659EAF48152A8A20005EE158 /* explosion7.png */,
-				659EAF49152A8A20005EE158 /* explosion8.png */,
-				659EAF4A152A8A20005EE158 /* explosion9.png */,
-				659EAF4B152A8A20005EE158 /* explosion10.png */,
-				659EAF4C152A8A20005EE158 /* explosion11.png */,
-				659EAF4D152A8A20005EE158 /* explosion12.png */,
-				659EAF4E152A8A20005EE158 /* explosion13.png */,
-				659EAF4F152A8A20005EE158 /* explosion14.png */,
-				659EAF50152A8A20005EE158 /* explosion15.png */,
-				659EAF51152A8A20005EE158 /* explosion16.png */,
-				659EAF52152A8A20005EE158 /* explosion17.png */,
 				659EAF53152A8A20005EE158 /* gear_ultimate.png */,
 				659EAF54152A8A20005EE158 /* laser.png */,
 				659EAF55152A8A20005EE158 /* laser2.png */,
@@ -524,6 +478,63 @@
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6CCB03AA1532952600F27B80 /* Explosion */ = {
+			isa = PBXGroup;
+			children = (
+				659EAF41152A8A20005EE158 /* explosion.wav */,
+				659EAF42152A8A20005EE158 /* explosion1.png */,
+				659EAF43152A8A20005EE158 /* explosion2.png */,
+				659EAF44152A8A20005EE158 /* explosion3.png */,
+				659EAF45152A8A20005EE158 /* explosion4.png */,
+				659EAF46152A8A20005EE158 /* explosion5.png */,
+				659EAF47152A8A20005EE158 /* explosion6.png */,
+				659EAF48152A8A20005EE158 /* explosion7.png */,
+				659EAF49152A8A20005EE158 /* explosion8.png */,
+				659EAF4A152A8A20005EE158 /* explosion9.png */,
+				659EAF4B152A8A20005EE158 /* explosion10.png */,
+				659EAF4C152A8A20005EE158 /* explosion11.png */,
+				659EAF4D152A8A20005EE158 /* explosion12.png */,
+				659EAF4E152A8A20005EE158 /* explosion13.png */,
+				659EAF4F152A8A20005EE158 /* explosion14.png */,
+				659EAF50152A8A20005EE158 /* explosion15.png */,
+				659EAF51152A8A20005EE158 /* explosion16.png */,
+				659EAF52152A8A20005EE158 /* explosion17.png */,
+				6525DF741530074D002D333E /* explode_red0.png */,
+				6525DF751530074D002D333E /* explode_red1.png */,
+				6525DF761530074D002D333E /* explode_red2.png */,
+				6525DF771530074D002D333E /* explode_red3.png */,
+				6525DF781530074D002D333E /* explode_red4.png */,
+				6525DF791530074D002D333E /* explode_red5.png */,
+				6525DF7A1530074D002D333E /* explode_red6.png */,
+				6525DF7B1530074D002D333E /* explode_red7.png */,
+				6525DF7C1530074D002D333E /* explode_red8.png */,
+				6525DF7D1530074D002D333E /* explode_red9.png */,
+				6525DF7E1530074D002D333E /* explode_red10.png */,
+				6525DF7F1530074D002D333E /* explode_red11.png */,
+				6525DF801530074D002D333E /* explode_red12.png */,
+				6525DF811530074D002D333E /* explode_red13.png */,
+				6525DF821530074D002D333E /* explode_red14.png */,
+				6525DF831530074D002D333E /* explode_red15.png */,
+				6525DF5315300739002D333E /* explode_blue0.png */,
+				6525DF5415300739002D333E /* explode_blue1.png */,
+				6525DF5515300739002D333E /* explode_blue2.png */,
+				6525DF5615300739002D333E /* explode_blue3.png */,
+				6525DF5715300739002D333E /* explode_blue4.png */,
+				6525DF5815300739002D333E /* explode_blue5.png */,
+				6525DF5915300739002D333E /* explode_blue6.png */,
+				6525DF5A15300739002D333E /* explode_blue7.png */,
+				6525DF5B15300739002D333E /* explode_blue8.png */,
+				6525DF5C15300739002D333E /* explode_blue9.png */,
+				6525DF5D15300739002D333E /* explode_blue10.png */,
+				6525DF5E15300739002D333E /* explode_blue11.png */,
+				6525DF5F15300739002D333E /* explode_blue12.png */,
+				6525DF6015300739002D333E /* explode_blue13.png */,
+				6525DF6115300739002D333E /* explode_blue14.png */,
+				6525DF6215300739002D333E /* explode_blue15.png */,
+			);
+			name = Explosion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -672,6 +683,7 @@
 				6525DFC915317A7B002D333E /* erase.png in Resources */,
 				6525DFCA15317A7B002D333E /* submit.png in Resources */,
 				6583F8BE153256A500774CA2 /* laser_red2.png in Resources */,
+				6CCB03AD1532A97500F27B80 /* main_pg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
