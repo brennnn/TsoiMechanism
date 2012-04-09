@@ -77,7 +77,7 @@
 								<string key="NSFrame">{{230, 259}, {20, 12}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="488322545"/>
+								<reference key="NSNextKeyView" ref="146105078"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -89,17 +89,17 @@
 							<object class="IBUIImageView" id="488322545">
 								<reference key="NSNextResponder" ref="54063178"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{214, 273}, {53, 53}}</string>
+								<string key="NSFrame">{{214, 273}, {53, 52}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="146105078"/>
+								<reference key="NSNextKeyView" ref="284480041"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">gear_ultimate.png</string>
+									<string key="NSResourceName">ts_gear_ultimate_id.png</string>
 								</object>
 							</object>
 							<object class="IBUILabel" id="754943966">
@@ -164,7 +164,7 @@
 								</object>
 								<object class="NSCustomResource" key="IBUINormalImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">screw copy.png</string>
+									<string key="NSResourceName">ts_screw_close.png</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">2</int>
@@ -189,7 +189,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">cannon.png</string>
+									<string key="NSResourceName">ts_cannon_id.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="348673516">
@@ -198,7 +198,7 @@
 								<string key="NSFrame">{{341, 171}, {52, 47}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="284480041"/>
+								<reference key="NSNextKeyView" ref="488322545"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -227,29 +227,29 @@
 							<object class="IBUIImageView" id="146105078">
 								<reference key="NSNextResponder" ref="54063178"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{290, 209}, {170, 71}}</string>
+								<string key="NSFrame">{{290, 209}, {170, 64}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="348673516"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage" id="885403698">
+								<object class="NSCustomResource" key="IBUIImage" id="552948714">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">scale_nogear.png</string>
+									<string key="NSResourceName">ts_scale_nogear.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="388058205">
 								<reference key="NSNextResponder" ref="54063178"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{32, 209}, {170, 71}}</string>
+								<string key="NSFrame">{{32, 209}, {170, 64}}</string>
 								<reference key="NSSuperview" ref="54063178"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="754943966"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<reference key="IBUIImage" ref="885403698"/>
+								<reference key="IBUIImage" ref="552948714"/>
 							</object>
 							<object class="IBUIButton" id="530452440">
 								<reference key="NSNextResponder" ref="54063178"/>
@@ -784,16 +784,16 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="cannon.png">{1500, 2000}</string>
 			<string key="ep_marker_2.png">{357, 347}</string>
-			<string key="gear_ultimate.png">{1200, 1178}</string>
 			<string key="laser_red_new.png">{357, 376}</string>
 			<string key="next.png">{164, 142}</string>
 			<string key="np_marker_2.png">{357, 347}</string>
-			<string key="scale_nogear.png">{2800, 1054}</string>
-			<string key="screw copy.png">{175, 175}</string>
 			<string key="table.png">{1024, 750}</string>
+			<string key="ts_cannon_id.png">{62, 83}</string>
 			<string key="ts_dungeon.jpg">{480, 300}</string>
+			<string key="ts_gear_ultimate_id.png">{53, 52}</string>
+			<string key="ts_scale_nogear.png">{170, 64}</string>
+			<string key="ts_screw_close.png">{63, 63}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>

@@ -84,7 +84,7 @@
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">gear_ultimate.png</string>
+									<string key="NSResourceName">ts_gear_ultimate_id-ipad.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="1052642630">
@@ -120,16 +120,16 @@
 							<object class="IBUIImageView" id="142791393">
 								<reference key="NSNextResponder" ref="77438492"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{84, 583}, {349, 128}}</string>
+								<string key="NSFrame">{{84, 583}, {349, 131}}</string>
 								<reference key="NSSuperview" ref="77438492"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="305301279"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<object class="NSCustomResource" key="IBUIImage" id="954304163">
+								<object class="NSCustomResource" key="IBUIImage" id="240427043">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">scale_nogear.png</string>
+									<string key="NSResourceName">ts_scale_nogear-ipad.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="652242531">
@@ -160,7 +160,7 @@
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">cannon.png</string>
+									<string key="NSResourceName">ts_cannon_id-ipad.png</string>
 								</object>
 							</object>
 							<object class="IBUIButton" id="33123795">
@@ -204,14 +204,14 @@
 							<object class="IBUIImageView" id="261691028">
 								<reference key="NSNextResponder" ref="77438492"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{626, 583}, {349, 128}}</string>
+								<string key="NSFrame">{{626, 583}, {349, 131}}</string>
 								<reference key="NSSuperview" ref="77438492"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="652242531"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<reference key="IBUIImage" ref="954304163"/>
+								<reference key="IBUIImage" ref="240427043"/>
 							</object>
 							<object class="IBUIButton" id="781846181">
 								<reference key="NSNextResponder" ref="77438492"/>
@@ -233,7 +233,7 @@
 								<reference key="IBUINormalTitleShadowColor" ref="592785601"/>
 								<object class="NSCustomResource" key="IBUINormalImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">screw copy.png</string>
+									<string key="NSResourceName">ts_screw_close-ipad.png</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">2</int>
@@ -753,16 +753,16 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="cannon.png">{1500, 2000}</string>
 			<string key="ep_marker_2.png">{357, 347}</string>
-			<string key="gear_ultimate.png">{1200, 1178}</string>
 			<string key="laser_red_new.png">{357, 376}</string>
 			<string key="next.png">{164, 142}</string>
 			<string key="np_marker_2.png">{357, 347}</string>
-			<string key="scale_nogear.png">{2800, 1054}</string>
-			<string key="screw copy.png">{175, 175}</string>
 			<string key="table.png">{1024, 750}</string>
-			<string key="ts_dungeon-ipad.jpg">{1024, 748}</string>
+			<string key="ts_cannon_id-ipad.png">{162, 216}</string>
+			<string key="ts_dungeon-ipad.jpg">{1024, 768}</string>
+			<string key="ts_gear_ultimate_id-ipad.png">{153, 150}</string>
+			<string key="ts_scale_nogear-ipad.png">{349, 131}</string>
+			<string key="ts_screw_close-ipad.png">{100, 100}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>

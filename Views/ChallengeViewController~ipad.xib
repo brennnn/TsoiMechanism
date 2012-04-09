@@ -93,7 +93,7 @@
 						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">screw copy.png</string>
+							<string key="NSResourceName">ts_screw_close-ipad.png</string>
 						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="418367912">
 							<int key="type">2</int>
@@ -151,7 +151,7 @@
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">cannon_lip_3D.png</string>
+									<string key="NSResourceName">ts_cannon_lip_3D-ipad.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="57701369">
@@ -196,7 +196,7 @@
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">cannon_top.png</string>
+									<string key="NSResourceName">ts_cannon_top-ipad.png</string>
 								</object>
 							</object>
 						</array>
@@ -771,15 +771,15 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="cannon_lip_3D.png">{1200, 176}</string>
-			<string key="cannon_top.png">{1200, 176}</string>
 			<string key="charge_new.png">{492, 240}</string>
 			<string key="erase.png">{127, 109}</string>
 			<string key="laser_red.png">{400, 400}</string>
 			<string key="next.png">{164, 142}</string>
-			<string key="screw copy.png">{175, 175}</string>
 			<string key="submit.png">{139, 124}</string>
-			<string key="ts_dungeon-ipad.jpg">{1024, 748}</string>
+			<string key="ts_cannon_lip_3D-ipad.png">{1024, 160}</string>
+			<string key="ts_cannon_top-ipad.png">{1024, 160}</string>
+			<string key="ts_dungeon-ipad.jpg">{1024, 768}</string>
+			<string key="ts_screw_close-ipad.png">{100, 100}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>

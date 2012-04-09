@@ -172,7 +172,7 @@
         {
             if (moleculeIndex == 1)
             {
-                return CGPointMake(element.location.x + (MOLECULE_WIDTH * MOLECULE_MULTIPLIER), element.location.y * MOLECULE_MULTIPLIER);
+                return CGPointMake((element.location.x * MOLECULE_MULTIPLIER) + (MOLECULE_WIDTH * MOLECULE_MULTIPLIER), element.location.y * MOLECULE_MULTIPLIER);
             } else {
                 return CGPointMake(element.location.x * MOLECULE_MULTIPLIER, element.location.y * MOLECULE_MULTIPLIER);
             }

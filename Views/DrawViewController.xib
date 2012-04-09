@@ -110,24 +110,24 @@
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage" id="345466341">
+								<object class="NSCustomResource" key="IBUIImage" id="303840188">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">cannon.png</string>
+									<string key="NSResourceName">ts_cannon_draw.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="7748883">
 								<reference key="NSNextResponder" ref="9202355"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrame">{{73, 278}, {72, 72}}</string>
+								<string key="NSFrame">{{73, 278}, {72, 71}}</string>
 								<reference key="NSSuperview" ref="9202355"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="83151309"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage" id="202992632">
+								<object class="NSCustomResource" key="IBUIImage" id="612123397">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">gear_ultimate.png</string>
+									<string key="NSResourceName">ts_gear_ultimate_draw.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="127123185">
@@ -141,19 +141,19 @@
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<reference key="IBUIImage" ref="345466341"/>
+								<reference key="IBUIImage" ref="303840188"/>
 							</object>
 							<object class="IBUIImageView" id="83151309">
 								<reference key="NSNextResponder" ref="9202355"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrame">{{335, 278}, {72, 72}}</string>
+								<string key="NSFrame">{{335, 278}, {72, 71}}</string>
 								<reference key="NSSuperview" ref="9202355"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="301186957"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<reference key="IBUIImage" ref="202992632"/>
+								<reference key="IBUIImage" ref="612123397"/>
 							</object>
 							<object class="IBUIButton" id="1003413654">
 								<reference key="NSNextResponder" ref="9202355"/>
@@ -337,7 +337,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="432024188"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">screw copy.png</string>
+							<string key="NSResourceName">ts_screw_close.png</string>
 						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
@@ -787,14 +787,14 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="cannon.png">{1500, 2000}</string>
-			<string key="gear_ultimate.png">{1200, 1178}</string>
 			<string key="laser_red_new.png">{357, 376}</string>
 			<string key="light_off.png">{216, 535}</string>
 			<string key="next.png">{164, 142}</string>
-			<string key="screw copy.png">{175, 175}</string>
 			<string key="table.png">{1024, 750}</string>
+			<string key="ts_cannon_draw.png">{78, 104}</string>
 			<string key="ts_dungeon.jpg">{480, 300}</string>
+			<string key="ts_gear_ultimate_draw.png">{72, 71}</string>
+			<string key="ts_screw_close.png">{63, 63}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
