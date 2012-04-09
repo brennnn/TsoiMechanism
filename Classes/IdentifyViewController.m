@@ -16,6 +16,7 @@
 @synthesize epLabel;
 @synthesize npSuccessImage;
 @synthesize epSuccessImage;
+@synthesize hintButton;
 
 enum { NONE, ELECTROKNUCKLES, NUCLEOSONIC };
 
@@ -29,6 +30,26 @@ int answered = 0;
 		
     }
     return self;
+}
+
+-(void)hintPopUp
+{
+	if(draggingType == NUCLEOSONIC)
+	{
+		UIAlertView *hintView = [[UIAlertView alloc]initWithTitle:@"Hint!" 
+														  message:@"A Nucleophile is an electron pair donor. It could be a lone pair of electrons, a (pi) bond, or a negatively-charged ion. It is always an electron-rich species." 
+														 delegate:self cancelButtonTitle:@"Return to Game" otherButtonTitles:nil];
+		[hintView show];
+		[hintView release];
+	}
+	else if(draggingType == ELECTROKNUCKLES)
+	{
+		UIAlertView *hintView = [[UIAlertView alloc]initWithTitle:@"Hint!" 
+														  message:@"An Electrophile is an electron pair acceptor. It could be a proton, or have a partial positive charge, or be part of a polar molecule that has too low of an electronegativity to retain its electrons. It must be able to accept an electron pair." 
+														 delegate:self cancelButtonTitle:@"Return to Game" otherButtonTitles:nil];
+		[hintView show];
+		[hintView release];
+	}
 }
 
 -(void) showEpImageAndText
@@ -117,11 +138,15 @@ int answered = 0;
 			{
 				[problemView showElectrophileMarker:hitbox]; // create a marker at that spot
 				[self showEpSuccessImage];
-				
+				[self addScore:(50)];
 				[self recordAnswer];
 			}
 			else
 			{
+				if(score > 0)
+				{
+					[self removeScore:(10)];
+				}
 				NSLog(@"Guess again!");
 			}
 			
@@ -135,11 +160,15 @@ int answered = 0;
 			{
 				[problemView showNucleophileMarker:hitbox]; // create a marker at that spot
 				[self showNpSuccessImage];
-				
+				[self addScore:(50)];
 				[self recordAnswer];
 			}
 			else
 			{
+				if(score > 0)
+				{
+					[self removeScore:(10)];
+				}
 				NSLog(@"Guess again!");
 			}
 			
@@ -167,6 +196,11 @@ int answered = 0;
 		[nextButton setHidden:NO];
 		answered = 0;
 	}
+}
+
+-(IBAction)tappedHint:(UIButton *)sender
+{
+	[self hintPopUp];
 }
 
 - (IBAction)tappedNext:(UIButton *)sender

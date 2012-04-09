@@ -18,6 +18,7 @@
     IBOutlet UIImageView *npSuccessImage;
     IBOutlet UIImageView *epSuccessImage;
     IBOutlet UIButton *nextButton;    
+	IBOutlet UIButton *hintButton;
 }
 
 @property (retain, nonatomic) IBOutlet UIImageView *epImage;
@@ -27,10 +28,13 @@
 @property (retain, nonatomic) IBOutlet UIImageView *npSuccessImage;
 @property (retain, nonatomic) IBOutlet UIImageView *epSuccessImage;
 @property (retain, nonatomic) IBOutlet UIButton *nextButton;
+@property (retain, nonatomic) IBOutlet UIButton *hintButton;
 
 -(IBAction)tappedNext:(UIButton *)sender;
+-(IBAction)tappedHint:(UIButton *)sender;
 -(void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration scale:(int)scale x:(CGFloat)x y:(CGFloat)y;
 -(void)recordAnswer;
 -(void)newProblem;
+-(void)hintPopUp;
 
 @end
