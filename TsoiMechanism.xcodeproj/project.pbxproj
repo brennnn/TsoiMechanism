@@ -121,7 +121,7 @@
 		659EAF75152A8A20005EE158 /* screw copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF58152A8A20005EE158 /* screw copy.png */; };
 		659EAF76152A8A20005EE158 /* table.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF59152A8A20005EE158 /* table.png */; };
 		659EAF79152A8A7B005EE158 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659EAF78152A8A7B005EE158 /* AudioToolbox.framework */; };
-		6CCB03AD1532A97500F27B80 /* main_pg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCB03AC1532A97500F27B80 /* main_pg.png */; };
+		6C8983601533820600809045 /* main_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C89835F1533820600809045 /* main_page.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -257,7 +257,7 @@
 		659EAF58152A8A20005EE158 /* screw copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screw copy.png"; sourceTree = "<group>"; };
 		659EAF59152A8A20005EE158 /* table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table.png; sourceTree = "<group>"; };
 		659EAF78152A8A7B005EE158 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		6CCB03AC1532A97500F27B80 /* main_pg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_pg.png; sourceTree = "<group>"; };
+		6C89835F1533820600809045 /* main_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TsoiMechanism-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TsoiMechanism-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -348,6 +348,7 @@
 		26C6256314F5983E00B8A163 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6C89835F1533820600809045 /* main_page.png */,
 				6583F8BD153256A500774CA2 /* laser_red2.png */,
 				6525DFC315317361002D333E /* charge_new.png */,
 				6525DFBF15316E2E002D333E /* charge.png */,
@@ -361,7 +362,6 @@
 				6525DFAA15310430002D333E /* cannon_top.png */,
 				6525DFA71530FB54002D333E /* laser_red.png */,
 				6525DFA51530F7AF002D333E /* dungeon_2.png */,
-				6CCB03AC1532A97500F27B80 /* main_pg.png */,
 				6525DFA11530F717002D333E /* np_marker_2.png */,
 				6525DFA21530F717002D333E /* ep_marker_2.png */,
 				6525DF9F1530F623002D333E /* dungeon.png */,
@@ -691,7 +691,7 @@
 				6525DFC915317A7B002D333E /* erase.png in Resources */,
 				6525DFCA15317A7B002D333E /* submit.png in Resources */,
 				6583F8BE153256A500774CA2 /* laser_red2.png in Resources */,
-				6CCB03AD1532A97500F27B80 /* main_pg.png in Resources */,
+				6C8983601533820600809045 /* main_page.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
