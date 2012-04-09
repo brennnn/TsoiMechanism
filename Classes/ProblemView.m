@@ -15,9 +15,9 @@
 
 #define HITBOX_SIZE (iPad ? 80.0f : 40.0f)
 
-#define MOLECULE_COLOR_RED 0.0f
-#define MOLECULE_COLOR_GREEN 0.0f
-#define MOLECULE_COLOR_BLUE 0.0f
+#define MOLECULE_COLOR_RED 1.0f
+#define MOLECULE_COLOR_GREEN 1.0f
+#define MOLECULE_COLOR_BLUE 1.0f
 #define MOLECULE_COLOR_ALPHA 1.0f
 
 #define EP_MARKER_COLOR_RED 1.0f
@@ -643,7 +643,8 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, rect);
-    CGContextSetRGBFillColor(context, 1.0f, 1.0f, 1.0f, 1.0f);
+    CGContextSetRGBFillColor(context, 0, 0, 0, 0);
+
     CGContextFillRect(context, rect);
     
     if (electrophileMarker != nil)
