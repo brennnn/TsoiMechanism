@@ -49,7 +49,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">dungeon_2.png</string>
+							<string key="NSResourceName">ts_dungeon.jpg</string>
 						</object>
 					</object>
 					<object class="IBUIView" id="192505720">
@@ -92,6 +92,7 @@
 								<string key="NSFrame">{{70, 184}, {344, 68}}</string>
 								<reference key="NSSuperview" ref="667591972"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="234895349"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -106,7 +107,7 @@
 								<string key="NSFrame">{{70, 0}, {344, 280}}</string>
 								<reference key="NSSuperview" ref="667591972"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="15747046"/>
+								<reference key="NSNextKeyView" ref="1018052545"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -121,7 +122,7 @@
 								<string key="NSFrame">{{20, 217}, {439, 86}}</string>
 								<reference key="NSSuperview" ref="667591972"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="234895349"/>
+								<reference key="NSNextKeyView" ref="435485962"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -199,7 +200,7 @@
 						<string key="NSFrame">{{1, 0}, {479, 300}}</string>
 						<reference key="NSSuperview" ref="246743076"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="435485962"/>
+						<reference key="NSNextKeyView" ref="15747046"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="480220412"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -244,6 +245,7 @@
 						<string key="NSFrame">{{426, 276}, {47, 21}}</string>
 						<reference key="NSSuperview" ref="246743076"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -769,12 +771,12 @@
 			<string key="cannon_lip_3D.png">{1200, 176}</string>
 			<string key="cannon_top.png">{1200, 176}</string>
 			<string key="charge_new.png">{492, 240}</string>
-			<string key="dungeon_2.png">{1000, 800}</string>
 			<string key="erase.png">{127, 109}</string>
 			<string key="laser_red.png">{400, 400}</string>
 			<string key="next.png">{164, 142}</string>
 			<string key="screw copy.png">{175, 175}</string>
 			<string key="submit.png">{139, 124}</string>
+			<string key="ts_dungeon.jpg">{480, 300}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>

@@ -22,6 +22,18 @@
 		2680146A153387480009FDEF /* C4H9_and_HYDROXIDE.xml in Resources */ = {isa = PBXBuildFile; fileRef = 26801466153387480009FDEF /* C4H9_and_HYDROXIDE.xml */; };
 		2680146B153387480009FDEF /* CH3CH2O_and_C2Br.xml in Resources */ = {isa = PBXBuildFile; fileRef = 26801467153387480009FDEF /* CH3CH2O_and_C2Br.xml */; };
 		2680146C153387480009FDEF /* Methane_Water.xml in Resources */ = {isa = PBXBuildFile; fileRef = 26801468153387480009FDEF /* Methane_Water.xml */; };
+		26801477153388680009FDEF /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26801471153388680009FDEF /* explosion.wav */; };
+		26801478153388680009FDEF /* laser_cannon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26801472153388680009FDEF /* laser_cannon.wav */; };
+		26801479153388680009FDEF /* laser_charging.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26801473153388680009FDEF /* laser_charging.wav */; };
+		2680147A153388680009FDEF /* laser_fire.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26801474153388680009FDEF /* laser_fire.wav */; };
+		2680147B153388680009FDEF /* laser_release.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26801475153388680009FDEF /* laser_release.wav */; };
+		2680147C153388680009FDEF /* laser-boom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26801476153388680009FDEF /* laser-boom.wav */; };
+		26801483153389F70009FDEF /* ts_dungeon-ipad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2680147D153389F70009FDEF /* ts_dungeon-ipad.jpg */; };
+		26801484153389F70009FDEF /* ts_dungeon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2680147E153389F70009FDEF /* ts_dungeon.jpg */; };
+		26801485153389F70009FDEF /* ts_dungeon@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2680147F153389F70009FDEF /* ts_dungeon@2x.jpg */; };
+		26801486153389F70009FDEF /* ts_main-ipad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26801480153389F70009FDEF /* ts_main-ipad.jpg */; };
+		26801487153389F70009FDEF /* ts_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26801481153389F70009FDEF /* ts_main.jpg */; };
+		26801488153389F70009FDEF /* ts_main@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26801482153389F70009FDEF /* ts_main@2x.jpg */; };
 		26C6257914F59A4600B8A163 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6257714F59A4600B8A163 /* RootViewController.m */; };
 		26C6258414F59C8D00B8A163 /* IdentifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258214F59C8D00B8A163 /* IdentifyViewController.m */; };
 		26C6258A14F59CB900B8A163 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C6258814F59CB900B8A163 /* DrawViewController.m */; };
@@ -74,31 +86,23 @@
 		6525DF921530074D002D333E /* explode_red14.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DF821530074D002D333E /* explode_red14.png */; };
 		6525DF931530074D002D333E /* explode_red15.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DF831530074D002D333E /* explode_red15.png */; };
 		6525DF9D1530F321002D333E /* ep_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DF9C1530F321002D333E /* ep_marker.png */; };
-		6525DFA01530F623002D333E /* dungeon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DF9F1530F623002D333E /* dungeon.png */; };
 		6525DFA31530F717002D333E /* np_marker_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFA11530F717002D333E /* np_marker_2.png */; };
 		6525DFA41530F717002D333E /* ep_marker_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFA21530F717002D333E /* ep_marker_2.png */; };
-		6525DFA61530F7AF002D333E /* dungeon_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFA51530F7AF002D333E /* dungeon_2.png */; };
 		6525DFA81530FB54002D333E /* laser_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFA71530FB54002D333E /* laser_red.png */; };
 		6525DFAB15310430002D333E /* cannon_lip_3D.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFA915310430002D333E /* cannon_lip_3D.png */; };
 		6525DFAC15310430002D333E /* cannon_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFAA15310430002D333E /* cannon_top.png */; };
-		6525DFAE15310892002D333E /* laser_cannon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFAD15310891002D333E /* laser_cannon.wav */; };
-		6525DFB0153112E0002D333E /* laser_fire.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFAF153112E0002D333E /* laser_fire.wav */; };
-		6525DFB215311976002D333E /* laser-boom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFB115311975002D333E /* laser-boom.wav */; };
 		6525DFB415313AB7002D333E /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFB315313AB7002D333E /* next.png */; };
 		6525DFB615314A45002D333E /* laser_red_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFB515314A45002D333E /* laser_red_new.png */; };
 		6525DFB915314F70002D333E /* light_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFB715314F6E002D333E /* light_off.png */; };
 		6525DFBA15314F70002D333E /* light_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFB815314F6E002D333E /* light_on.png */; };
 		6525DFC015316E2E002D333E /* charge.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFBF15316E2E002D333E /* charge.png */; };
-		6525DFC215317351002D333E /* laser_release.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFC115317350002D333E /* laser_release.wav */; };
 		6525DFC415317361002D333E /* charge_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFC315317361002D333E /* charge_new.png */; };
-		6525DFC6153177B8002D333E /* laser_charging.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFC5153177B8002D333E /* laser_charging.wav */; };
 		6525DFC915317A7B002D333E /* erase.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFC715317A7A002D333E /* erase.png */; };
 		6525DFCA15317A7B002D333E /* submit.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525DFC815317A7B002D333E /* submit.png */; };
 		6583F8BE153256A500774CA2 /* laser_red2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6583F8BD153256A500774CA2 /* laser_red2.png */; };
 		659EAF5B152A8A20005EE158 /* burn-grunge-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF3E152A8A20005EE158 /* burn-grunge-iPhone.png */; };
 		659EAF5C152A8A20005EE158 /* burn-grunge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF3F152A8A20005EE158 /* burn-grunge.jpg */; };
 		659EAF5D152A8A20005EE158 /* cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF40152A8A20005EE158 /* cannon.png */; };
-		659EAF5E152A8A20005EE158 /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF41152A8A20005EE158 /* explosion.wav */; };
 		659EAF5F152A8A20005EE158 /* explosion1.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF42152A8A20005EE158 /* explosion1.png */; };
 		659EAF60152A8A20005EE158 /* explosion2.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF43152A8A20005EE158 /* explosion2.png */; };
 		659EAF61152A8A20005EE158 /* explosion3.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF44152A8A20005EE158 /* explosion3.png */; };
@@ -124,7 +128,6 @@
 		659EAF75152A8A20005EE158 /* screw copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF58152A8A20005EE158 /* screw copy.png */; };
 		659EAF76152A8A20005EE158 /* table.png in Resources */ = {isa = PBXBuildFile; fileRef = 659EAF59152A8A20005EE158 /* table.png */; };
 		659EAF79152A8A7B005EE158 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659EAF78152A8A7B005EE158 /* AudioToolbox.framework */; };
-		6CCB03AD1532A97500F27B80 /* main_pg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCB03AC1532A97500F27B80 /* main_pg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +148,18 @@
 		26801466153387480009FDEF /* C4H9_and_HYDROXIDE.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = C4H9_and_HYDROXIDE.xml; path = XML/C4H9_and_HYDROXIDE.xml; sourceTree = "<group>"; };
 		26801467153387480009FDEF /* CH3CH2O_and_C2Br.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = CH3CH2O_and_C2Br.xml; path = XML/CH3CH2O_and_C2Br.xml; sourceTree = "<group>"; };
 		26801468153387480009FDEF /* Methane_Water.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Methane_Water.xml; path = XML/Methane_Water.xml; sourceTree = "<group>"; };
+		26801471153388680009FDEF /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = explosion.wav; path = Sounds/explosion.wav; sourceTree = "<group>"; };
+		26801472153388680009FDEF /* laser_cannon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = laser_cannon.wav; path = Sounds/laser_cannon.wav; sourceTree = "<group>"; };
+		26801473153388680009FDEF /* laser_charging.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = laser_charging.wav; path = Sounds/laser_charging.wav; sourceTree = "<group>"; };
+		26801474153388680009FDEF /* laser_fire.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = laser_fire.wav; path = Sounds/laser_fire.wav; sourceTree = "<group>"; };
+		26801475153388680009FDEF /* laser_release.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = laser_release.wav; path = Sounds/laser_release.wav; sourceTree = "<group>"; };
+		26801476153388680009FDEF /* laser-boom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "laser-boom.wav"; path = "Sounds/laser-boom.wav"; sourceTree = "<group>"; };
+		2680147D153389F70009FDEF /* ts_dungeon-ipad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ts_dungeon-ipad.jpg"; path = "Images/ts_dungeon-ipad.jpg"; sourceTree = "<group>"; };
+		2680147E153389F70009FDEF /* ts_dungeon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ts_dungeon.jpg; path = Images/ts_dungeon.jpg; sourceTree = "<group>"; };
+		2680147F153389F70009FDEF /* ts_dungeon@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ts_dungeon@2x.jpg"; path = "Images/ts_dungeon@2x.jpg"; sourceTree = "<group>"; };
+		26801480153389F70009FDEF /* ts_main-ipad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ts_main-ipad.jpg"; path = "Images/ts_main-ipad.jpg"; sourceTree = "<group>"; };
+		26801481153389F70009FDEF /* ts_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ts_main.jpg; path = Images/ts_main.jpg; sourceTree = "<group>"; };
+		26801482153389F70009FDEF /* ts_main@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ts_main@2x.jpg"; path = "Images/ts_main@2x.jpg"; sourceTree = "<group>"; };
 		26C6255014F597F600B8A163 /* GDataXMLNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		26C6255114F597F600B8A163 /* GDataXMLNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		26C6255414F5981A00B8A163 /* ProblemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProblemView.h; sourceTree = "<group>"; };
@@ -213,31 +228,23 @@
 		6525DF821530074D002D333E /* explode_red14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = explode_red14.png; path = explode_red/explode_red14.png; sourceTree = "<group>"; };
 		6525DF831530074D002D333E /* explode_red15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = explode_red15.png; path = explode_red/explode_red15.png; sourceTree = "<group>"; };
 		6525DF9C1530F321002D333E /* ep_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ep_marker.png; sourceTree = "<group>"; };
-		6525DF9F1530F623002D333E /* dungeon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dungeon.png; sourceTree = "<group>"; };
 		6525DFA11530F717002D333E /* np_marker_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = np_marker_2.png; sourceTree = "<group>"; };
 		6525DFA21530F717002D333E /* ep_marker_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ep_marker_2.png; sourceTree = "<group>"; };
-		6525DFA51530F7AF002D333E /* dungeon_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dungeon_2.png; sourceTree = "<group>"; };
 		6525DFA71530FB54002D333E /* laser_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser_red.png; sourceTree = "<group>"; };
 		6525DFA915310430002D333E /* cannon_lip_3D.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannon_lip_3D.png; sourceTree = "<group>"; };
 		6525DFAA15310430002D333E /* cannon_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannon_top.png; sourceTree = "<group>"; };
-		6525DFAD15310891002D333E /* laser_cannon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser_cannon.wav; sourceTree = "<group>"; };
-		6525DFAF153112E0002D333E /* laser_fire.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser_fire.wav; sourceTree = "<group>"; };
-		6525DFB115311975002D333E /* laser-boom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "laser-boom.wav"; sourceTree = "<group>"; };
 		6525DFB315313AB7002D333E /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		6525DFB515314A45002D333E /* laser_red_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser_red_new.png; sourceTree = "<group>"; };
 		6525DFB715314F6E002D333E /* light_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_off.png; sourceTree = "<group>"; };
 		6525DFB815314F6E002D333E /* light_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_on.png; sourceTree = "<group>"; };
 		6525DFBF15316E2E002D333E /* charge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge.png; sourceTree = "<group>"; };
-		6525DFC115317350002D333E /* laser_release.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser_release.wav; sourceTree = "<group>"; };
 		6525DFC315317361002D333E /* charge_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_new.png; sourceTree = "<group>"; };
-		6525DFC5153177B8002D333E /* laser_charging.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser_charging.wav; sourceTree = "<group>"; };
 		6525DFC715317A7A002D333E /* erase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erase.png; sourceTree = "<group>"; };
 		6525DFC815317A7B002D333E /* submit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submit.png; sourceTree = "<group>"; };
 		6583F8BD153256A500774CA2 /* laser_red2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser_red2.png; sourceTree = "<group>"; };
 		659EAF3E152A8A20005EE158 /* burn-grunge-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "burn-grunge-iPhone.png"; sourceTree = "<group>"; };
 		659EAF3F152A8A20005EE158 /* burn-grunge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "burn-grunge.jpg"; sourceTree = "<group>"; };
 		659EAF40152A8A20005EE158 /* cannon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannon.png; sourceTree = "<group>"; };
-		659EAF41152A8A20005EE158 /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
 		659EAF42152A8A20005EE158 /* explosion1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion1.png; sourceTree = "<group>"; };
 		659EAF43152A8A20005EE158 /* explosion2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion2.png; sourceTree = "<group>"; };
 		659EAF44152A8A20005EE158 /* explosion3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion3.png; sourceTree = "<group>"; };
@@ -263,7 +270,6 @@
 		659EAF58152A8A20005EE158 /* screw copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screw copy.png"; sourceTree = "<group>"; };
 		659EAF59152A8A20005EE158 /* table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table.png; sourceTree = "<group>"; };
 		659EAF78152A8A7B005EE158 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		6CCB03AC1532A97500F27B80 /* main_pg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_pg.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TsoiMechanism-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TsoiMechanism-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -354,6 +360,12 @@
 		26C6256314F5983E00B8A163 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2680147D153389F70009FDEF /* ts_dungeon-ipad.jpg */,
+				2680147E153389F70009FDEF /* ts_dungeon.jpg */,
+				2680147F153389F70009FDEF /* ts_dungeon@2x.jpg */,
+				26801480153389F70009FDEF /* ts_main-ipad.jpg */,
+				26801481153389F70009FDEF /* ts_main.jpg */,
+				26801482153389F70009FDEF /* ts_main@2x.jpg */,
 				6583F8BD153256A500774CA2 /* laser_red2.png */,
 				6525DFC315317361002D333E /* charge_new.png */,
 				6525DFBF15316E2E002D333E /* charge.png */,
@@ -366,11 +378,8 @@
 				6525DFA915310430002D333E /* cannon_lip_3D.png */,
 				6525DFAA15310430002D333E /* cannon_top.png */,
 				6525DFA71530FB54002D333E /* laser_red.png */,
-				6525DFA51530F7AF002D333E /* dungeon_2.png */,
-				6CCB03AC1532A97500F27B80 /* main_pg.png */,
 				6525DFA11530F717002D333E /* np_marker_2.png */,
 				6525DFA21530F717002D333E /* ep_marker_2.png */,
-				6525DF9F1530F623002D333E /* dungeon.png */,
 				6CCB03AA1532952600F27B80 /* Explosion */,
 				659EAF3E152A8A20005EE158 /* burn-grunge-iPhone.png */,
 				659EAF3F152A8A20005EE158 /* burn-grunge.jpg */,
@@ -444,11 +453,12 @@
 		26E027DB1532C01A00A3AEBE /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				6525DFC5153177B8002D333E /* laser_charging.wav */,
-				6525DFB115311975002D333E /* laser-boom.wav */,
-				6525DFAD15310891002D333E /* laser_cannon.wav */,
-				6525DFAF153112E0002D333E /* laser_fire.wav */,
-				6525DFC115317350002D333E /* laser_release.wav */,
+				26801471153388680009FDEF /* explosion.wav */,
+				26801472153388680009FDEF /* laser_cannon.wav */,
+				26801473153388680009FDEF /* laser_charging.wav */,
+				26801474153388680009FDEF /* laser_fire.wav */,
+				26801475153388680009FDEF /* laser_release.wav */,
+				26801476153388680009FDEF /* laser-boom.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -500,7 +510,6 @@
 		6CCB03AA1532952600F27B80 /* Explosion */ = {
 			isa = PBXGroup;
 			children = (
-				659EAF41152A8A20005EE158 /* explosion.wav */,
 				659EAF42152A8A20005EE158 /* explosion1.png */,
 				659EAF43152A8A20005EE158 /* explosion2.png */,
 				659EAF44152A8A20005EE158 /* explosion3.png */,
@@ -620,7 +629,6 @@
 				659EAF5B152A8A20005EE158 /* burn-grunge-iPhone.png in Resources */,
 				659EAF5C152A8A20005EE158 /* burn-grunge.jpg in Resources */,
 				659EAF5D152A8A20005EE158 /* cannon.png in Resources */,
-				659EAF5E152A8A20005EE158 /* explosion.wav in Resources */,
 				659EAF5F152A8A20005EE158 /* explosion1.png in Resources */,
 				659EAF60152A8A20005EE158 /* explosion2.png in Resources */,
 				659EAF61152A8A20005EE158 /* explosion3.png in Resources */,
@@ -678,32 +686,36 @@
 				6525DF921530074D002D333E /* explode_red14.png in Resources */,
 				6525DF931530074D002D333E /* explode_red15.png in Resources */,
 				6525DF9D1530F321002D333E /* ep_marker.png in Resources */,
-				6525DFA01530F623002D333E /* dungeon.png in Resources */,
 				6525DFA31530F717002D333E /* np_marker_2.png in Resources */,
 				6525DFA41530F717002D333E /* ep_marker_2.png in Resources */,
-				6525DFA61530F7AF002D333E /* dungeon_2.png in Resources */,
 				6525DFA81530FB54002D333E /* laser_red.png in Resources */,
 				6525DFAB15310430002D333E /* cannon_lip_3D.png in Resources */,
 				6525DFAC15310430002D333E /* cannon_top.png in Resources */,
-				6525DFAE15310892002D333E /* laser_cannon.wav in Resources */,
-				6525DFB0153112E0002D333E /* laser_fire.wav in Resources */,
-				6525DFB215311976002D333E /* laser-boom.wav in Resources */,
 				6525DFB415313AB7002D333E /* next.png in Resources */,
 				6525DFB615314A45002D333E /* laser_red_new.png in Resources */,
 				6525DFB915314F70002D333E /* light_off.png in Resources */,
 				6525DFBA15314F70002D333E /* light_on.png in Resources */,
 				6525DFC015316E2E002D333E /* charge.png in Resources */,
-				6525DFC215317351002D333E /* laser_release.wav in Resources */,
 				6525DFC415317361002D333E /* charge_new.png in Resources */,
-				6525DFC6153177B8002D333E /* laser_charging.wav in Resources */,
 				6525DFC915317A7B002D333E /* erase.png in Resources */,
 				6525DFCA15317A7B002D333E /* submit.png in Resources */,
 				6583F8BE153256A500774CA2 /* laser_red2.png in Resources */,
-				6CCB03AD1532A97500F27B80 /* main_pg.png in Resources */,
 				26801469153387480009FDEF /* C3O_and_CN.xml in Resources */,
 				2680146A153387480009FDEF /* C4H9_and_HYDROXIDE.xml in Resources */,
 				2680146B153387480009FDEF /* CH3CH2O_and_C2Br.xml in Resources */,
 				2680146C153387480009FDEF /* Methane_Water.xml in Resources */,
+				26801477153388680009FDEF /* explosion.wav in Resources */,
+				26801478153388680009FDEF /* laser_cannon.wav in Resources */,
+				26801479153388680009FDEF /* laser_charging.wav in Resources */,
+				2680147A153388680009FDEF /* laser_fire.wav in Resources */,
+				2680147B153388680009FDEF /* laser_release.wav in Resources */,
+				2680147C153388680009FDEF /* laser-boom.wav in Resources */,
+				26801483153389F70009FDEF /* ts_dungeon-ipad.jpg in Resources */,
+				26801484153389F70009FDEF /* ts_dungeon.jpg in Resources */,
+				26801485153389F70009FDEF /* ts_dungeon@2x.jpg in Resources */,
+				26801486153389F70009FDEF /* ts_main-ipad.jpg in Resources */,
+				26801487153389F70009FDEF /* ts_main.jpg in Resources */,
+				26801488153389F70009FDEF /* ts_main@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
