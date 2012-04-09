@@ -49,7 +49,7 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">dungeon_2.png</string>
+							<string key="NSResourceName">ts_dungeon-ipad.jpg</string>
 						</object>
 					</object>
 					<object class="IBUIView" id="1054973552">
@@ -272,6 +272,7 @@
 						<string key="NSFrame">{{911, 707}, {101, 41}}</string>
 						<reference key="NSSuperview" ref="527761561"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -784,13 +785,13 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="cannon.png">{1500, 2000}</string>
-			<string key="dungeon_2.png">{1000, 800}</string>
 			<string key="gear_ultimate.png">{1200, 1178}</string>
 			<string key="laser_red_new.png">{357, 376}</string>
 			<string key="light_off.png">{216, 535}</string>
 			<string key="next.png">{164, 142}</string>
 			<string key="screw copy.png">{175, 175}</string>
 			<string key="table.png">{1024, 750}</string>
+			<string key="ts_dungeon-ipad.jpg">{1024, 748}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>

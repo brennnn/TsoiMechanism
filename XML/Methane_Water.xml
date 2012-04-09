@@ -1,84 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Problem>
     <Molecule>
         <Element>
-            <Location x="120" y="120" />
+            <Location x="120" y="110" />
             <Label>C</Label>
             <Charge>1</Charge>
             <Electrons>2</Electrons>
             <Type>2</Type>
         </Element>
         <Element>
-            <Location x="60" y="120" />
+            <Location x="60" y="110" />
             <Label>H</Label>
             <Charge>0</Charge>
             <Electrons>0</Electrons>
             <Type>0</Type>
         </Element>
         <Element>
-            <Location x="120" y="60" />
+            <Location x="120" y="50" />
             <Label>H</Label>
             <Charge>0</Charge>
             <Electrons>0</Electrons>
             <Type>0</Type>
         </Element>
         <Element>
-            <Location x="120" y="180" />
+            <Location x="120" y="170" />
             <Label>H</Label>
             <Charge>0</Charge>
             <Electrons>0</Electrons>
             <Type>0</Type>
         </Element>
         <Bond>
-            <LocationA x="120" y="120" />
-            <LocationB x="60" y="120" />
-            <BondOrder>2</BondOrder>
+            <LocationA x="120" y="110" />
+            <LocationB x="60" y="110" />
+            <BondOrder>1</BondOrder>
         </Bond>
         <Bond>
-            <LocationA x="120" y="120" />
-            <LocationB x="120" y="60" />
-            <BondOrder>3</BondOrder>
+            <LocationA x="120" y="110" />
+            <LocationB x="120" y="50" />
+            <BondOrder>1</BondOrder>
         </Bond>
         <Bond>
-            <LocationA x="120" y="120" />
-            <LocationB x="120" y="180" />
+            <LocationA x="120" y="110" />
+            <LocationB x="120" y="170" />
             <BondOrder>1</BondOrder>
         </Bond>
     </Molecule>
     <Molecule>
         <Element>
-            <Location x="120" y="120" />
+            <Location x="120" y="110" />
             <Label>O</Label>
             <Charge>0</Charge>
             <Electrons>4</Electrons>
+            <Type>0</Type>
+        </Element>
+        <Element>
+            <Location x="60" y="110" />
+            <Label>H</Label>
+            <Charge>0</Charge>
+            <Electrons>0</Electrons>
             <Type>1</Type>
         </Element>
         <Element>
-            <Location x="60" y="120" />
-            <Label>H</Label>
-            <Charge>0</Charge>
-            <Electrons>0</Electrons>
-            <Type>0</Type>
-        </Element>
-        <Element>
-            <Location x="180" y="120" />
+            <Location x="180" y="110" />
             <Label>H</Label>
             <Charge>0</Charge>
             <Electrons>0</Electrons>
             <Type>0</Type>
         </Element>
         <Bond>
-            <LocationA x="120" y="120" />
-            <LocationB x="60" y="120" />
+            <LocationA x="120" y="110" />
+            <LocationB x="60" y="110" />
             <BondOrder>1</BondOrder>
         </Bond>
         <Bond>
-            <LocationA x="120" y="120" />
-            <LocationB x="180" y="120" />
+            <LocationA x="120" y="110" />
+            <LocationB x="180" y="110" />
             <BondOrder>1</BondOrder>
         </Bond>
         <Arrow>
-            <LocationA x="90" y="120" />
-            <LocationB x="120" y="120" />
+            <LocationA x="90" y="110" />
+            <LocationB x="120" y="110" />
             <Order>2</Order>
         </Arrow>
     </Molecule>

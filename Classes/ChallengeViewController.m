@@ -36,7 +36,7 @@ NSArray *frames;
 {
     [super viewDidLoad];
 	
-    [instructionsLabel setText:@"Draw the arrows to the appropiate spots"];
+    //[instructionsLabel setText:@"Draw the arrows to the appropiate spots"];
     tries = 0;
     
 	frames = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"laser_red.png"], [UIImage imageNamed:@"laser_red2.png"], nil];
