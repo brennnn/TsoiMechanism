@@ -1148,13 +1148,13 @@
                 
                 if (arrowMode == ARROW_NORMAL)
                 {
-                    CGContextSetRGBStrokeColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                    CGContextSetRGBFillColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
                 } else if (arrowMode == ARROW_CORRECT)
                 {
-                    CGContextSetRGBStrokeColor(context, ARROW_CORRECT_COLOR_RED, ARROW_CORRECT_COLOR_GREEN, ARROW_CORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                    CGContextSetRGBFillColor(context, ARROW_CORRECT_COLOR_RED, ARROW_CORRECT_COLOR_GREEN, ARROW_CORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
                 } else if (arrowMode == ARROW_INCORRECT)
                 {
-                    CGContextSetRGBStrokeColor(context, ARROW_INCORRECT_COLOR_RED, ARROW_INCORRECT_COLOR_GREEN, ARROW_INCORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                    CGContextSetRGBFillColor(context, ARROW_INCORRECT_COLOR_RED, ARROW_INCORRECT_COLOR_GREEN, ARROW_INCORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
                 }
                 
                 CGContextFillEllipseInRect(context, CGRectMake(arrow.locationB.x - (10.0f / 2.0f), arrow.locationB.y - (10.0f / 2.0f), 10.0f,10.0f));
