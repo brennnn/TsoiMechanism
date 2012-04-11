@@ -57,11 +57,19 @@
 #define HITBOX_COLOR_BLUE 1.0f
 #define HITBOX_COLOR_ALPHA 0.5f
 
-#define ARROW_COLOR_RED 140.0f/255.0f
-#define ARROW_COLOR_GREEN 200.0f/255.0f
-#define ARROW_COLOR_BLUE 60.0f/255.0f
-#define ARROW_COLOR_ALPHA 1.0f
+#define ARROW_COLOR_RED 1.0f 
+#define ARROW_COLOR_GREEN 1.0f
+#define ARROW_COLOR_BLUE 0.0f
 
+#define ARROW_CORRECT_COLOR_RED 0.0f 
+#define ARROW_CORRECT_COLOR_GREEN 1.0f
+#define ARROW_CORRECT_COLOR_BLUE 0.0f
+
+#define ARROW_INCORRECT_COLOR_RED 1.0f 
+#define ARROW_INCORRECT_COLOR_GREEN 0.0f
+#define ARROW_INCORRECT_COLOR_BLUE 0.0f
+
+#define ARROW_COLOR_ALPHA 1.0f
 #define ARROW_POINT_COLOR_ALPHA 0.7f
 
 @implementation ProblemView
@@ -71,6 +79,7 @@
 -(id) initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) 
     {
+        arrowMode = ARROW_NORMAL;
         electrophileMarker = nil;
         nucleophileMarker = nil;
         showProblemMarkers = FALSE;
@@ -481,6 +490,18 @@
     }
     
     return TRUE;
+}
+
+-(void) setArrowMode:(int) mode
+{
+    if (mode == ARROW_NORMAL || mode == ARROW_CORRECT || mode == ARROW_INCORRECT)
+    {
+        if (arrowMode != mode)
+        {
+            arrowMode = mode;
+            [self setNeedsDisplay];
+        }
+    }
 }
 
 -(BOOL) doesArrowMatchProblem:(Arrow*)arrow
@@ -1093,7 +1114,17 @@
         {
             if (!CGPointEqualToPoint(arrow.locationB, CGPointMake(-1.0f, -1.0f))) 
             {
-                CGContextSetRGBStrokeColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                if (arrowMode == ARROW_NORMAL)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_CORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_CORRECT_COLOR_RED, ARROW_CORRECT_COLOR_GREEN, ARROW_CORRECT_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_INCORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_INCORRECT_COLOR_RED, ARROW_INCORRECT_COLOR_GREEN, ARROW_INCORRECT_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                }
+                
                 CGContextSetLineWidth(context, 2.0f * MOLECULE_MULTIPLIER);
                 CGContextMoveToPoint(context, arrow.locationA.x, arrow.locationA.y);
 
@@ -1115,8 +1146,17 @@
                 CGContextAddCurveToPoint(context, cp1.x, cp1.y, cp2.x, cp2.y, arrow.locationB.x, arrow.locationB.y);
                 CGContextStrokePath(context);
                 
+                if (arrowMode == ARROW_NORMAL)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_CORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_CORRECT_COLOR_RED, ARROW_CORRECT_COLOR_GREEN, ARROW_CORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_INCORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_INCORRECT_COLOR_RED, ARROW_INCORRECT_COLOR_GREEN, ARROW_INCORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                }
                 
-                CGContextSetRGBFillColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
                 CGContextFillEllipseInRect(context, CGRectMake(arrow.locationB.x - (10.0f / 2.0f), arrow.locationB.y - (10.0f / 2.0f), 10.0f,10.0f));
                 
 //                float length = 10.0f;
@@ -1179,7 +1219,90 @@
     return inset;
 }
 
-
+-(UIImage*) getArrowImage
+{
+	float width = self.frame.size.width;
+	float height = self.frame.size.height;
+	
+	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+	
+	CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 4 * width, colorSpace, kCGImageAlphaPremultipliedFirst);
+	
+	
+    if ([arrowStack count] > 0) 
+    {
+        for (Arrow *arrow in arrowStack) 
+        {
+            if (!CGPointEqualToPoint(arrow.locationB, CGPointMake(-1.0f, -1.0f))) 
+            {
+                if (arrowMode == ARROW_NORMAL)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_CORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_CORRECT_COLOR_RED, ARROW_CORRECT_COLOR_GREEN, ARROW_CORRECT_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_INCORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_INCORRECT_COLOR_RED, ARROW_INCORRECT_COLOR_GREEN, ARROW_INCORRECT_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                }
+                
+                CGContextSetLineWidth(context, 2.0f * MOLECULE_MULTIPLIER);
+                CGContextMoveToPoint(context, arrow.locationA.x, arrow.locationA.y);
+                
+                float dx = arrow.locationA.x - arrow.locationB.x;
+                float dy = arrow.locationB.y - arrow.locationA.y;
+                float dist = sqrtf(dx*dx + dy*dy);
+                
+                float length = 60.0;
+                
+                float x1p = arrow.locationA.x + length * (arrow.locationB.y-arrow.locationA.y) / dist;
+                float y1p = arrow.locationA.y + length * (arrow.locationA.x-arrow.locationB.x) / dist;
+                float x2p = arrow.locationB.x + length * (arrow.locationB.y-arrow.locationA.y) / dist;
+                float y2p = arrow.locationB.y + length * (arrow.locationA.x-arrow.locationB.x) / dist;
+                
+                CGPoint cp1 = CGPointMake(x1p,y1p);
+                CGPoint cp2 = CGPointMake(x2p,y2p);
+                
+                
+                CGContextAddCurveToPoint(context, cp1.x, cp1.y, cp2.x, cp2.y, arrow.locationB.x, arrow.locationB.y);
+                CGContextStrokePath(context);
+                
+                if (arrowMode == ARROW_NORMAL)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_CORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_CORRECT_COLOR_RED, ARROW_CORRECT_COLOR_GREEN, ARROW_CORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_INCORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_INCORRECT_COLOR_RED, ARROW_INCORRECT_COLOR_GREEN, ARROW_INCORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                }
+                
+                CGContextFillEllipseInRect(context, CGRectMake(arrow.locationB.x - (10.0f / 2.0f), arrow.locationB.y - (10.0f / 2.0f), 10.0f,10.0f));
+                
+                //                float length = 10.0f;
+                //                float width = 10.0f;
+                //            
+                //                CGContextSetRGBFillColor(context, 140.0f/255.0f, 200.0f/255.0f, 60.0f/255.0f, 1.0f);
+                //                CGContextMoveToPoint(context, arrow.locationB.x - (width / 2.0f), arrow.locationB.y - length);
+                //                CGContextAddLineToPoint(context, arrow.locationB.x + (width / 2.0f), arrow.locationB.y - length);
+                //                CGContextAddLineToPoint(context, arrow.locationB.x, arrow.locationB.y);
+                //                CGContextClosePath(context);
+                //                CGContextFillPath(context);
+                
+            }
+        }
+        
+    }
+	
+	CGImageRef imageMasked = CGBitmapContextCreateImage(context);
+	UIImage *arrowImage = [UIImage imageWithCGImage:imageMasked];
+	CGImageRelease(imageMasked);
+	CGContextRelease(context);
+	CGColorSpaceRelease(colorSpace);
+	
+	return arrowImage;	
+}
 
 -(void) dealloc {
     if (electrophileMarker != nil)

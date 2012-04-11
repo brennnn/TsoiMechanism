@@ -47,7 +47,6 @@ double currentCannon2Angle;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setDrawInstructions];
     [problemView showProblemMarkers];
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -254,12 +253,6 @@ double currentCannon2Angle;
 	[UIView commitAnimations];
 }
 
-
--(void)setDrawInstructions
-{
-	//self.instructionsLabel.text = @"Draw arrows by from the highlighted elements and bonds in order to complete the problem.";
-}
-
 - (IBAction)tappedNext:(id)sender 
 {
 	[self goToNextProblem];
@@ -308,45 +301,6 @@ double currentCannon2Angle;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight));
-}
-
--(UIImage*) getArrowImageFrom:(CGPoint) pointA and:(CGPoint) pointB
-{
-	float width = 480.0f;
-	float height = 320.0f;
-	
-	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-	
-	CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 4 * width, colorSpace, kCGImageAlphaPremultipliedFirst);
-	
-	CGContextSetRGBStrokeColor(context, 140.0f/255.0f, 200.0f/255.0f, 60.0f/255.0f, 1.0f);
-	CGContextSetLineWidth(context, 2.0f);
-	CGContextMoveToPoint(context, pointA.x, pointA.y);
-	
-	float dx = pointA.x - pointB.x;
-	float dy = pointB.y - pointA.y;
-	float dist = sqrtf(dx*dx + dy*dy);
-	
-	float length = 60.0;
-	
-	float x1p = pointA.x + length * (pointB.y-pointA.y) / dist;
-	float y1p = pointA.y + length * (pointA.x-pointB.x) / dist;
-	float x2p = pointB.x + length * (pointB.y-pointA.y) / dist;
-	float y2p = pointB.y + length * (pointA.x-pointB.x) / dist;
-	
-	CGPoint cp1 = CGPointMake(x1p,y1p);
-	CGPoint cp2 = CGPointMake(x2p,y2p);
-	
-	CGContextAddCurveToPoint(context, cp1.x, cp1.y, cp2.x, cp2.y, pointB.x, pointB.y);
-	CGContextStrokePath(context);
-	
-	CGImageRef imageMasked = CGBitmapContextCreateImage(context);
-	UIImage *arrowImage = [UIImage imageWithCGImage:imageMasked];
-	CGImageRelease(imageMasked);
-	CGContextRelease(context);
-	CGColorSpaceRelease(colorSpace);
-	
-	return arrowImage;	
 }
 
 
