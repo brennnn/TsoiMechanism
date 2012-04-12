@@ -54,7 +54,13 @@
 
 -(void) removeScore:(int) amount
 {
-    score -= amount;
+    if ((score - amount) < 0)
+    {
+        score = 0;
+    } else 
+    {
+        score -= amount;
+    }
     [scoreLabel setText:[NSString stringWithFormat:@"Score: %i", score]];
 }
 

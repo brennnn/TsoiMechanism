@@ -733,9 +733,12 @@
             
             CGSize labelSize = [element.label sizeWithFont:[UIFont fontWithName:@"Helvetica" size:(24.0f * MOLECULE_MULTIPLIER)]];
             CGPoint elementLocation = CGPointMake(element.location.x * MOLECULE_MULTIPLIER, element.location.y * MOLECULE_MULTIPLIER);
-            
+
+                        
             CGContextSetTextPosition(context, (elementLocation.x - (labelSize.width / 2.0f) + moleculeOffset), (elementLocation.y + (labelSize.height / 4.0f)));
             CGContextShowText(context, [element.label UTF8String], strlen([element.label UTF8String]));
+ 
+ 
             
             //add charge, electrons
             

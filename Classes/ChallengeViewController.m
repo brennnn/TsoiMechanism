@@ -35,6 +35,9 @@ NSArray *frames;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.multipleTouchEnabled=NO;
+    self.view.exclusiveTouch=YES;
+
 	
     tries = 0;
     
@@ -138,6 +141,7 @@ NSArray *frames;
 
 -(void) answerCorrect
 {
+    [problemView setArrowMode:ARROW_CORRECT];
     submitButton.hidden = YES;
 	undoButtons.hidden = YES;
     nextButton.hidden = NO;
@@ -148,6 +152,7 @@ NSArray *frames;
 {
     if (tries > 0)
     {
+        [problemView setArrowMode:ARROW_INCORRECT];
         submitButton.hidden = YES;
 		undoButtons.hidden = YES;
 		AudioServicesPlayAlertSound(laserFire);
@@ -157,6 +162,7 @@ NSArray *frames;
     {
 		AudioServicesPlayAlertSound(laserCharge);
 		[self playFlashCharge];
+        [problemView removeAllArrows];
     }
     tries++;
     [self removeScore:50];
@@ -169,6 +175,7 @@ NSArray *frames;
 	undoButtons.hidden = NO;
     submitButton.hidden = NO;
     tries = 0;
+    [problemView setArrowMode:ARROW_NORMAL];
     [self goToNextProblem];
 }
 

@@ -47,6 +47,11 @@ double currentCannon2Angle;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.multipleTouchEnabled=NO;
+    self.view.exclusiveTouch=YES;
+
+    
     [problemView showProblemMarkers];
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -153,77 +158,88 @@ double currentCannon2Angle;
 		{
             if ([problemView getArrowStackCount] == 1)
             {
+                int arrowStack = [problemView getArrowStackCount];
                 [problemView endArrow:hitbox];
 				//Checks to see if the current arrow drawn is on the correct hitbox and direction
-				if([problemView doesLastArrowMatchProblem]) 
+                if (arrowStack == [problemView getArrowStackCount])
                 {
-					[problemView showElectrophileMarker:hitbox];
-                    
-                    [self addScore:100];
-                    
-                    if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
-					{
+                    if([problemView doesLastArrowMatchProblem]) 
+                    {
+                        [problemView showElectrophileMarker:hitbox];
                         
-						// Problem was correct!
-						nextButton.hidden = NO;
-					}
-				} 
-				else 
-				{
-                    [self removeScore:25];
-					[problemView removeLastArrow];
-					[problemView clearNucleophileMarker];
-					
-					[Animations fireLaser:laser fromCannon:cannon toPoint:firstPoint];
-					[Animations fireLaser:laser2 fromCannon:cannon2 toPoint:touchPoint];
-					
-					[Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
-					[Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
-					
-					[Animations shakeView:problemView power:8.0];
-				}
+                        [self addScore:100];
+                        
+                        if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
+                        {
+                            
+                            // Problem was correct!
+                            nextButton.hidden = NO;
+                        }
+                    } 
+                    else 
+                    {
+                        [self removeScore:25];
+                        [problemView removeLastArrow];
+                        [problemView clearNucleophileMarker];
+                        
+                        [Animations fireLaser:laser fromCannon:cannon toPoint:firstPoint];
+                        [Animations fireLaser:laser2 fromCannon:cannon2 toPoint:touchPoint];
+                        
+                        [Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
+                        [Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
+                        
+                        [Animations shakeView:problemView power:8.0];
+                    }
+                } else 
+                {
+                    [problemView clearNucleophileMarker];
+                }
             } else if ([problemView getArrowStackCount] > 1)
             {
+                int arrowStack = [problemView getArrowStackCount];
                 [problemView endArrow:hitbox];
                 
-				if([problemView doesLastArrowMatchProblem])
-				{
-                    if ([problemView getProblemArrowCount] == 3) {
+                if (arrowStack == [problemView getArrowStackCount])
+                {
+                    if([problemView doesLastArrowMatchProblem])
+                    {
+                        if ([problemView getProblemArrowCount] == 3) {
+                            
+                            [self addScore:25];
+                            
+                        } else if ([problemView getProblemArrowCount] == 2) {
+                            
+                            [self addScore:50];
+                        }
                         
-                        [self addScore:25];
-                        
-                    } else if ([problemView getProblemArrowCount] == 2) {
-                        
-                        [self addScore:50];
+                        if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
+                        {
+                            
+                            // Problem was correct!
+                            nextButton.hidden = NO;
+                        }
                     }
-
-					if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
-					{
-
-						// Problem was correct!
-						nextButton.hidden = NO;
-					}
-				}
-				else
-				{
-                    if ([problemView getProblemArrowCount] == 3) {
+                    else
+                    {
+                        if ([problemView getProblemArrowCount] == 3) {
+                            
+                            [self removeScore:10];
+                            
+                        } else if ([problemView getProblemArrowCount] == 2) {
+                            
+                            [self removeScore:25];
+                        }
+                        [problemView removeLastArrow];
                         
-                        [self removeScore:10];
+                        [Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
+                        [Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
                         
-                    } else if ([problemView getProblemArrowCount] == 2) {
+                        [Animations fireLaser:laser fromCannon:cannon toPoint:firstPoint];
+                        [Animations fireLaser:laser2 fromCannon:cannon2 toPoint:touchPoint];
                         
-                        [self removeScore:25];
+                        [Animations shakeView:problemView power:8.0];
                     }
-					[problemView removeLastArrow];
-					
-					[Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
-					[Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
-					
-					[Animations fireLaser:laser fromCannon:cannon toPoint:firstPoint];
-					[Animations fireLaser:laser2 fromCannon:cannon2 toPoint:touchPoint];
-				
-					[Animations shakeView:problemView power:8.0];
-				}
+                }
 				
 			}
         }
