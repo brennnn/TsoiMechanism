@@ -10,7 +10,7 @@
 
 @implementation ModeViewController
 
-@synthesize problemView, problemNumberLabel, scoreLabel, instructionsLabel;
+@synthesize problemView, problemNumberLabel, scoreLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -81,6 +81,8 @@
 -(void) dealloc 
 {
     [problemView release];
+    [problemNumberLabel release];
+    [scoreLabel release];
     [super dealloc];
 }
 

@@ -33,13 +33,9 @@
 @property (retain, nonatomic) IBOutlet UIImageView *laser2;
 @property (retain, nonatomic) IBOutlet UIButton *nextButton;
 
-- (IBAction)tappedNext:(id)sender;
-
-
+-(IBAction)tappedNext:(id)sender;
 -(IBAction)hintPressed:(id)sender;
--(void) setDrawInstructions;
 -(void) hintPopUp;
 
--(UIImage*) getArrowImageFrom:(CGPoint) pointA and:(CGPoint) pointB;
 
 @end
