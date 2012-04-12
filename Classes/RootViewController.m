@@ -18,6 +18,9 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) 
     {
         [self.navigationController setNavigationBarHidden:NO];
+        
+        self.view.multipleTouchEnabled=NO;
+        self.view.exclusiveTouch=YES;
     }
     return self;
 }
