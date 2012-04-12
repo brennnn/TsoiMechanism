@@ -145,7 +145,7 @@
 								<string key="NSFrame">{{90, 373}, {843, 282}}</string>
 								<reference key="NSSuperview" ref="932546584"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
+								<reference key="NSNextKeyView" ref="219156880"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -182,7 +182,7 @@
 					<object class="IBUIButton" id="219156880">
 						<reference key="NSNextResponder" ref="991595515"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{880, 320}, {100, 100}}</string>
+						<string key="NSFrame">{{880, 320}, {100, 87}}</string>
 						<reference key="NSSuperview" ref="991595515"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="833450044"/>
@@ -199,7 +199,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="1031274435"/>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">next.png</string>
+							<string key="NSResourceName">ts_next-ipad.png</string>
 						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
@@ -217,6 +217,7 @@
 						<string key="NSFrame">{{911, 707}, {101, 41}}</string>
 						<reference key="NSSuperview" ref="991595515"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -562,7 +563,7 @@
 						<int key="objectID">33</int>
 						<reference key="object" ref="219156880"/>
 						<reference key="parent" ref="991595515"/>
-						<string key="objectName">Next Buttin</string>
+						<string key="objectName">Next Buttion</string>
 					</object>
 				</array>
 			</object>
@@ -723,11 +724,11 @@
 			<string key="charge_new.png">{492, 240}</string>
 			<string key="erase.png">{127, 109}</string>
 			<string key="laser_red.png">{400, 400}</string>
-			<string key="next.png">{164, 142}</string>
 			<string key="submit.png">{139, 124}</string>
 			<string key="ts_cannon_lip_3D-ipad.png">{1024, 160}</string>
 			<string key="ts_cannon_top-ipad.png">{1024, 160}</string>
 			<string key="ts_dungeon-ipad.jpg">{1024, 768}</string>
+			<string key="ts_next-ipad.png">{100, 87}</string>
 			<string key="ts_screw_close-ipad.png">{100, 100}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1181</string>

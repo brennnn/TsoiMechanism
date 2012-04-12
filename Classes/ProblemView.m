@@ -22,12 +22,12 @@
 #define MOLECULE_COLOR_BLUE 1.0f
 #define MOLECULE_COLOR_ALPHA 1.0f
 
-#define EP_MARKER_COLOR_RED 1.0f
+#define EP_MARKER_COLOR_RED 0.0f
 #define EP_MARKER_COLOR_GREEN 0.0f
-#define EP_MARKER_COLOR_BLUE 0.0f
+#define EP_MARKER_COLOR_BLUE 1.0f
 #define EP_MARKER_COLOR_ALPHA 0.3f
 
-#define NP_MARKER_COLOR_RED 0.0f
+#define NP_MARKER_COLOR_RED 1.0f
 #define NP_MARKER_COLOR_GREEN 0.0f
 #define NP_MARKER_COLOR_BLUE 1.0f
 #define NP_MARKER_COLOR_ALPHA 0.3f
@@ -37,12 +37,12 @@
 #define PROBLEM_MARKER_COLOR_BLUE 0.5f
 #define PROBLEM_MARKER_COLOR_ALPHA 0.3f
 
-#define EP_MOVABLE_MARKER_COLOR_RED 1.0f
+#define EP_MOVABLE_MARKER_COLOR_RED 0.0f
 #define EP_MOVABLE_MARKER_COLOR_GREEN 0.0f
-#define EP_MOVABLE_MARKER_COLOR_BLUE 0.0f
+#define EP_MOVABLE_MARKER_COLOR_BLUE 1.0f
 #define EP_MOVABLE_MARKER_COLOR_ALPHA 0.6f
 
-#define NP_MOVABLE_MARKER_COLOR_RED 0.0f
+#define NP_MOVABLE_MARKER_COLOR_RED 1.0f
 #define NP_MOVABLE_MARKER_COLOR_GREEN 0.0f
 #define NP_MOVABLE_MARKER_COLOR_BLUE 1.0f
 #define NP_MOVABLE_MARKER_COLOR_ALPHA 0.6f
@@ -1052,12 +1052,12 @@
         {
             CGContextSetRGBFillColor(context, EP_MOVABLE_MARKER_COLOR_RED, EP_MOVABLE_MARKER_COLOR_GREEN, EP_MOVABLE_MARKER_COLOR_BLUE, EP_MOVABLE_MARKER_COLOR_ALPHA);
             CGContextSetRGBStrokeColor(context, EP_MOVABLE_MARKER_COLOR_RED, EP_MOVABLE_MARKER_COLOR_GREEN, EP_MOVABLE_MARKER_COLOR_BLUE, 0.3f);
-            label = [[NSString alloc] initWithString:@"EP"];
+            label = [[NSString alloc] initWithString:@"E"];
         } else if (movableMarker.type == ELEMENT_NUCLEOPHILE)
         {
             CGContextSetRGBFillColor(context, NP_MOVABLE_MARKER_COLOR_RED, NP_MOVABLE_MARKER_COLOR_GREEN, NP_MOVABLE_MARKER_COLOR_BLUE, NP_MOVABLE_MARKER_COLOR_ALPHA);
             CGContextSetRGBStrokeColor(context, NP_MOVABLE_MARKER_COLOR_RED, NP_MOVABLE_MARKER_COLOR_GREEN, NP_MOVABLE_MARKER_COLOR_BLUE, 0.3f);
-            label = [[NSString alloc] initWithString:@"NP"];
+            label = [[NSString alloc] initWithString:@"N"];
         } else 
         {
             CGContextSetRGBFillColor(context, 0.0f, 0.5f, 0.5f, 0.6f);

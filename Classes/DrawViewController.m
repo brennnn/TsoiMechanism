@@ -193,6 +193,8 @@ double currentCannon2Angle;
                         
                         [Animations shakeView:problemView power:8.0];
                     }
+                } else {
+                    [problemView clearNucleophileMarker];
                 }
             } else if ([problemView getArrowStackCount] > 1)
             {
