@@ -53,7 +53,6 @@ int answered = 0;
     answered = 0;
     
     self.view.multipleTouchEnabled=NO;
-    self.view.exclusiveTouch=YES;
 
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)

@@ -49,7 +49,6 @@ double currentCannon2Angle;
     [super viewDidLoad];
     
     self.view.multipleTouchEnabled=NO;
-    self.view.exclusiveTouch=YES;
 
     
     [problemView showProblemMarkers];

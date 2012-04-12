@@ -36,7 +36,6 @@ NSArray *frames;
 {
     [super viewDidLoad];
     self.view.multipleTouchEnabled=NO;
-    self.view.exclusiveTouch=YES;
 
 	
     tries = 0;
