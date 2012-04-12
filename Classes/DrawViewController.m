@@ -160,6 +160,7 @@ double currentCannon2Angle;
 					[problemView showElectrophileMarker:hitbox];
                     
                     [self addScore:100];
+					[Animations createScoreAnimationInView:self.view withText:@"+100" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
                     
                     if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
 					{
@@ -179,6 +180,7 @@ double currentCannon2Angle;
 					
 					[Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
 					[Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
+					AudioServicesPlayAlertSound(explosion);
 					
 					[Animations shakeView:problemView power:8.0];
 				}
@@ -191,10 +193,12 @@ double currentCannon2Angle;
                     if ([problemView getProblemArrowCount] == 3) {
                         
                         [self addScore:25];
+						[Animations createScoreAnimationInView:self.view withText:@"+25" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
                         
                     } else if ([problemView getProblemArrowCount] == 2) {
                         
                         [self addScore:50];
+						[Animations createScoreAnimationInView:self.view withText:@"+50" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
                     }
 
 					if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
@@ -222,6 +226,8 @@ double currentCannon2Angle;
 					[Animations fireLaser:laser fromCannon:cannon toPoint:firstPoint];
 					[Animations fireLaser:laser2 fromCannon:cannon2 toPoint:touchPoint];
 				
+					AudioServicesPlayAlertSound(explosion);
+					
 					[Animations shakeView:problemView power:8.0];
 				}
 				

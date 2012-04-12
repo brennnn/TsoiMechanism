@@ -142,6 +142,7 @@ NSArray *frames;
 	undoButtons.hidden = YES;
     nextButton.hidden = NO;
     [self addScore:100];
+	[Animations createScoreAnimationInView:self.view withText:@"+100" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
 }
 
 -(void)answerIncorrect
