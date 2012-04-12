@@ -143,9 +143,34 @@
 				 }
 				 completion:^(BOOL finished){
 					 explode = nil;
-					 [explode release];
+					 [explode removeFromSuperview];
 				 }];
 	
+}
+
++(void) createScoreAnimationInView:(UIView*)view withText:(NSString*)string fromPoint:(CGPoint)begin toPoint:(CGPoint)end textColor:(UIColor*)textColor
+{
+	int sizeOfLabel = 300;
+	UILabel *scoreChange = [[UILabel alloc] initWithFrame:CGRectMake(begin.x - (double)sizeOfLabel/2, begin.y - (double)sizeOfLabel/2, sizeOfLabel, sizeOfLabel)];
+	scoreChange.text = string;
+	[scoreChange setTextAlignment:UITextAlignmentCenter];
+	scoreChange.backgroundColor = [UIColor clearColor];
+	scoreChange.textColor = textColor;
+	scoreChange.font = [UIFont fontWithName:scoreChange.font.familyName size:100];
+	
+	[view addSubview:scoreChange];
+	
+	[UIView animateWithDuration:0.5
+						  delay:0.5
+						options:UIViewAnimationCurveEaseIn
+					 animations:^{
+						 scoreChange.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5);
+						 scoreChange.center = CGPointMake(end.x - 20, end.y);
+						 [scoreChange release];
+					 }
+					 completion:^(BOOL finished) {
+						 [scoreChange removeFromSuperview];
+					 }];
 }
 
 // Taken from: http://stackoverflow.com/questions/1632364/shake-visual-effect-on-iphone-not-shaking-the-device
