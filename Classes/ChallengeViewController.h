@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ModeViewController.h"
 
-@interface ChallengeViewController : ModeViewController {
+@interface ChallengeViewController : ModeViewController 
+{
 	IBOutlet UIButton *submitButton;
 	IBOutlet UIButton *nextButton;
 	IBOutlet UIButton *undoButtons;

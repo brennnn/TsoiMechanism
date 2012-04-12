@@ -10,34 +10,37 @@
 
 @implementation ModeViewController
 
-@synthesize problemView, problemNumberLabel, scoreLabel, instructionsLabel, responseText;
+@synthesize problemView, problemNumberLabel, scoreLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) 
+    {
         problemView = [[ProblemView alloc] init];
         score = 0;
         problemNumber = 1;
     }
-	responseText = [[UIAlertView alloc] 
-					initWithTitle:@"ALERT!"
-					message:@"" 
-					delegate:self 
-					cancelButtonTitle:@"Continue" 
-					otherButtonTitles:nil];
+	
     return self;
 }
 
 -(void) goToNextProblem
 {
-    if (problemNumber < MAX_PROBLEMS) {
+    if (problemNumber < MAX_PROBLEMS) 
+    {
         [problemView showNextProblem];
         problemNumber++;
         [problemNumberLabel setText:[NSString stringWithFormat:@"%i/%i", problemNumber, MAX_PROBLEMS]];
-    }
-	else {
-		responseText.message = [NSString stringWithFormat:@"CONGRATULATIONS!! Your score was %i !", score];
-		[responseText show];
+    } else 
+    {
+		UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Game Over"
+                              message: [NSString stringWithFormat:@"Your score was %i !", score]
+                              delegate: nil
+                              cancelButtonTitle:@"Close"
+                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
         [self.navigationController popViewControllerAnimated:YES];
 	}
     
@@ -75,9 +78,11 @@
     return ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight));
 }
 
--(void) dealloc {
-    [responseText release];
+-(void) dealloc 
+{
     [problemView release];
+    [problemNumberLabel release];
+    [scoreLabel release];
     [super dealloc];
 }
 

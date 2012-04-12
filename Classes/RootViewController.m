@@ -61,7 +61,8 @@
     return ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight));
 }
 
--(void) dealloc {
+-(void) dealloc 
+{
     [super dealloc];
 }
 

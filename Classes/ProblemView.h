@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Problems.h"
 #import "Marker.h"
+
+#define ARROW_NORMAL 0
+#define ARROW_CORRECT 1
+#define ARROW_INCORRECT 2
  
 @interface ProblemView : UIView {
+    
     @private
         Problems *problems;
         Marker *electrophileMarker;
@@ -21,6 +26,7 @@
         NSMutableArray *arrowStack;
         BOOL arrowInProgress;
         int arrowOrder;
+        int arrowMode;
 }
 
 @property (nonatomic, retain) Problems *problems;
@@ -119,6 +125,12 @@
 // number of arrows in the arrow stack and current problem.
 -(BOOL) doesAllArrowsMatchProblem;
 
+// Sets Arrows that are drawn to a mode: ARROW_NORMAL, ARROW_INCORRECT,
+// and ARROW_INCORRECT. This changes the color of the arrows to its mode.
+-(void) setArrowMode:(int) mode;
+
+// Returns a UIImage of all Images on the screen.
+-(UIImage*) getArrowImage;
 
 // PRIVATE METHODS - FOR INTERNAL CLASS USE ONLY
 

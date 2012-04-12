@@ -15,14 +15,16 @@
 
 #define HITBOX_SIZE (iPad ? 80.0f : 40.0f)
 
+#define ELECTRON_SIZE (iPad ? 8.0f : 4.0f)
+
 #define MOLECULE_COLOR_RED 1.0f
 #define MOLECULE_COLOR_GREEN 1.0f
 #define MOLECULE_COLOR_BLUE 1.0f
 #define MOLECULE_COLOR_ALPHA 1.0f
 
-#define EP_MARKER_COLOR_RED 1.0f
+#define EP_MARKER_COLOR_RED 0.0f
 #define EP_MARKER_COLOR_GREEN 0.0f
-#define EP_MARKER_COLOR_BLUE 0.0f
+#define EP_MARKER_COLOR_BLUE 1.0f
 #define EP_MARKER_COLOR_ALPHA 0.3f
 
 #define NP_MARKER_COLOR_RED 0.0f
@@ -35,12 +37,12 @@
 #define PROBLEM_MARKER_COLOR_BLUE 0.5f
 #define PROBLEM_MARKER_COLOR_ALPHA 0.3f
 
-#define EP_MOVABLE_MARKER_COLOR_RED 1.0f
+#define EP_MOVABLE_MARKER_COLOR_RED 0.0f
 #define EP_MOVABLE_MARKER_COLOR_GREEN 0.0f
-#define EP_MOVABLE_MARKER_COLOR_BLUE 0.0f
+#define EP_MOVABLE_MARKER_COLOR_BLUE 1.0f
 #define EP_MOVABLE_MARKER_COLOR_ALPHA 0.6f
 
-#define NP_MOVABLE_MARKER_COLOR_RED 0.0f
+#define NP_MOVABLE_MARKER_COLOR_RED 1.0f
 #define NP_MOVABLE_MARKER_COLOR_GREEN 0.0f
 #define NP_MOVABLE_MARKER_COLOR_BLUE 1.0f
 #define NP_MOVABLE_MARKER_COLOR_ALPHA 0.6f
@@ -55,10 +57,20 @@
 #define HITBOX_COLOR_BLUE 1.0f
 #define HITBOX_COLOR_ALPHA 0.5f
 
-#define ARROW_COLOR_RED 140.0f/255.0f
-#define ARROW_COLOR_GREEN 200.0f/255.0f
-#define ARROW_COLOR_BLUE 60.0f/255.0f
+#define ARROW_COLOR_RED 1.0f 
+#define ARROW_COLOR_GREEN 1.0f
+#define ARROW_COLOR_BLUE 0.0f
+
+#define ARROW_CORRECT_COLOR_RED 0.0f 
+#define ARROW_CORRECT_COLOR_GREEN 1.0f
+#define ARROW_CORRECT_COLOR_BLUE 0.0f
+
+#define ARROW_INCORRECT_COLOR_RED 1.0f 
+#define ARROW_INCORRECT_COLOR_GREEN 0.0f
+#define ARROW_INCORRECT_COLOR_BLUE 0.0f
+
 #define ARROW_COLOR_ALPHA 1.0f
+#define ARROW_POINT_COLOR_ALPHA 0.7f
 
 @implementation ProblemView
 
@@ -67,6 +79,7 @@
 -(id) initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) 
     {
+        arrowMode = ARROW_NORMAL;
         electrophileMarker = nil;
         nucleophileMarker = nil;
         showProblemMarkers = FALSE;
@@ -168,7 +181,7 @@
         {
             if (moleculeIndex == 1)
             {
-                return CGPointMake(element.location.x + (MOLECULE_WIDTH * MOLECULE_MULTIPLIER), element.location.y * MOLECULE_MULTIPLIER);
+                return CGPointMake((element.location.x * MOLECULE_MULTIPLIER) + (MOLECULE_WIDTH * MOLECULE_MULTIPLIER), element.location.y * MOLECULE_MULTIPLIER);
             } else {
                 return CGPointMake(element.location.x * MOLECULE_MULTIPLIER, element.location.y * MOLECULE_MULTIPLIER);
             }
@@ -363,13 +376,16 @@
 
 -(void) removeLastArrow 
 {
-    arrowInProgress = FALSE;
-    if (arrowOrder > [self getArrowStackCount])
-	{
-        arrowOrder--;
-	}
-    [arrowStack removeLastObject];
-    [self setNeedsDisplay];
+    if ([arrowStack count] > 0)
+    {
+        arrowInProgress = FALSE;
+        if (arrowOrder > [self getArrowStackCount])
+        {
+            arrowOrder--;
+        }
+        [arrowStack removeLastObject];
+        [self setNeedsDisplay];
+    }
 }
 
 -(void) removeAllArrows 
@@ -474,6 +490,18 @@
     }
     
     return TRUE;
+}
+
+-(void) setArrowMode:(int) mode
+{
+    if (mode == ARROW_NORMAL || mode == ARROW_CORRECT || mode == ARROW_INCORRECT)
+    {
+        if (arrowMode != mode)
+        {
+            arrowMode = mode;
+            [self setNeedsDisplay];
+        }
+    }
 }
 
 -(BOOL) doesArrowMatchProblem:(Arrow*)arrow
@@ -697,6 +725,7 @@
         {
             CGContextSelectFont(context, "Helvetica", (24.0f * MOLECULE_MULTIPLIER), kCGEncodingMacRoman);
             CGContextSetRGBFillColor(context, MOLECULE_COLOR_RED, MOLECULE_COLOR_GREEN, MOLECULE_COLOR_BLUE, MOLECULE_COLOR_ALPHA);
+            CGContextSetRGBStrokeColor(context, MOLECULE_COLOR_RED, MOLECULE_COLOR_GREEN, MOLECULE_COLOR_BLUE, MOLECULE_COLOR_ALPHA);
             
             CGAffineTransform flipMatrix = CGAffineTransformIdentity;
             flipMatrix.d = -1;
@@ -709,6 +738,215 @@
             CGContextShowText(context, [element.label UTF8String], strlen([element.label UTF8String]));
             
             //add charge, electrons
+            
+            if ((element.electrons > 0) || (element.charge > 0))
+            {
+                BOOL upQuad = FALSE;
+                BOOL rightQuad = FALSE;
+                BOOL downQuad = FALSE;
+                BOOL leftQuad = FALSE;
+                
+                for (Bond *bond in [molecule.bonds allValues])
+                {
+                    if (CGPointEqualToPoint(bond.locationA, element.location))
+                    {
+                        if (((bond.locationB.x - bond.locationA.x) < 0) && ((bond.locationB.y - bond.locationA.y) == 0))
+                        {
+                            leftQuad = TRUE;
+                        } else if (((bond.locationB.x - bond.locationA.x) > 0) && ((bond.locationB.y - bond.locationA.y) == 0))
+                        {
+                            rightQuad = TRUE;
+                        } else if (((bond.locationB.y - bond.locationA.y) < 0) && ((bond.locationB.x - bond.locationA.x) == 0))
+                        {
+                            upQuad = TRUE;
+                        } else if (((bond.locationB.y - bond.locationA.y) > 0) && ((bond.locationB.x - bond.locationA.x) == 0))
+                        {
+                            downQuad = TRUE;
+                        }
+                        
+                    } else if (CGPointEqualToPoint(bond.locationB, element.location))
+                    {
+                        if (((bond.locationA.x - bond.locationB.x) < 0) && ((bond.locationA.y - bond.locationB.y) == 0))
+                        {
+                            leftQuad = TRUE;
+                        } else if (((bond.locationA.x - bond.locationB.x) > 0) && ((bond.locationA.y - bond.locationB.y) == 0))
+                        {
+                            rightQuad = TRUE;
+                        } else if (((bond.locationA.y - bond.locationB.y) < 0) && ((bond.locationA.x - bond.locationB.x) == 0))
+                        {
+                            upQuad = TRUE;
+                        } else if (((bond.locationA.y - bond.locationB.y) > 0) && ((bond.locationA.x - bond.locationB.x) == 0))
+                        {
+                            downQuad = TRUE;
+                        }
+                    }
+                }
+                
+                int electrons = element.electrons;
+                BOOL charge = (element.charge > 0) ? TRUE : FALSE;
+                CGContextSetLineWidth(context, 1.0f * MOLECULE_MULTIPLIER);
+                
+                if (upQuad == FALSE)
+                {
+                    if (electrons > 1)
+                    {
+                        CGContextFillEllipseInRect(context, CGRectMake(elementLocation.x - (6.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y - (16.0f * MOLECULE_MULTIPLIER), ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        CGContextFillEllipseInRect(context, CGRectMake(elementLocation.x + (2.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y - (16.0f * MOLECULE_MULTIPLIER), ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        electrons -= 2;
+                        
+                    } else if (electrons > 0) {
+                        CGContextFillEllipseInRect(context, CGRectMake(elementLocation.x + moleculeOffset, elementLocation.y - (10.0f * MOLECULE_MULTIPLIER), ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        electrons -= 1;
+                    }
+            
+            
+                    if (charge == TRUE)
+                    {
+                        CGContextStrokeEllipseInRect(context, CGRectMake(elementLocation.x - ((10.0f * MOLECULE_MULTIPLIER) / 2.0f) + moleculeOffset, elementLocation.y - (25.0f * MOLECULE_MULTIPLIER) - ((10.0f * MOLECULE_MULTIPLIER) / 2.0f), (10.0f * MOLECULE_MULTIPLIER), (10.0f * MOLECULE_MULTIPLIER)));
+                        
+                        if (element.charge == CHARGE_NEGATIVE)
+                        {
+                            CGContextMoveToPoint(context, elementLocation.x - (3.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y - (25.0f * MOLECULE_MULTIPLIER));
+                            CGContextAddLineToPoint(context, elementLocation.x + (3.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y - (25.0f * MOLECULE_MULTIPLIER));
+                            CGContextStrokePath(context);
+                        } else if (element.charge == CHARGE_POSITIVE)
+                        {
+                            CGContextMoveToPoint(context, elementLocation.x - (3.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y - (25.0f * MOLECULE_MULTIPLIER));
+                            CGContextAddLineToPoint(context, elementLocation.x + (3.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y - (25.0f * MOLECULE_MULTIPLIER));
+                            CGContextStrokePath(context);
+                            
+                            CGContextMoveToPoint(context, elementLocation.x + moleculeOffset, elementLocation.y - (28.0f * MOLECULE_MULTIPLIER));
+                            CGContextAddLineToPoint(context, elementLocation.x + moleculeOffset, elementLocation.y - (22.0f * MOLECULE_MULTIPLIER));
+                            CGContextStrokePath(context);
+                        }
+                        charge = FALSE;
+                    }
+                }
+                
+                if (rightQuad == FALSE)
+                {
+                    if (electrons > 1)
+                    {
+                        CGContextFillEllipseInRect(context, CGRectMake(elementLocation.x + (10.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y - (5.0f * MOLECULE_MULTIPLIER), ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        CGContextFillEllipseInRect(context, CGRectMake(elementLocation.x + (10.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y + (5.0f * MOLECULE_MULTIPLIER), ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        electrons -= 2;
+                        
+                    } else if (electrons > 0) {
+                        CGContextFillEllipseInRect(context, CGRectMake(elementLocation.x + (10.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y, ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        electrons -= 1;
+                    }
+                    
+                    if (charge == TRUE)
+                    {
+                        CGContextStrokeEllipseInRect(context, CGRectMake(elementLocation.x + (21.0f * MOLECULE_MULTIPLIER) - ((10.0f * MOLECULE_MULTIPLIER) / 2.0f) + moleculeOffset, elementLocation.y - ((10.0f * MOLECULE_MULTIPLIER) / 2.0f), (10.0f * MOLECULE_MULTIPLIER), (10.0f * MOLECULE_MULTIPLIER)));
+                        
+                        if (element.charge == CHARGE_NEGATIVE)
+                        {
+                            CGContextMoveToPoint(context, elementLocation.x + (19.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y);
+                            CGContextAddLineToPoint(context, elementLocation.x + (24.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y);
+                            CGContextStrokePath(context);
+                        } else if (element.charge == CHARGE_POSITIVE)
+                        {
+                            CGContextMoveToPoint(context, elementLocation.x + (19.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y);
+                            CGContextAddLineToPoint(context, elementLocation.x + (24.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y);
+                            CGContextStrokePath(context);
+                            
+                            CGContextMoveToPoint(context, elementLocation.x + (21.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y - (3.0f * MOLECULE_MULTIPLIER));
+                            CGContextAddLineToPoint(context, elementLocation.x + (21.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y + (3.0f * MOLECULE_MULTIPLIER));
+                            CGContextStrokePath(context);
+                        }
+                        charge = FALSE;
+                    }
+                }
+                
+                if (downQuad == FALSE)
+                {
+                    if (electrons > 1)
+                    {
+                        CGContextFillEllipseInRect(context, CGRectMake(elementLocation.x - (6.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y + (12.0f * MOLECULE_MULTIPLIER), ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        CGContextFillEllipseInRect(context, CGRectMake(elementLocation.x + (2.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y + (12.0f * MOLECULE_MULTIPLIER), ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        electrons -= 2;
+                        
+                    } else if (electrons > 0) {
+                        CGContextFillEllipseInRect(context, CGRectMake(elementLocation.x + moleculeOffset, elementLocation.y + (10.0f * MOLECULE_MULTIPLIER), ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        electrons -= 1;
+                    }
+                    
+                    if (charge == TRUE)
+                    {
+                        CGContextStrokeEllipseInRect(context, CGRectMake(elementLocation.x - ((10.0f * MOLECULE_MULTIPLIER) / 2.0f) + moleculeOffset, elementLocation.y + (25.0f * MOLECULE_MULTIPLIER) - ((10.0f * MOLECULE_MULTIPLIER) / 2.0f), (10.0f * MOLECULE_MULTIPLIER), (10.0f * MOLECULE_MULTIPLIER)));
+                        
+                        if (element.charge == CHARGE_NEGATIVE)
+                        {
+                            CGContextMoveToPoint(context, elementLocation.x - (3.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y + (25.0f * MOLECULE_MULTIPLIER));
+                            CGContextAddLineToPoint(context, elementLocation.x + (3.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y + (25.0f * MOLECULE_MULTIPLIER));
+                            CGContextStrokePath(context);
+                        } else if (element.charge == CHARGE_POSITIVE)
+                        {
+                            CGContextMoveToPoint(context, elementLocation.x - (3.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y + (25.0f * MOLECULE_MULTIPLIER));
+                            CGContextAddLineToPoint(context, elementLocation.x + (3.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y + (25.0f * MOLECULE_MULTIPLIER));
+                            CGContextStrokePath(context);
+                            
+                            CGContextMoveToPoint(context, elementLocation.x + moleculeOffset, elementLocation.y + (28.0f * MOLECULE_MULTIPLIER));
+                            CGContextAddLineToPoint(context, elementLocation.x + moleculeOffset, elementLocation.y + (22.0f * MOLECULE_MULTIPLIER));
+                            CGContextStrokePath(context);
+                        }
+                        charge = FALSE;
+                    }
+                }
+                
+                if (leftQuad == FALSE)
+                {
+                    if (electrons > 1)
+                    {
+                        CGContextFillEllipseInRect(context, CGRectMake(element.location.x - (10.0f * MOLECULE_MULTIPLIER) + moleculeOffset, element.location.y - (5.0f * MOLECULE_MULTIPLIER), ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        CGContextFillEllipseInRect(context, CGRectMake(element.location.x - (10.0f * MOLECULE_MULTIPLIER) + moleculeOffset, element.location.y + (5.0f * MOLECULE_MULTIPLIER), ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        electrons -= 2;
+                        
+                    } else if (electrons > 0) {
+                        CGContextFillEllipseInRect(context, CGRectMake(element.location.x - (10.0f * MOLECULE_MULTIPLIER) + moleculeOffset, element.location.y, ELECTRON_SIZE, ELECTRON_SIZE));
+                        
+                        electrons -= 1;
+                    }                
+                    
+                    if (charge == TRUE)
+                    {
+                        CGContextStrokeEllipseInRect(context, CGRectMake(elementLocation.x - (21.0f * MOLECULE_MULTIPLIER) - ((10.0f * MOLECULE_MULTIPLIER) / 2.0f) + moleculeOffset, elementLocation.y - ((10.0f * MOLECULE_MULTIPLIER) / 2.0f), (10.0f * MOLECULE_MULTIPLIER), (10.0f * MOLECULE_MULTIPLIER)));
+                        
+                        if (element.charge == CHARGE_NEGATIVE)
+                        {
+                            CGContextMoveToPoint(context, elementLocation.x - (19.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y);
+                            CGContextAddLineToPoint(context, elementLocation.x - (24.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y);
+                            CGContextStrokePath(context);
+                        } else if (element.charge == CHARGE_POSITIVE)
+                        {
+                            CGContextMoveToPoint(context, elementLocation.x - (19.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y);
+                            CGContextAddLineToPoint(context, elementLocation.x - (24.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y);
+                            CGContextStrokePath(context);
+                            
+                            CGContextMoveToPoint(context, elementLocation.x - (21.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y - (3.0f * MOLECULE_MULTIPLIER));
+                            CGContextAddLineToPoint(context, elementLocation.x - (21.0f * MOLECULE_MULTIPLIER) + moleculeOffset, elementLocation.y + (3.0f * MOLECULE_MULTIPLIER));
+                            CGContextStrokePath(context);
+                        }
+                        charge = FALSE;
+                    }
+                }
+            
+                
+            }
+                
+                        
         }
         
         for (Bond *bond in [molecule.bonds allValues]) 
@@ -811,12 +1049,12 @@
         {
             CGContextSetRGBFillColor(context, EP_MOVABLE_MARKER_COLOR_RED, EP_MOVABLE_MARKER_COLOR_GREEN, EP_MOVABLE_MARKER_COLOR_BLUE, EP_MOVABLE_MARKER_COLOR_ALPHA);
             CGContextSetRGBStrokeColor(context, EP_MOVABLE_MARKER_COLOR_RED, EP_MOVABLE_MARKER_COLOR_GREEN, EP_MOVABLE_MARKER_COLOR_BLUE, 0.3f);
-            label = [[NSString alloc] initWithString:@"EP"];
+            label = [[NSString alloc] initWithString:@"E"];
         } else if (movableMarker.type == ELEMENT_NUCLEOPHILE)
         {
             CGContextSetRGBFillColor(context, NP_MOVABLE_MARKER_COLOR_RED, NP_MOVABLE_MARKER_COLOR_GREEN, NP_MOVABLE_MARKER_COLOR_BLUE, NP_MOVABLE_MARKER_COLOR_ALPHA);
             CGContextSetRGBStrokeColor(context, NP_MOVABLE_MARKER_COLOR_RED, NP_MOVABLE_MARKER_COLOR_GREEN, NP_MOVABLE_MARKER_COLOR_BLUE, 0.3f);
-            label = [[NSString alloc] initWithString:@"NP"];
+            label = [[NSString alloc] initWithString:@"N"];
         } else 
         {
             CGContextSetRGBFillColor(context, 0.0f, 0.5f, 0.5f, 0.6f);
@@ -876,7 +1114,17 @@
         {
             if (!CGPointEqualToPoint(arrow.locationB, CGPointMake(-1.0f, -1.0f))) 
             {
-                CGContextSetRGBStrokeColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                if (arrowMode == ARROW_NORMAL)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_CORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_CORRECT_COLOR_RED, ARROW_CORRECT_COLOR_GREEN, ARROW_CORRECT_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_INCORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_INCORRECT_COLOR_RED, ARROW_INCORRECT_COLOR_GREEN, ARROW_INCORRECT_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                }
+                
                 CGContextSetLineWidth(context, 2.0f * MOLECULE_MULTIPLIER);
                 CGContextMoveToPoint(context, arrow.locationA.x, arrow.locationA.y);
 
@@ -898,8 +1146,17 @@
                 CGContextAddCurveToPoint(context, cp1.x, cp1.y, cp2.x, cp2.y, arrow.locationB.x, arrow.locationB.y);
                 CGContextStrokePath(context);
                 
+                if (arrowMode == ARROW_NORMAL)
+                {
+                    CGContextSetRGBFillColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_CORRECT)
+                {
+                    CGContextSetRGBFillColor(context, ARROW_CORRECT_COLOR_RED, ARROW_CORRECT_COLOR_GREEN, ARROW_CORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_INCORRECT)
+                {
+                    CGContextSetRGBFillColor(context, ARROW_INCORRECT_COLOR_RED, ARROW_INCORRECT_COLOR_GREEN, ARROW_INCORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                }
                 
-                CGContextSetRGBFillColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_COLOR_ALPHA);
                 CGContextFillEllipseInRect(context, CGRectMake(arrow.locationB.x - (10.0f / 2.0f), arrow.locationB.y - (10.0f / 2.0f), 10.0f,10.0f));
                 
 //                float length = 10.0f;
@@ -952,7 +1209,7 @@
     } else 
     {
         float length = sqrtf(dx * dx + dy * dy);
-        float scale = (length + (labelSize.width > labelSize.height ? (labelSize.width / 2.0f) : (labelSize.height / 2.0f))) / length;
+        float scale = (length - (labelSize.width > labelSize.height ? (labelSize.width / 2.0f) : (labelSize.height / 2.0f))) / length;
         dx *= scale;
         dy *= scale;
         inset.x = dx;
@@ -962,7 +1219,90 @@
     return inset;
 }
 
-
+-(UIImage*) getArrowImage
+{
+	float width = self.frame.size.width;
+	float height = self.frame.size.height;
+	
+	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+	
+	CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 4 * width, colorSpace, kCGImageAlphaPremultipliedFirst);
+	
+	
+    if ([arrowStack count] > 0) 
+    {
+        for (Arrow *arrow in arrowStack) 
+        {
+            if (!CGPointEqualToPoint(arrow.locationB, CGPointMake(-1.0f, -1.0f))) 
+            {
+                if (arrowMode == ARROW_NORMAL)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_CORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_CORRECT_COLOR_RED, ARROW_CORRECT_COLOR_GREEN, ARROW_CORRECT_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_INCORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_INCORRECT_COLOR_RED, ARROW_INCORRECT_COLOR_GREEN, ARROW_INCORRECT_COLOR_BLUE, ARROW_COLOR_ALPHA);
+                }
+                
+                CGContextSetLineWidth(context, 2.0f * MOLECULE_MULTIPLIER);
+                CGContextMoveToPoint(context, arrow.locationA.x, arrow.locationA.y);
+                
+                float dx = arrow.locationA.x - arrow.locationB.x;
+                float dy = arrow.locationB.y - arrow.locationA.y;
+                float dist = sqrtf(dx*dx + dy*dy);
+                
+                float length = 60.0;
+                
+                float x1p = arrow.locationA.x + length * (arrow.locationB.y-arrow.locationA.y) / dist;
+                float y1p = arrow.locationA.y + length * (arrow.locationA.x-arrow.locationB.x) / dist;
+                float x2p = arrow.locationB.x + length * (arrow.locationB.y-arrow.locationA.y) / dist;
+                float y2p = arrow.locationB.y + length * (arrow.locationA.x-arrow.locationB.x) / dist;
+                
+                CGPoint cp1 = CGPointMake(x1p,y1p);
+                CGPoint cp2 = CGPointMake(x2p,y2p);
+                
+                
+                CGContextAddCurveToPoint(context, cp1.x, cp1.y, cp2.x, cp2.y, arrow.locationB.x, arrow.locationB.y);
+                CGContextStrokePath(context);
+                
+                if (arrowMode == ARROW_NORMAL)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_CORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_CORRECT_COLOR_RED, ARROW_CORRECT_COLOR_GREEN, ARROW_CORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                } else if (arrowMode == ARROW_INCORRECT)
+                {
+                    CGContextSetRGBStrokeColor(context, ARROW_INCORRECT_COLOR_RED, ARROW_INCORRECT_COLOR_GREEN, ARROW_INCORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
+                }
+                
+                CGContextFillEllipseInRect(context, CGRectMake(arrow.locationB.x - (10.0f / 2.0f), arrow.locationB.y - (10.0f / 2.0f), 10.0f,10.0f));
+                
+                //                float length = 10.0f;
+                //                float width = 10.0f;
+                //            
+                //                CGContextSetRGBFillColor(context, 140.0f/255.0f, 200.0f/255.0f, 60.0f/255.0f, 1.0f);
+                //                CGContextMoveToPoint(context, arrow.locationB.x - (width / 2.0f), arrow.locationB.y - length);
+                //                CGContextAddLineToPoint(context, arrow.locationB.x + (width / 2.0f), arrow.locationB.y - length);
+                //                CGContextAddLineToPoint(context, arrow.locationB.x, arrow.locationB.y);
+                //                CGContextClosePath(context);
+                //                CGContextFillPath(context);
+                
+            }
+        }
+        
+    }
+	
+	CGImageRef imageMasked = CGBitmapContextCreateImage(context);
+	UIImage *arrowImage = [UIImage imageWithCGImage:imageMasked];
+	CGImageRelease(imageMasked);
+	CGContextRelease(context);
+	CGColorSpaceRelease(colorSpace);
+	
+	return arrowImage;	
+}
 
 -(void) dealloc {
     if (electrophileMarker != nil)

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Problem>
+    <Molecule>
+        <Element>
+            <Location x="140" y="160"/>
+            <Label>C</Label>
+            <Charge>0</Charge>
+            <Electrons>0</Electrons>
+            <Type>0</Type>
+        </Element>
+        <Element>
+            <Location x="60" y="160"/>
+            <Label>C</Label>
+            <Charge>0</Charge>
+            <Electrons>0</Electrons>
+            <Type>0</Type>
+        </Element>
+        <Element>
+            <Location x="100" y="60"/>
+            <Label>O</Label>
+            <Charge>0</Charge>
+            <Electrons>4</Electrons>
+            <Type>0</Type>
+        </Element>
+        <Element>
+            <Location x="100" y="120"/>
+            <Label>C</Label>
+            <Charge>0</Charge>
+            <Electrons>0</Electrons>
+            <Type>1</Type>
+        </Element>
+        <Bond>
+            <LocationA x="140" y="160"/>
+            <LocationB x="100" y="120"/>
+            <BondOrder>1</BondOrder>
+        </Bond>
+        <Bond>
+            <LocationA x="100" y="120"/>
+            <LocationB x="100" y="60"/>
+            <BondOrder>2</BondOrder>
+        </Bond>
+        <Bond>
+            <LocationA x="60" y="160"/>
+            <LocationB x="100" y="120"/>
+            <BondOrder>1</BondOrder>
+        </Bond>
+        <Arrow>
+            <LocationA x="100" y="90"/>
+            <LocationB x="100" y="60"/>
+            <Order>2</Order>
+        </Arrow>
+    </Molecule>
+    <Molecule>
+        <Element>
+            <Location x="50" y="100"/>
+            <Label>C</Label>
+            <Charge>1</Charge>
+            <Electrons>2</Electrons>
+            <Type>2</Type>
+        </Element>
+        <Element>
+            <Location x="120" y="100"/>
+            <Label>N</Label>
+            <Charge>0</Charge>
+            <Electrons>0</Electrons>
+            <Type>0</Type>
+        </Element>
+        <Bond>
+            <LocationA x="50" y="100"/>
+            <LocationB x="120" y="100"/>
+            <BondOrder>3</BondOrder>
+        </Bond>
+    </Molecule>
+</Problem>

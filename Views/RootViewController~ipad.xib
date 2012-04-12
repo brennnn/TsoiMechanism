@@ -39,7 +39,7 @@
 					<object class="IBUIButton" id="526917427">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{79, 313}, {236, 236}}</string>
+						<string key="NSFrame">{{62, 233}, {253, 358}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="33613678"/>
@@ -75,7 +75,7 @@
 					<object class="IBUIButton" id="33613678">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{430, 311}, {198, 236}}</string>
+						<string key="NSFrame">{{405, 244}, {232, 347}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="262510298"/>
@@ -98,10 +98,9 @@
 					<object class="IBUIButton" id="262510298">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{724, 331}, {220, 247}}</string>
+						<string key="NSFrame">{{724, 251}, {234, 340}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -130,7 +129,7 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">main_page.png</string>
+							<string key="NSResourceName">ts_main-ipad.png</string>
 						</object>
 					</object>
 				</array>
@@ -295,10 +294,6 @@
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1280" key="NS.object.0"/>
-		</object>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.InterfaceBuilder3</string>
 			<real value="3200" key="NS.object.0"/>
@@ -306,8 +301,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">main_page.png</string>
-			<string key="NS.object.0">{1700, 1300}</string>
+			<string key="NS.key.0">ts_main-ipad.png</string>
+			<string key="NS.object.0">{1024, 783}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">933</string>
 	</data>
