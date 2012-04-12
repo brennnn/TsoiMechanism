@@ -161,82 +161,89 @@ double currentCannon2Angle;
                 int arrowStack = [problemView getArrowStackCount];
                 [problemView endArrow:hitbox];
 				//Checks to see if the current arrow drawn is on the correct hitbox and direction
-				if([problemView doesLastArrowMatchProblem]) 
+                
+                if (arrowStack == [problemView getArrowStackCount])
                 {
-					[problemView showElectrophileMarker:hitbox];
-                    
-                    [self addScore:100];
-					[Animations createScoreAnimationInView:self.view withText:@"+100" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
-                    
-                    if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
-					{
+                    if([problemView doesLastArrowMatchProblem]) 
+                    {
+                        [problemView showElectrophileMarker:hitbox];
                         
-						// Problem was correct!
-						nextButton.hidden = NO;
-					}
-				} 
-				else 
-				{
-                    [self removeScore:25];
-					[problemView removeLastArrow];
-					[problemView clearNucleophileMarker];
-					
-					[Animations fireLaser:laser fromCannon:cannon toPoint:firstPoint];
-					[Animations fireLaser:laser2 fromCannon:cannon2 toPoint:touchPoint];
-					
-					[Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
-					[Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
-					AudioServicesPlayAlertSound(explosion);
-					
-					[Animations shakeView:problemView power:8.0];
-				}
+                        [self addScore:100];
+                        [Animations createScoreAnimationInView:self.view withText:@"+100" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
+                        
+                        if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
+                        {
+                            
+                            // Problem was correct!
+                            nextButton.hidden = NO;
+                        }
+                    } 
+                    else 
+                    {
+                        [self removeScore:25];
+                        [problemView removeLastArrow];
+                        [problemView clearNucleophileMarker];
+                        
+                        [Animations fireLaser:laser fromCannon:cannon toPoint:firstPoint];
+                        [Animations fireLaser:laser2 fromCannon:cannon2 toPoint:touchPoint];
+                        
+                        [Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
+                        [Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
+                        AudioServicesPlayAlertSound(explosion);
+                        
+                        [Animations shakeView:problemView power:8.0];
+                    }
+                }
             } else if ([problemView getArrowStackCount] > 1)
             {
                 int arrowStack = [problemView getArrowStackCount];
                 [problemView endArrow:hitbox];
                 
-				if([problemView doesLastArrowMatchProblem])
-				{
-                    if ([problemView getProblemArrowCount] == 3) {
+                if (arrowStack == [problemView getArrowStackCount])
+                {
+                    if([problemView doesLastArrowMatchProblem])
+                    {
+                        if ([problemView getProblemArrowCount] == 3) {
+                            
+                            [self addScore:25];
+                            [Animations createScoreAnimationInView:self.view withText:@"+25" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
+                            
+                        } else if ([problemView getProblemArrowCount] == 2) {
+                            
+                            [self addScore:50];
+                            [Animations createScoreAnimationInView:self.view withText:@"+50" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
+                        }
                         
-                        [self addScore:25];
-						[Animations createScoreAnimationInView:self.view withText:@"+25" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
-                        
-                    } else if ([problemView getProblemArrowCount] == 2) {
-                        
-                        [self addScore:50];
-						[Animations createScoreAnimationInView:self.view withText:@"+50" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
+                        if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
+                        {
+                            
+                            // Problem was correct!
+                            nextButton.hidden = NO;
+                        }
                     }
-
-					if([problemView getArrowStackCount] == [problemView getProblemArrowCount])
-					{
-
-						// Problem was correct!
-						nextButton.hidden = NO;
-					}
-				}
-				else
-				{
-                    if ([problemView getProblemArrowCount] == 3) {
+                    else
+                    {
+                        if ([problemView getProblemArrowCount] == 3) {
+                            
+                            [self removeScore:10];
+                            
+                        } else if ([problemView getProblemArrowCount] == 2) {
+                            
+                            [self removeScore:25];
+                        }
+                        [problemView removeLastArrow];
                         
-                        [self removeScore:10];
+                        [Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
+                        [Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
                         
-                    } else if ([problemView getProblemArrowCount] == 2) {
+                        [Animations fireLaser:laser fromCannon:cannon toPoint:firstPoint];
+                        [Animations fireLaser:laser2 fromCannon:cannon2 toPoint:touchPoint];
                         
-                        [self removeScore:25];
+                        AudioServicesPlayAlertSound(explosion);
+                        
+                        [Animations shakeView:problemView power:8.0];
                     }
-					[problemView removeLastArrow];
-					
-					[Animations createExplosionInView:self.view atPoint:firstPoint withImages:myImages];
-					[Animations createExplosionInView:self.view atPoint:touchPoint withImages:myImages];
-					
-					[Animations fireLaser:laser fromCannon:cannon toPoint:firstPoint];
-					[Animations fireLaser:laser2 fromCannon:cannon2 toPoint:touchPoint];
-				
-					AudioServicesPlayAlertSound(explosion);
-					
-					[Animations shakeView:problemView power:8.0];
-				}
+                }
 				
 			}
         }
