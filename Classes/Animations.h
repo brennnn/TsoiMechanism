@@ -35,6 +35,7 @@
 +(void)moveImage:(UIImageView *)image duration:(NSTimeInterval)duration scale:(int)scale toPoint:(CGPoint)point;
 
 + (void)shakeView:(UIView *)viewToShake power:(CGFloat)t;
++(void) createScoreAnimationInView:(UIView*)view withText:(NSString*)string fromPoint:(CGPoint)begin toPoint:(CGPoint)end textColor:(UIColor*)textColor;
 
 +(double) getAngleOfView:(UIView*)view;
 +(int) getiPadScale;

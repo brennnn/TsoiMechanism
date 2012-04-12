@@ -197,6 +197,9 @@ int answered = 0;
 				[problemView showElectrophileMarker:hitbox]; // create a marker at that spot
 				[self showEpSuccessImage];
 				[self addScore:50];
+				
+				[Animations createScoreAnimationInView:self.view withText:@"+50" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
+				
 				[self recordAnswer];
 			}
 			else
@@ -208,6 +211,7 @@ int answered = 0;
                 
 				[Animations fireLaser:laser fromCannon:cannon toPoint:touchPoint];
 				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionRedFrames];
+				AudioServicesPlayAlertSound(explosion);
 				
 				// If actually put on a element or bond:
 				if (!CGPointEqualToPoint([problemView isHitbox:touchPoint], CGPointMake(-1.0f, -1.0f)))
@@ -229,6 +233,7 @@ int answered = 0;
 				[problemView showNucleophileMarker:hitbox]; // create a marker at that spot
 				[self showNpSuccessImage];
 				[self addScore:50];
+				[Animations createScoreAnimationInView:self.view withText:@"+50" fromPoint:self.view.center toPoint:scoreLabel.center textColor:[UIColor greenColor]];
 				[self recordAnswer];
 			}
 			else
@@ -240,6 +245,7 @@ int answered = 0;
                 
 				[Animations fireLaser:laser fromCannon:cannon toPoint:touchPoint];
 				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionBlueFrames];
+				AudioServicesPlayAlertSound(explosion);
 				
 				// If actually put on a element or bond:
 				if (!CGPointEqualToPoint([problemView isHitbox:touchPoint], CGPointMake(-1.0f, -1.0f)))
