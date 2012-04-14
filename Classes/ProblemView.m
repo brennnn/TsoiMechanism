@@ -70,7 +70,7 @@
 #define ARROW_INCORRECT_COLOR_BLUE 0.0f
 
 #define ARROW_COLOR_ALPHA 1.0f
-#define ARROW_POINT_COLOR_ALPHA 0.7f
+#define ARROW_POINT_COLOR_ALPHA 1.0f
 
 @implementation ProblemView
 
@@ -1135,7 +1135,7 @@
                 float dy = arrow.locationB.y - arrow.locationA.y;
                 float dist = sqrtf(dx*dx + dy*dy);
                 
-                float length = 60.0;
+                float length = 100.0;
                 
                 float x1p = arrow.locationA.x + length * (arrow.locationB.y-arrow.locationA.y) / dist;
                 float y1p = arrow.locationA.y + length * (arrow.locationA.x-arrow.locationB.x) / dist;
@@ -1149,28 +1149,27 @@
                 CGContextAddCurveToPoint(context, cp1.x, cp1.y, cp2.x, cp2.y, arrow.locationB.x, arrow.locationB.y);
                 CGContextStrokePath(context);
                 
-                if (arrowMode == ARROW_NORMAL)
-                {
-                    CGContextSetRGBFillColor(context, ARROW_COLOR_RED, ARROW_COLOR_GREEN, ARROW_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
-                } else if (arrowMode == ARROW_CORRECT)
-                {
-                    CGContextSetRGBFillColor(context, ARROW_CORRECT_COLOR_RED, ARROW_CORRECT_COLOR_GREEN, ARROW_CORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
-                } else if (arrowMode == ARROW_INCORRECT)
-                {
-                    CGContextSetRGBFillColor(context, ARROW_INCORRECT_COLOR_RED, ARROW_INCORRECT_COLOR_GREEN, ARROW_INCORRECT_COLOR_BLUE, ARROW_POINT_COLOR_ALPHA);
-                }
+            
+                float pointLength = 15.0f;
+                float angle = 35 * M_PI / 180.0f;
+                float ddy = arrow.locationB.y - y2p;
+                float ddx = arrow.locationB.x - x2p;
+                float theta = atan2f(ddy, ddx);
+                float rho = theta + angle;
+                float x1 = arrow.locationB.x - pointLength * cosf(rho);
+                float y1 = arrow.locationB.y - pointLength * sinf(rho);
+                rho = theta - angle;
+                float x2 = arrow.locationB.x - pointLength * cosf(rho);
+                float y2 = arrow.locationB.y - pointLength * sinf(rho);
                 
-                CGContextFillEllipseInRect(context, CGRectMake(arrow.locationB.x - (10.0f / 2.0f), arrow.locationB.y - (10.0f / 2.0f), 10.0f,10.0f));
+            
+                CGContextMoveToPoint(context,  arrow.locationB.x,  arrow.locationB.y);
+                CGContextAddLineToPoint(context, x1, y1);
+                CGContextAddLineToPoint(context, x2, y2);
                 
-//                float length = 10.0f;
-//                float width = 10.0f;
-//            
-//                CGContextSetRGBFillColor(context, 140.0f/255.0f, 200.0f/255.0f, 60.0f/255.0f, 1.0f);
-//                CGContextMoveToPoint(context, arrow.locationB.x - (width / 2.0f), arrow.locationB.y - length);
-//                CGContextAddLineToPoint(context, arrow.locationB.x + (width / 2.0f), arrow.locationB.y - length);
-//                CGContextAddLineToPoint(context, arrow.locationB.x, arrow.locationB.y);
-//                CGContextClosePath(context);
-//                CGContextFillPath(context);
+                CGContextClosePath(context);
+                CGContextFillPath(context);
+
                                
             }
         }
