@@ -9,7 +9,6 @@
 #import "IdentifyViewController.h"
 #import "Element.h"
 #import <QuartzCore/QuartzCore.h>
-#import <AudioToolbox/AudioToolbox.h>
 #import "Animations.h"
 
 @implementation IdentifyViewController
@@ -27,22 +26,14 @@
 // Our conversion definition
 #define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
 
-SystemSoundID explosion;
-NSArray *explosionFrames; // The animation frames (images) of the explosion
-NSArray *explosionBlueFrames;
-NSArray *explosionRedFrames;
-double iPadScale;
-
 enum { NONE, ELECTROKNUCKLES, NUCLEOSONIC };
-
-int draggingType = 0; // 0 = user isn't dragging anything
-int answered = 0;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) 
     {
-		
+		draggingType = 0;
+		answered = 0;
     }
     return self;
 }

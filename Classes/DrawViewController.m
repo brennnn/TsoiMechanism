@@ -8,7 +8,6 @@
 
 #import "DrawViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import <AudioToolbox/AudioToolbox.h>
 #import "Animations.h"
 
 @implementation DrawViewController
@@ -26,15 +25,6 @@
 
 // Our conversion definition
 #define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
-
-SystemSoundID explosion;
-NSArray *myImages;
-CGPoint firstPoint;
-UIImageView *deadArrow;
-
-double iPadScale;
-double currentCannonAngle;
-double currentCannon2Angle;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {

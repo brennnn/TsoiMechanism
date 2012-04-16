@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ModeViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface IdentifyViewController : ModeViewController
 {
@@ -18,6 +19,18 @@
 	IBOutlet UIImageView *gear;
 	IBOutlet UIImageView *laser;
 	IBOutlet UIImageView *background;
+	
+	SystemSoundID explosion;
+	NSArray *explosionFrames; // The animation frames (images) of the explosion
+	NSArray *explosionBlueFrames;
+	NSArray *explosionRedFrames;
+	double iPadScale;
+	
+	
+	
+	int draggingType; // 0 = user isn't dragging anything
+	int answered;
+	
 }
 
 @property (retain, nonatomic) IBOutlet UIImageView *epImage;
@@ -32,5 +45,13 @@
 -(IBAction) tappedNext:(UIButton *)sender;
 -(void) recordAnswer;
 -(void) newProblem;
+
+-(void) showEpImageAndText;
+-(void) showNpImageAndText;
+-(void) showEpSuccessImage;
+-(void) showNpSuccessImage;
+
+-(void) fadeInDraggableMarker:(UIView*)marker;
+
 
 @end

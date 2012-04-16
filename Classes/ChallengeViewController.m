@@ -7,7 +7,6 @@
 //
 
 #import "ChallengeViewController.h"
-#import <AudioToolbox/AudioToolbox.h>
 #import "Animations.h"
 
 @implementation ChallengeViewController
@@ -15,14 +14,6 @@
 @synthesize charge;
 @synthesize undoButtons;
 @synthesize cannonContainerView;
-
-SystemSoundID laserFire;
-SystemSoundID laserCharge;
-
-CGRect originalFrame;
-CGPoint originalProblemViewPos;
-
-NSArray *frames;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {

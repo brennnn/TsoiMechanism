@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ModeViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface DrawViewController : ModeViewController <UIAlertViewDelegate>
 {
@@ -22,6 +23,15 @@
 	
 	IBOutlet UIImageView *laser;
 	IBOutlet UIImageView *laser2;
+	
+	SystemSoundID explosion;
+	NSArray *myImages;
+	CGPoint firstPoint;
+	UIImageView *deadArrow;
+	
+	double iPadScale;
+	double currentCannonAngle;
+	double currentCannon2Angle;
 }
 @property (retain, nonatomic) IBOutlet UIImageView *cannon;
 @property (retain, nonatomic) IBOutlet UIImageView *gear;
@@ -36,6 +46,8 @@
 -(IBAction)tappedNext:(id)sender;
 -(IBAction)hintPressed:(id)sender;
 -(void) hintPopUp;
+
+-(void) dropArrow;
 
 
 @end

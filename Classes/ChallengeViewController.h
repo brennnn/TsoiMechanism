@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ModeViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ChallengeViewController : ModeViewController 
 {
@@ -18,6 +19,14 @@
 	
 	IBOutlet UIImageView *megalaser;
 	IBOutlet UIImageView *charge;
+	
+	SystemSoundID laserFire;
+	SystemSoundID laserCharge;
+	
+	CGRect originalFrame;
+	CGPoint originalProblemViewPos;
+	
+	NSArray *frames;
 }
 
 @property (retain, nonatomic) IBOutlet UIImageView *megalaser;
@@ -28,5 +37,14 @@
 -(IBAction)nextAct:(id)sender;
 -(IBAction)submitAct:(id)sender;
 -(IBAction)eraseAct:(id)sender;
+
+-(void) pulsateLaser;
+-(void) answerCorrect;
+-(void) answerIncorrect;
+
+-(void) slideInProblemView;
+-(void) playFireAnimation;
+-(void) playFlashCharge;
+
 
 @end
