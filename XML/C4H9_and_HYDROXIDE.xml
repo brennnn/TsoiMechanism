@@ -3,7 +3,7 @@
     <Molecule>
         <Element>
             <Location x="60" y="170"/>
-            <Label>H3C</Label>
+            <Label>H₃C</Label>
             <Charge>0</Charge>
             <Electrons>0</Electrons>
             <Type>0</Type>
@@ -17,14 +17,14 @@
         </Element>
         <Element>
             <Location x="150" y="170"/>
-            <Label>CH3</Label>
+            <Label>CH₃</Label>
             <Charge>0</Charge>
             <Electrons>0</Electrons>
             <Type>0</Type>
         </Element>
         <Element>
             <Location x="110" y="60"/>
-            <Label>CH3</Label>
+            <Label>CH₃</Label>
             <Charge>0</Charge>
             <Electrons>0</Electrons>
             <Type>0</Type>

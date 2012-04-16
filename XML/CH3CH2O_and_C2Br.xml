@@ -3,14 +3,14 @@
     <Molecule>
         <Element>
             <Location x="60" y="100"/>
-            <Label>CH3</Label>
+            <Label>CH₃</Label>
             <Charge>0</Charge>
             <Electrons>0</Electrons>
             <Type>0</Type>
         </Element>
         <Element>
             <Location x="110" y="100"/>
-            <Label>CH2</Label>
+            <Label>CH₂</Label>
             <Charge>0</Charge>
             <Electrons>0</Electrons>
             <Type>0</Type>

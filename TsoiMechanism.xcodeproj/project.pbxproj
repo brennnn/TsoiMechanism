@@ -18,6 +18,14 @@
 		264F79B8152A799E00757C1F /* RootViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264F79B3152A799E00757C1F /* RootViewController~ipad.xib */; };
 		265DB5A114F6A8540070D769 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265DB5A014F6A8540070D769 /* MainWindow.xib */; };
 		266BA54214F8311000B06C88 /* ModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BA54114F8311000B06C88 /* ModeViewController.m */; };
+		2671A10A153C8EB00031BE27 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2671A109153C8EB00031BE27 /* DemoViewController.m */; };
+		2671A10D153C8F8B0031BE27 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2671A10C153C8F8B0031BE27 /* MediaPlayer.framework */; };
+		2671A118153CA8830031BE27 /* challenge-ipad.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2671A112153CA8830031BE27 /* challenge-ipad.mov */; };
+		2671A119153CA8830031BE27 /* challenge.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2671A113153CA8830031BE27 /* challenge.mov */; };
+		2671A11A153CA8830031BE27 /* draw-ipad.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2671A114153CA8830031BE27 /* draw-ipad.mov */; };
+		2671A11B153CA8830031BE27 /* draw.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2671A115153CA8830031BE27 /* draw.mov */; };
+		2671A11C153CA8830031BE27 /* identify-ipad.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2671A116153CA8830031BE27 /* identify-ipad.mov */; };
+		2671A11D153CA8830031BE27 /* identify.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2671A117153CA8830031BE27 /* identify.mov */; };
 		2673A8311536C2EF005D0FD5 /* ts_scale_nogearN-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2673A82E1536C2EF005D0FD5 /* ts_scale_nogearN-ipad.png */; };
 		2673A8321536C2EF005D0FD5 /* ts_scale_nogearN.png in Resources */ = {isa = PBXBuildFile; fileRef = 2673A82F1536C2EF005D0FD5 /* ts_scale_nogearN.png */; };
 		2673A8331536C2EF005D0FD5 /* ts_scale_nogearN@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2673A8301536C2EF005D0FD5 /* ts_scale_nogearN@2x.png */; };
@@ -174,6 +182,15 @@
 		265DB5A014F6A8540070D769 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = Views/MainWindow.xib; sourceTree = "<group>"; };
 		266BA54014F8311000B06C88 /* ModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeViewController.h; sourceTree = "<group>"; };
 		266BA54114F8311000B06C88 /* ModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeViewController.m; sourceTree = "<group>"; };
+		2671A108153C8EB00031BE27 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		2671A109153C8EB00031BE27 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		2671A10C153C8F8B0031BE27 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		2671A112153CA8830031BE27 /* challenge-ipad.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "challenge-ipad.mov"; sourceTree = "<group>"; };
+		2671A113153CA8830031BE27 /* challenge.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = challenge.mov; sourceTree = "<group>"; };
+		2671A114153CA8830031BE27 /* draw-ipad.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "draw-ipad.mov"; sourceTree = "<group>"; };
+		2671A115153CA8830031BE27 /* draw.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = draw.mov; sourceTree = "<group>"; };
+		2671A116153CA8830031BE27 /* identify-ipad.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "identify-ipad.mov"; sourceTree = "<group>"; };
+		2671A117153CA8830031BE27 /* identify.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = identify.mov; sourceTree = "<group>"; };
 		2673A82E1536C2EF005D0FD5 /* ts_scale_nogearN-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ts_scale_nogearN-ipad.png"; path = "Images/ts_scale_nogearN-ipad.png"; sourceTree = "<group>"; };
 		2673A82F1536C2EF005D0FD5 /* ts_scale_nogearN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ts_scale_nogearN.png; path = Images/ts_scale_nogearN.png; sourceTree = "<group>"; };
 		2673A8301536C2EF005D0FD5 /* ts_scale_nogearN@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ts_scale_nogearN@2x.png"; path = "Images/ts_scale_nogearN@2x.png"; sourceTree = "<group>"; };
@@ -338,6 +355,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2671A10D153C8F8B0031BE27 /* MediaPlayer.framework in Frameworks */,
 				659EAF79152A8A7B005EE158 /* AudioToolbox.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
@@ -367,6 +385,19 @@
 				1D6058910D05DD3D006BFB54 /* TsoiMechanism.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2671A111153CA8760031BE27 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				2671A112153CA8830031BE27 /* challenge-ipad.mov */,
+				2671A113153CA8830031BE27 /* challenge.mov */,
+				2671A114153CA8830031BE27 /* draw-ipad.mov */,
+				2671A115153CA8830031BE27 /* draw.mov */,
+				2671A116153CA8830031BE27 /* identify-ipad.mov */,
+				2671A117153CA8830031BE27 /* identify.mov */,
+			);
+			name = Video;
 			sourceTree = "<group>";
 		};
 		26C6254E14F597EB00B8A163 /* GXML */ = {
@@ -536,6 +567,8 @@
 				26C6258814F59CB900B8A163 /* DrawViewController.m */,
 				26C6258C14F59CC500B8A163 /* ChallengeViewController.h */,
 				26C6258D14F59CC500B8A163 /* ChallengeViewController.m */,
+				2671A108153C8EB00031BE27 /* DemoViewController.h */,
+				2671A109153C8EB00031BE27 /* DemoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -577,6 +610,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2671A111153CA8760031BE27 /* Video */,
 				26E027DB1532C01A00A3AEBE /* Sounds */,
 				26C6256414F5984300B8A163 /* XMLs */,
 				26C6256314F5983E00B8A163 /* Images */,
@@ -589,6 +623,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2671A10C153C8F8B0031BE27 /* MediaPlayer.framework */,
 				659EAF78152A8A7B005EE158 /* AudioToolbox.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -836,6 +871,12 @@
 				2673A8521536C6E4005D0FD5 /* Default-Landscape~ipad.png in Resources */,
 				2673A8531536C6E4005D0FD5 /* Default.png in Resources */,
 				2673A8541536C6E4005D0FD5 /* Default@2x.png in Resources */,
+				2671A118153CA8830031BE27 /* challenge-ipad.mov in Resources */,
+				2671A119153CA8830031BE27 /* challenge.mov in Resources */,
+				2671A11A153CA8830031BE27 /* draw-ipad.mov in Resources */,
+				2671A11B153CA8830031BE27 /* draw.mov in Resources */,
+				2671A11C153CA8830031BE27 /* identify-ipad.mov in Resources */,
+				2671A11D153CA8830031BE27 /* identify.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,6 +904,7 @@
 				26C625C614F6178400B8A163 /* Marker.m in Sources */,
 				266BA54214F8311000B06C88 /* ModeViewController.m in Sources */,
 				652582BC152D77AD006EFCE0 /* Animations.m in Sources */,
+				2671A10A153C8EB00031BE27 /* DemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
