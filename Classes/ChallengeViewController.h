@@ -20,6 +20,8 @@
 	IBOutlet UIImageView *megalaser;
 	IBOutlet UIImageView *charge;
 	
+	IBOutlet UIView *cannonContainerView;
+	
 	SystemSoundID laserFire;
 	SystemSoundID laserCharge;
 	

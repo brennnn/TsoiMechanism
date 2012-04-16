@@ -11,10 +11,12 @@
 
 @interface ModeViewController : UIViewController {
     IBOutlet ProblemView *problemView;
-    int problemNumber;
     IBOutlet UILabel *problemNumberLabel;
-    int score;
     IBOutlet UILabel *scoreLabel;
+	
+	@private
+	int score;
+	int problemNumber;
 }
 
 @property (nonatomic, retain) IBOutlet ProblemView *problemView;

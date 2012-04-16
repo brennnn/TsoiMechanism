@@ -7,7 +7,6 @@
 //
 
 #import "DemoViewController.h"
-#import <MediaPlayer/MediaPlayer.h>
 #import "IdentifyViewController.h"
 #import "DrawViewController.h"
 #import "ChallengeViewController.h"
@@ -16,13 +15,13 @@
 
 @implementation DemoViewController
 
-@synthesize mode;
+@synthesize mode, moviePlayer;
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        
+		
     }
     return self;
 }
@@ -48,7 +47,7 @@
         return;
     }
   
-    MPMoviePlayerController *moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
+    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
     moviePlayer.view.frame = CGRectMake(self.view.frame.origin.y, self.view.frame.origin.x-20, self.view.frame.size.height, self.view.frame.size.width);
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayBackDidFinish:) name:MPMoviePlayerPlaybackDidFinishNotification object:moviePlayer];
     [moviePlayer setFullscreen:YES];
@@ -56,7 +55,20 @@
     [moviePlayer setFullscreen:YES];
     [moviePlayer play];
     
-    
+	UIButton *skipBtn = [[UIButton alloc] init];
+	if (Demo_iPad)
+	{
+		skipBtn.frame = CGRectMake(5.0f, 10.0f, 250.0f, 80.0f);
+		skipBtn.titleLabel.font = [UIFont systemFontOfSize:40.0f];
+	} else {
+		skipBtn.frame = CGRectMake(5.0f, 10.0f, 100.0f, 30.0f);
+	}
+
+	[skipBtn addTarget:self action:@selector(moviePlayBackDidFinish:) forControlEvents:UIControlEventTouchUpInside];
+	[skipBtn setBackgroundColor:[UIColor blackColor]];
+	[skipBtn setTitle:@"SKIP" forState:UIControlStateNormal];
+	[self.view addSubview:skipBtn];
+	[skipBtn release];
     
 }
 
@@ -95,17 +107,8 @@
 
 - (void) moviePlayBackDidFinish:(NSNotification*)notification
 {  
-    MPMoviePlayerController *moviePlayer = [notification object];  
-    [[NSNotificationCenter defaultCenter] removeObserver:self  
-                                                    name:MPMoviePlayerPlaybackDidFinishNotification  
-                                                  object:moviePlayer];  
     
-    
-    if ([moviePlayer respondsToSelector:@selector(setFullscreen:animated:)]) {  
-        [moviePlayer.view removeFromSuperview];  
-    }  
-    
-    [moviePlayer release];  
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:moviePlayer];
     [self pushMode];
 }  
 
@@ -118,6 +121,12 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void) dealloc {
+	[moviePlayer release];
+	
+    [super dealloc];
 }
 
 @end

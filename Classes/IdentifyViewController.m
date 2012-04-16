@@ -194,10 +194,9 @@ enum { NONE, ELECTROKNUCKLES, NUCLEOSONIC };
 			}
 			else
 			{
-                if (score > 0)
-                {
-                    [self removeScore:10];
-                }
+
+				[self removeScore:10];
+ 
                 
 				[Animations fireLaser:laser fromCannon:cannon toPoint:touchPoint];
 				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionRedFrames];
@@ -228,10 +227,7 @@ enum { NONE, ELECTROKNUCKLES, NUCLEOSONIC };
 			}
 			else
 			{
-                if (score > 0)
-                {
-                    [self removeScore:10];
-                }
+				[self removeScore:10];
                 
 				[Animations fireLaser:laser fromCannon:cannon toPoint:touchPoint];
 				[Animations createExplosionInView:self.view atPoint:touchPoint withImages:explosionBlueFrames];

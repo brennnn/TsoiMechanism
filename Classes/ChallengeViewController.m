@@ -10,6 +10,7 @@
 #import "Animations.h"
 
 @implementation ChallengeViewController
+
 @synthesize megalaser;
 @synthesize charge;
 @synthesize undoButtons;

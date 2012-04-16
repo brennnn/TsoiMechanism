@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 #define MODE_IDENTIFY 1
 #define MODE_DRAW 2
@@ -15,9 +16,11 @@
 @interface DemoViewController : UIViewController
 {
     int mode;
+	MPMoviePlayerController *moviePlayer;
 }
 
 @property (nonatomic, readwrite) int mode;
+@property (nonatomic, retain) MPMoviePlayerController *moviePlayer;
 
 
 -(void) moviePlayBackDidFinish:(NSNotification*)notification;
