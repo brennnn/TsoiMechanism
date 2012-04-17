@@ -34,8 +34,6 @@
     
 	frames = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"laser_red.png"], [UIImage imageNamed:@"laser_red2.png"], nil];
 	
-	originalProblemViewPos = problemView.center;
-	
 	[nextButton setHidden:YES];
 	
 	[megalaser setHidden:YES];
@@ -91,6 +89,12 @@
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
 {
+    
+    if (nextButton.hidden == FALSE)
+    {
+        return;
+    }
+    
     if (tries > 1)
     {
         return;
@@ -162,7 +166,6 @@
 
 -(IBAction)nextAct:(id)sender
 {
-	[self slideInProblemView];
     nextButton.hidden = YES; 
 	undoButtons.hidden = NO;
     submitButton.hidden = NO;
@@ -182,25 +185,14 @@
     }
 }
 
--(void) slideInProblemView
-{
-	[UIView animateWithDuration:1.0 
-						  delay:0.0 
-						options:UIViewAnimationOptionCurveEaseOut
-					 animations:^{
-						 problemView.center = originalProblemViewPos;
-					 }
-					 completion:NULL];
-}
-
 -(void) playFireAnimation
 {
 	[megalaser startAnimating];
 	megalaser.frame = originalFrame;
 	[megalaser setHidden:NO];
 	
-	problemView.center = CGPointMake(self.view.frame.size.width*2, problemView.center.y);
-	
+    [problemView showCorrectAnswer];
+    
 	[Animations shakeView:cannonContainerView power:20.0];
 	
 	[UIView animateWithDuration:2.0 

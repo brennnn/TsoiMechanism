@@ -132,6 +132,9 @@
 // Returns a UIImage of all Images on the screen.
 -(UIImage*) getArrowImage;
 
+// Clears all current arrows and shows the correct arrows for a problem.
+-(void) showCorrectAnswer;
+
 // PRIVATE METHODS - FOR INTERNAL CLASS USE ONLY
 
 // Adds all Problem related Markers to problemMarkersArray

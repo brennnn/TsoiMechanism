@@ -26,7 +26,6 @@
 	SystemSoundID laserCharge;
 	
 	CGRect originalFrame;
-	CGPoint originalProblemViewPos;
 	
 	NSArray *frames;
 }
@@ -44,7 +43,6 @@
 -(void) answerCorrect;
 -(void) answerIncorrect;
 
--(void) slideInProblemView;
 -(void) playFireAnimation;
 -(void) playFlashCharge;
 

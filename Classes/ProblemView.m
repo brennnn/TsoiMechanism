@@ -1314,6 +1314,59 @@
 	return arrowImage;	
 }
 
+-(void) showCorrectAnswer
+{
+    [self removeAllArrows];
+    [self setArrowMode:ARROW_CORRECT];
+    
+    Problem *currentProblem = [problems getCurrent];
+    
+    Molecule *moleculeA = [currentProblem.moleculeArray objectAtIndex:0];
+    Molecule *moleculeB = [currentProblem.moleculeArray objectAtIndex:1];
+    
+    CGPoint ep = CGPointMake(0.0f, 0.0f);
+    CGPoint np = CGPointMake(0.0f, 0.0f);
+    
+    for (Element *element in [moleculeA.elements allValues])
+    {
+        if (element.type == ELEMENT_NUCLEOPHILE)
+        {
+            np = CGPointMake(element.location.x * MOLECULE_MULTIPLIER, element.location.y * MOLECULE_MULTIPLIER);
+        } else if (element.type == ELEMENT_ELECTROPHILE)
+        {
+            ep = CGPointMake(element.location.x * MOLECULE_MULTIPLIER, element.location.y * MOLECULE_MULTIPLIER);
+        }
+    }
+    
+    for (Element *element in [moleculeB.elements allValues])
+    {
+        if (element.type == ELEMENT_NUCLEOPHILE)
+        {
+            np = CGPointMake((element.location.x * MOLECULE_MULTIPLIER) + (MOLECULE_WIDTH * MOLECULE_MULTIPLIER), element.location.y * MOLECULE_MULTIPLIER);
+        } else if (element.type == ELEMENT_ELECTROPHILE)
+        {
+            ep = CGPointMake((element.location.x * MOLECULE_MULTIPLIER) + (MOLECULE_WIDTH * MOLECULE_MULTIPLIER), element.location.y * MOLECULE_MULTIPLIER);
+        }
+    }
+    
+    [self startArrow:CGPointMake(np.x, np.y)];
+    [self endArrow:CGPointMake(ep.x, ep.y)];
+    
+    for (Arrow *arrow in [moleculeA.arrows allValues])
+    {        
+        [self startArrow:CGPointMake(arrow.locationA.x * MOLECULE_MULTIPLIER, arrow.locationA.y * MOLECULE_MULTIPLIER)];
+        [self endArrow:CGPointMake(arrow.locationB.x * MOLECULE_MULTIPLIER, arrow.locationB.y * MOLECULE_MULTIPLIER)];
+    }
+    
+    for (Arrow *arrow in [moleculeB.arrows allValues])
+    {
+        [self startArrow:CGPointMake((arrow.locationA.x * MOLECULE_MULTIPLIER) + (MOLECULE_WIDTH * MOLECULE_MULTIPLIER), arrow.locationA.y * MOLECULE_MULTIPLIER)];
+        [self endArrow:CGPointMake((arrow.locationB.x * MOLECULE_MULTIPLIER) + (MOLECULE_WIDTH * MOLECULE_MULTIPLIER), arrow.locationB.y * MOLECULE_MULTIPLIER)];
+    }
+    
+    
+}
+
 -(void) dealloc {
     if (electrophileMarker != nil)
         [electrophileMarker release];
